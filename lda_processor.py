@@ -48,6 +48,42 @@ class LDAProcessor():
         unseen_document_topics = self.lda_model.transform(self.vectorizer.transform(data_test))[0]
         print(unseen_document_topics)
 
+    def doc_to_topic_matrix(self):
+        '''Code below I got from 
+        https://www.machinelearningplus.com/nlp/topic-modeling-python-sklearn-examples/'''
+        ''' same with lemmatization, sent to words, and others in corpus_processor'''
+
+        # Creates a Document-Topic Matrix
+        matrix = self.lda_model.transform(self.doc_to_word_matrix)
+
+        # Column Names
+        topic_names = ["Topic" + str(i) for i in range(self.lda_model.n_components)]
+
+        # Index Names
+        doc_names = ["Doc" + str(i) for i in range(len(data))]
+
+        # Make the pandas dataframe
+        df_document_topic = pd.DataFrame(np.round(lda_output, 2), columns=topic_names, index = doc_names)
+
+        # Get dominant topic for each document -- WHERE I WILL INPUT THE CLASSFICATION
+        dominant_topic = np.argmax(df_document_topic.values, axis = 1)
+        df_document_topic['dominant_topic'] = dominant_topic
+
+        # Styling
+        def color_green(val):
+            color = 'green' if val > .1 else 'black'
+            return 'color: {col}'.format(col=color)
+
+        def make_bold(val):
+            weight = 700 if val > .1 else 400
+            return 'font-weight: {weight}'.format(weight = weight)
+
+        # Apply Style
+        df_document_topics = df_document_topic.head(15).style.applymap(color_green)
+            .applymap(make_bold)
+        
+        df_document_topics.to_csv('movie_reviews_doc_to_topic' + '.csv', encoding='utf-8', index=False)
+
 
 
 

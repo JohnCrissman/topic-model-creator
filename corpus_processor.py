@@ -145,6 +145,8 @@ class CorpusProcessor():
         data_vectorized = self.vectorizer.fit_transform(list_of_list_of_words)
         return data_vectorized
 
+    
+
 
 
 
