@@ -4,11 +4,14 @@ import pandas as pd
 
 class LDAProcessor():
 
-    def __init__(self, doc_to_word_matrix, num_topics, vectorizer):
+    def __init__(self, doc_to_word_matrix, num_topics, vectorizer, exists, existing_lda_model = None):
         self.doc_to_word_matrix = doc_to_word_matrix
         self.num_topics = num_topics
         self.vectorizer = vectorizer
-        self.lda_model = self.build_lda_model()
+        if exists is False:
+            self.lda_model = self.build_lda_model()
+        else:
+            self.lda_model = existing_lda_model
     
     def build_lda_model(self):
         '''Build LDA model.'''
@@ -21,7 +24,7 @@ class LDAProcessor():
                                       )
 
         lda_output = lda_model.fit_transform(self.doc_to_word_matrix)
-        print(lda_output)
+        print(lda_output) # may be the matrix I need for the classifier?
         return lda_model
 
     def show_topics(self, n_words):
@@ -42,7 +45,7 @@ class LDAProcessor():
         df_topic_keywords.index = ['Topic '+str(i) for i in range(df_topic_keywords.shape[0])]
         #print(df_topic_keywords)
 
-        df_topic_keywords.to_csv('movie_reviews_neg_pos_' + str(n_words) + '.csv', encoding='utf-8', index=False)
+        df_topic_keywords.to_csv('my_2nd_movie_reviews_neg_pos_' + str(n_words) + '.csv', encoding='utf-8', index=False)
 
     def show_topics_for_unseen(self, data_test):
         unseen_document_topics = self.lda_model.transform(self.vectorizer.transform(data_test))[0]
@@ -79,11 +82,13 @@ class LDAProcessor():
             return 'font-weight: {weight}'.format(weight = weight)
 
         # Apply Style
-        df_document_topics = df_document_topic.head(15).style.applymap(color_green)
-            .applymap(make_bold)
+        # df_document_topics = df_document_topic.head(15).style.applymap(color_green)
+        # .applymap(make_bold)
         
         df_document_topics.to_csv('movie_reviews_doc_to_topic' + '.csv', encoding='utf-8', index=False)
 
+    def get_lda_model(self):
+        return self.lda_model
 
 
 
