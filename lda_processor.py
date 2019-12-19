@@ -54,8 +54,8 @@ class LDAProcessor():
         df_topic_keywords.columns = ['Word '+str(i) for i in range(df_topic_keywords.shape[1])]
         df_topic_keywords.index = ['Topic '+str(i) for i in range(df_topic_keywords.shape[0])]
         #print(df_topic_keywords)
-
-        df_topic_keywords.to_csv('my_6th_movie_reviews_neg_pos_' + str(n_words) + '.csv', encoding='utf-8', index=False)
+        
+        ##df_topic_keywords.to_csv('my_6th_movie_reviews_neg_pos_' + str(n_words) + '.csv', encoding='utf-8', index=False)
 
     def show_topics_for_unseen(self, data_test):
         unseen_document_topics = self.lda_model.transform(self.vectorizer.transform(data_test))[0]

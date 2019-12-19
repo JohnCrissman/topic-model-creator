@@ -5,6 +5,19 @@ import pandas as pd
 from corpus_processor import CorpusProcessor
 from lda_processor import LDAProcessor
 
+from sklearn.model_selection import train_test_split
+
+# CLASSIFIERS
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.neural_network import MLPClassifier
+from sklearn.naive_bayes import GaussianNB
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.neighbors import NearestCentroid
+from sklearn.linear_model import SGDClassifier
+
+from sklearn.metrics import classification_report, confusion_matrix
+
+
 # main file to run the program
 
 def main():
@@ -32,18 +45,63 @@ def main():
     # returns Document to Topic matrix and creates a csv file of the matrix
     #####doc_topic_matrix = topic_model_creator.create_doc_to_topic_matrix()
    
-    print(doc_to_topic_matrix)
+    #print(doc_to_topic_matrix)
 
-    classifications = ['bad', 'good']
+    '''
+    classification of 0 means bad
+    classification of 1 means good
+    '''
+    classifications = ['0', '1']
     n = 999
     list_of_classifications = [item for item in classifications for i in range(n)]
-    print(list_of_classifications)
+    #print(list_of_classifications)
 
     doc_to_topic_matrix['Classification'] = list_of_classifications
 
     print(doc_to_topic_matrix)
+
+    #doc_to_topic_matrix.to_csv('doc_to_topic_w_classifier.csv', encoding='utf-8', index=False)
+    
+    print(doc_to_topic_matrix.shape)
+
+    print(doc_to_topic_matrix.head())
+
+    X = doc_to_topic_matrix.drop('Classification', axis=1)
+    y = doc_to_topic_matrix['Classification']
+
+    print(X)
+    print(y)
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20)
+
+    #############
+    # Testing different types of classifiers here:  results for 20 topics!!
+    #############
+    '''Decision Tree: ~57% accuracy'''
+    # classifier = DecisionTreeClassifier()
+
+    '''Multi-Layer-Perceptron: ~60% accuracy'''
+    # classifier = MLPClassifier(solver='lbfgs', alpha = 1e-5, 
+                               #hidden_layer_sizes=(5,2), random_state =1)
+
+    '''Gaussian Naive Bayes: ~52% accuracy'''
+    # classifier = GaussianNB()
+
+    '''Multinomial Naive Bayes: ~50% accuracy'''
+    # classifier = MultinomialNB()
+
+    '''Nearest Neighbors (Nearest Centroid): ~50% accuracy'''
+    # classifier = NearestCentroid()
+
+    '''Stochastic Gradient Descent Classifier: ~60% accuracy'''
+    # classifier = SGDClassifier(loss = "hinge", penalty = "l2", max_iter = 5)
+
     
 
+    classifier.fit(X_train, y_train)
+    y_pred = classifier.predict(X_test)
+    print(confusion_matrix(y_test, y_pred))
+    print(classification_report(y_test, y_pred))
 
 
 
