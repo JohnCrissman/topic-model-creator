@@ -1,5 +1,6 @@
 import time
 import pickle
+import pandas as pd
 
 from corpus_processor import CorpusProcessor
 from lda_processor import LDAProcessor
@@ -8,8 +9,8 @@ from lda_processor import LDAProcessor
 
 def main():
     # load vectorizer, doc to word matrix, and topic model
-    with open('finalized_model.pkl', 'rb') as f:
-        vectorizer, doc_to_word_matrix, lda_model = pickle.load(f)
+    with open('a_finalized_model.pkl', 'rb') as f:
+        vectorizer, doc_to_word_matrix, lda_model, doc_to_topic_matrix = pickle.load(f)
 
     topic_model_creator = LDAProcessor(doc_to_word_matrix, 10, vectorizer, True, lda_model)
 
@@ -28,8 +29,19 @@ def main():
 
     topic_model_creator.show_topics_for_unseen(doc_neg_text)
 
+    # returns Document to Topic matrix and creates a csv file of the matrix
+    #####doc_topic_matrix = topic_model_creator.create_doc_to_topic_matrix()
    
+    print(doc_to_topic_matrix)
 
+    classifications = ['bad', 'good']
+    n = 999
+    list_of_classifications = [item for item in classifications for i in range(n)]
+    print(list_of_classifications)
+
+    doc_to_topic_matrix['Classification'] = list_of_classifications
+
+    print(doc_to_topic_matrix)
     
 
 

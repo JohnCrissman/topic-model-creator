@@ -24,8 +24,18 @@ class LDAProcessor():
                                       )
 
         lda_output = lda_model.fit_transform(self.doc_to_word_matrix)
-        print(lda_output) # may be the matrix I need for the classifier?
+        #print(lda_output) # may be the matrix I need for the classifier?
         return lda_model
+
+    def create_doc_to_topic_matrix(self):
+        # lda_output = self.lda_model.fit_transform(self.doc_to_word_matrix) ### __
+
+        lda_output = self.lda_model.transform(self.doc_to_word_matrix) ### a
+
+        df_doc_to_topic = pd.DataFrame(lda_output)
+        df_doc_to_topic.to_csv('b_doc_to_topic_matrix.csv', encoding='utf-8', index=False)
+        return df_doc_to_topic
+
 
     def show_topics(self, n_words):
         '''Show top n keywords for each topic.'''
@@ -45,7 +55,7 @@ class LDAProcessor():
         df_topic_keywords.index = ['Topic '+str(i) for i in range(df_topic_keywords.shape[0])]
         #print(df_topic_keywords)
 
-        df_topic_keywords.to_csv('my_2nd_movie_reviews_neg_pos_' + str(n_words) + '.csv', encoding='utf-8', index=False)
+        df_topic_keywords.to_csv('my_6th_movie_reviews_neg_pos_' + str(n_words) + '.csv', encoding='utf-8', index=False)
 
     def show_topics_for_unseen(self, data_test):
         unseen_document_topics = self.lda_model.transform(self.vectorizer.transform(data_test))[0]

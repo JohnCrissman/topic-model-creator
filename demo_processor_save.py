@@ -23,10 +23,12 @@ def main():
 
     lda_model = topic_model_creator.get_lda_model()
 
+    # returns Document to Topic matrix and creates a csv file of the matrix
+    doc_to_topic_matrix = topic_model_creator.create_doc_to_topic_matrix()
 
     # save vectorizer, doc to word matrix, and topic model
-    with open('finalized_model.pkl', 'wb') as fout:
-        pickle.dump((vectorizer, doc_to_word_matrix, lda_model), fout)
+    with open('a_finalized_model.pkl', 'wb') as fout:
+        pickle.dump((vectorizer, doc_to_word_matrix, lda_model, doc_to_topic_matrix), fout)
 
     
     
