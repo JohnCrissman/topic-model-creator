@@ -19,7 +19,7 @@ def main():
     vectorizer = corpus.get_vectorizer()
 
     # We are choosing 20 topics as second parameter
-    topic_model_creator = LDAProcessor(doc_to_word_matrix, 20, vectorizer, False)
+    topic_model_creator = LDAProcessor(doc_to_word_matrix, 7, vectorizer, False)
 
     lda_model = topic_model_creator.get_lda_model()
 
@@ -27,7 +27,7 @@ def main():
     doc_to_topic_matrix = topic_model_creator.create_doc_to_topic_matrix()
 
     # save vectorizer, doc to word matrix, and topic model
-    with open('a_finalized_model.pkl', 'wb') as fout:
+    with open('c_finalized_model.pkl', 'wb') as fout:
         pickle.dump((vectorizer, doc_to_word_matrix, lda_model, doc_to_topic_matrix), fout)
 
     

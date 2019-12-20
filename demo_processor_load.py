@@ -22,10 +22,10 @@ from sklearn.metrics import classification_report, confusion_matrix
 
 def main():
     # load vectorizer, doc to word matrix, and topic model
-    with open('a_finalized_model.pkl', 'rb') as f:
+    with open('c_finalized_model.pkl', 'rb') as f:
         vectorizer, doc_to_word_matrix, lda_model, doc_to_topic_matrix = pickle.load(f)
 
-    topic_model_creator = LDAProcessor(doc_to_word_matrix, 10, vectorizer, True, lda_model)
+    topic_model_creator = LDAProcessor(doc_to_word_matrix, 7, vectorizer, True, lda_model)
 
 
 
@@ -39,8 +39,13 @@ def main():
 
     doc_neg = CorpusProcessor(path_neg_test)
     doc_neg_text = doc_neg.create_one_doc()
+    print("testing unseen doc")
+    print(doc_neg_text)
+    print("testing finished")
 
-    topic_model_creator.show_topics_for_unseen(doc_neg_text)
+    ''' input used for predicting classification (good or bad) for unseen document!!!!!!!!!!!!'''
+    unseen_doc_features = topic_model_creator.show_topics_for_unseen(doc_neg_text).reshape(1, -1)
+    
 
     # returns Document to Topic matrix and creates a csv file of the matrix
     #####doc_topic_matrix = topic_model_creator.create_doc_to_topic_matrix()
@@ -51,12 +56,12 @@ def main():
     classification of 0 means bad
     classification of 1 means good
     '''
-    classifications = ['0', '1']
-    n = 999
-    list_of_classifications = [item for item in classifications for i in range(n)]
-    #print(list_of_classifications)
+    # classifications = ['0', '1']
+    # n = 999
+    # list_of_classifications = [item for item in classifications for i in range(n)]
+    # #print(list_of_classifications)
 
-    doc_to_topic_matrix['Classification'] = list_of_classifications
+    # doc_to_topic_matrix['Classification'] = list_of_classifications
 
     print(doc_to_topic_matrix)
 
@@ -81,8 +86,8 @@ def main():
     # classifier = DecisionTreeClassifier()
 
     '''Multi-Layer-Perceptron: ~60% accuracy'''
-    # classifier = MLPClassifier(solver='lbfgs', alpha = 1e-5, 
-                               #hidden_layer_sizes=(5,2), random_state =1)
+    classifier = MLPClassifier(solver='lbfgs', alpha = 1e-5, 
+                               hidden_layer_sizes=(5,2), random_state =1)
 
     '''Gaussian Naive Bayes: ~52% accuracy'''
     # classifier = GaussianNB()
@@ -90,7 +95,8 @@ def main():
     '''Multinomial Naive Bayes: ~50% accuracy'''
     # classifier = MultinomialNB()
 
-    '''Nearest Neighbors (Nearest Centroid): ~50% accuracy'''
+    '''Nearest Neighbors (Nearest Centroid): 
+        20 topics:  ~50% accuracy'''
     # classifier = NearestCentroid()
 
     '''Stochastic Gradient Descent Classifier: ~60% accuracy'''
@@ -103,8 +109,12 @@ def main():
     print(confusion_matrix(y_test, y_pred))
     print(classification_report(y_test, y_pred))
 
+    # SHOWING THE PREDICTION (GOOD OR BAD) OF THE UNSEEN DOCUMENT
+    print("Here is the prediction: ")
+    print(classifier.predict(unseen_doc_features))
 
-
+    print("looking at the tests: ")
+    print(classifier.predict(X_test))
 
 
 

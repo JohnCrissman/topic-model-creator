@@ -1,4 +1,6 @@
 from sklearn.decomposition import LatentDirichletAllocation
+from sklearn.model_selection import GridSearchCV
+
 import numpy as np
 import pandas as pd
 
@@ -19,7 +21,7 @@ class LDAProcessor():
                                       max_iter=1000, # Max learning iterations
                                       learning_method='online',
                                       random_state=100, # Random state
-                                      batch_size=1800,#  docs in each learning iter 
+                                      batch_size=100,#  docs in each learning iter 
                                       n_jobs=-1, # Use all available CPUs
                                       )
 
@@ -27,15 +29,23 @@ class LDAProcessor():
         #print(lda_output) # may be the matrix I need for the classifier?
         return lda_model
 
+    def add_class_to_doc_to_top_matrix(self, matrix):
+        ## hard coded classes for each document
+        classifications = ['0', '1']
+        n = 999
+        list_of_classifications = [item for item in classifications for i in range(n)]
+        matrix['Classification'] = list_of_classifications
+        return matrix
+
     def create_doc_to_topic_matrix(self):
         # lda_output = self.lda_model.fit_transform(self.doc_to_word_matrix) ### __
 
         lda_output = self.lda_model.transform(self.doc_to_word_matrix) ### a
 
         df_doc_to_topic = pd.DataFrame(lda_output)
-        df_doc_to_topic.to_csv('b_doc_to_topic_matrix.csv', encoding='utf-8', index=False)
-        return df_doc_to_topic
-
+        df_doc_to_topic.to_csv('c_doc_to_topic_matrix.csv', encoding='utf-8', index=False)
+        fin_matrix = self.add_class_to_doc_to_top_matrix(df_doc_to_topic)
+        return fin_matrix
 
     def show_topics(self, n_words):
         '''Show top n keywords for each topic.'''
@@ -54,48 +64,13 @@ class LDAProcessor():
         df_topic_keywords.columns = ['Word '+str(i) for i in range(df_topic_keywords.shape[1])]
         df_topic_keywords.index = ['Topic '+str(i) for i in range(df_topic_keywords.shape[0])]
         #print(df_topic_keywords)
-        
+
         ##df_topic_keywords.to_csv('my_6th_movie_reviews_neg_pos_' + str(n_words) + '.csv', encoding='utf-8', index=False)
 
     def show_topics_for_unseen(self, data_test):
         unseen_document_topics = self.lda_model.transform(self.vectorizer.transform(data_test))[0]
         print(unseen_document_topics)
-
-    def doc_to_topic_matrix(self):
-        '''Code below I got from 
-        https://www.machinelearningplus.com/nlp/topic-modeling-python-sklearn-examples/'''
-        ''' same with lemmatization, sent to words, and others in corpus_processor'''
-
-        # Creates a Document-Topic Matrix
-        matrix = self.lda_model.transform(self.doc_to_word_matrix)
-
-        # Column Names
-        topic_names = ["Topic" + str(i) for i in range(self.lda_model.n_components)]
-
-        # Index Names
-        doc_names = ["Doc" + str(i) for i in range(len(data))]
-
-        # Make the pandas dataframe
-        df_document_topic = pd.DataFrame(np.round(lda_output, 2), columns=topic_names, index = doc_names)
-
-        # Get dominant topic for each document -- WHERE I WILL INPUT THE CLASSFICATION
-        dominant_topic = np.argmax(df_document_topic.values, axis = 1)
-        df_document_topic['dominant_topic'] = dominant_topic
-
-        # Styling
-        def color_green(val):
-            color = 'green' if val > .1 else 'black'
-            return 'color: {col}'.format(col=color)
-
-        def make_bold(val):
-            weight = 700 if val > .1 else 400
-            return 'font-weight: {weight}'.format(weight = weight)
-
-        # Apply Style
-        # df_document_topics = df_document_topic.head(15).style.applymap(color_green)
-        # .applymap(make_bold)
-        
-        df_document_topics.to_csv('movie_reviews_doc_to_topic' + '.csv', encoding='utf-8', index=False)
+        return unseen_document_topics
 
     def get_lda_model(self):
         return self.lda_model
