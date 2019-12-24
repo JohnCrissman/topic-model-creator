@@ -4,6 +4,7 @@ import spacy
 from sklearn.feature_extraction.text import CountVectorizer
 import re
 
+
 class CorpusProcessor():
 
     def __init__(self, fileName1, fileName2 = None):
@@ -120,23 +121,26 @@ class CorpusProcessor():
         # Remove distracting single quotes
         data = [re.sub("\'", "", sent) for sent in data]
 
+        """ data is a list of documents such that each document is a string.  (list of strings)"""
         # Tokenize each sentence into a list of words
         data_words = self.sent_to_words(data)
     
+        """ data_words is an iterator.  Thus we need to convert it to a list like we did below."""
+        
         data_words_list = list(data_words)
 
         # Do lemmatization keeping only Noun, Adj, Verb, Adverb
         data_lemmatized = self.lemmatization(data_words_list, allowed_postags=['NOUN', 'ADJ', 'VERB', 'ADV'])
-        
-        return data_lemmatized
+
+        return data
     
     def create_vectorizer(self):
         vectorizer = CountVectorizer(#analyzer='word',
                                     min_df = 5,
                                     max_df = 0.9,
-                                    stop_words='english', # remove stop words
+                                    #stop_words='english', # remove stop words
                                     lowercase=True,  # convert all words to lowercase
-                                    token_pattern='[a-zA-Z0-9]{3,}')# num chars >= 3
+                                    token_pattern='[a-zA-Z0-9]{2,}')# num chars >= 3
                                     # max_features = 50000, # max number of unique words
         return vectorizer
 

@@ -14,6 +14,8 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.neighbors import NearestCentroid
 from sklearn.linear_model import SGDClassifier
+from sklearn import svm
+
 
 from sklearn.metrics import classification_report, confusion_matrix
 
@@ -87,7 +89,7 @@ def main():
 
     '''Multi-Layer-Perceptron: ~60% accuracy'''
     classifier = MLPClassifier(solver='lbfgs', alpha = 1e-5, 
-                               hidden_layer_sizes=(5,2), random_state =1)
+                                hidden_layer_sizes=(5,2), random_state =1)
 
     '''Gaussian Naive Bayes: ~52% accuracy'''
     # classifier = GaussianNB()
@@ -102,6 +104,9 @@ def main():
     '''Stochastic Gradient Descent Classifier: ~60% accuracy'''
     # classifier = SGDClassifier(loss = "hinge", penalty = "l2", max_iter = 5)
 
+    '''Support Vector Machines (SVM)'''
+    # classifier = svm.SVC()
+    
     
 
     classifier.fit(X_train, y_train)
