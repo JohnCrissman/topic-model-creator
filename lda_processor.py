@@ -40,7 +40,7 @@ class LDAProcessor():
     def create_doc_to_topic_matrix(self):
         # lda_output = self.lda_model.fit_transform(self.doc_to_word_matrix) ### __
 
-        lda_output = self.lda_model.transform(self.doc_to_word_matrix) ### a
+        lda_output = self.lda_model.transform(self.doc_to_word_matrix)
 
         df_doc_to_topic = pd.DataFrame(lda_output)
         df_doc_to_topic.to_csv('c_doc_to_topic_matrix.csv', encoding='utf-8', index=False)
