@@ -5,6 +5,7 @@ import pandas as pd
 from corpus_processor import CorpusProcessor
 from lda_processor import LDAProcessor
 from classifier_processor import ClassifierProcessor
+from display_notes import DisplayNotes
 
 from sklearn.model_selection import train_test_split
 
@@ -44,7 +45,14 @@ def main():
     doc_neg_text = doc_neg.create_one_doc()
     print("testing unseen doc")
     print(doc_neg_text)
+    print(type(doc_neg_text))
     print("testing finished")
+
+    one_string = " ".join(doc_neg_text)
+    print("\n")
+    print(one_string)
+    print(type(one_string))
+    print("\n")
 
     ''' input used for predicting classification (good or bad) for unseen document!!!!!!!!!!!!'''
     unseen_doc_features = topic_model_creator.show_topics_for_unseen(doc_neg_text).reshape(1, -1)
@@ -137,6 +145,7 @@ def main():
     classifying_movie_reviews.train_classifier()
     classifying_movie_reviews.predict_class_for_doc()
 
+    display = DisplayNotes(doc_neg_text)
 
 
 
