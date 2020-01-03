@@ -32,8 +32,6 @@ def main():
     topic_model_creator = LDAProcessor(doc_to_word_matrix, 7, vectorizer, True, lda_model)
 
 
-
-    
     # Create an excel file showing the top 15 words for each topic
     topic_model_creator.topic_to_word_matrix_n_words(15)
 
