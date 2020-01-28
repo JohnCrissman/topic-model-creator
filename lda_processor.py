@@ -37,15 +37,19 @@ class LDAProcessor():
         matrix['Classification'] = list_of_classifications
         return matrix
 
-    def create_doc_to_topic_matrix(self):
+    def create_doc_to_topic_matrix(self, classes = []):
         # lda_output = self.lda_model.fit_transform(self.doc_to_word_matrix) ### __
 
         lda_output = self.lda_model.transform(self.doc_to_word_matrix)
 
         df_doc_to_topic = pd.DataFrame(lda_output)
         df_doc_to_topic.to_csv('c_doc_to_topic_matrix.csv', encoding='utf-8', index=False)
-        fin_matrix = self.add_class_to_doc_to_top_matrix(df_doc_to_topic)
-        return fin_matrix
+        if len(classes) is 0:
+            fin_matrix = self.add_class_to_doc_to_top_matrix(df_doc_to_topic)
+            return fin_matrix
+        else:
+            df_doc_to_topic['Classification'] = classes
+            return df_doc_to_topic
 
     def show_topics(self, n_words):
         '''Show top n keywords for each topic.'''
@@ -57,15 +61,15 @@ class LDAProcessor():
             topic_keywords.append(keywords.take(top_keyword_locs))
         return topic_keywords
 
-    def topic_to_word_matrix_n_words(self, n_words):
+    def topic_to_word_matrix_n_words(self, n_words, filename):
         '''Creates a topic - Keywords Dataframe as an excel file.'''
         topic_keywords = self.show_topics(n_words)
         df_topic_keywords = pd.DataFrame(topic_keywords)
         df_topic_keywords.columns = ['Word '+str(i) for i in range(df_topic_keywords.shape[1])]
         df_topic_keywords.index = ['Topic '+str(i) for i in range(df_topic_keywords.shape[0])]
-        #print(df_topic_keywords)
 
-        ##df_topic_keywords.to_csv('my_6th_movie_reviews_neg_pos_' + str(n_words) + '.csv', encoding='utf-8', index=False)
+        df_topic_keywords.to_csv(filename, encoding='utf-8', index=False)
+        return df_topic_keywords
 
     def show_topics_for_unseen(self, data_test):
         unseen_document_topics = self.lda_model.transform(self.vectorizer.transform(data_test))[0]

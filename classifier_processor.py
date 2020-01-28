@@ -16,7 +16,7 @@ from sklearn.metrics import classification_report, confusion_matrix
 
 class ClassifierProcessor():
 
-    def __init__(self, doc_to_topic_matrix, unseen_doc_features, classifier = 'ANN'):
+    def __init__(self, doc_to_topic_matrix, unseen_doc_features = [], classifier = 'ANN'):
         self.doc_to_topic_matrix = doc_to_topic_matrix
         self.unseen_doc_features = unseen_doc_features
         if classifier == 'DT':

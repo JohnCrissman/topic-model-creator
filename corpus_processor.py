@@ -7,7 +7,7 @@ import re
 
 class CorpusProcessor():
 
-    def __init__(self, fileName1, fileName2 = None):
+    def __init__(self, fileName1 = None, fileName2 = None):
         self.path_neg = fileName1
         self.path_pos = fileName2
         self.vectorizer = self.create_vectorizer()
@@ -106,12 +106,14 @@ class CorpusProcessor():
 
         return data
 
-    def create_list_of_list_of_words(self):
+    def create_list_of_list_of_words(self, list_of_docs = []):
         '''Each element in the list is a document.
            Each document is represented as a list of words.
            This will be our input to create a document - word matrix.'''
-        data = self.create_list_of_docs()
-
+        if(len(list_of_docs) is 0):
+            data = self.create_list_of_docs()
+        else:
+            data = list_of_docs
         # Remove Emails
         data = [re.sub('\S*@\S*\s?', '', sent) for sent in data]
 
@@ -139,8 +141,8 @@ class CorpusProcessor():
                                     min_df = 5,
                                     max_df = 0.9,
                                     #stop_words='english', # remove stop words
-                                    lowercase=True,  # convert all words to lowercase
-                                    token_pattern='[a-zA-Z0-9]{2,}')# num chars >= 3
+                                    lowercase=True)  # convert all words to lowercase
+                                    # token_pattern='[a-zA-Z0-9]{1,}')# num chars >= 1
                                     # max_features = 50000, # max number of unique words
         return vectorizer
 

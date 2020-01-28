@@ -1,19 +1,32 @@
 import webbrowser
+import pandas as pd
 
 class DisplayNotes():
-    def __init__(self, notes):
+    def __init__(self, notes, unseen_doc_features, topic_to_word_matrix):
+        self.unseen_doc_features = unseen_doc_features
+        print(type(notes))
+        print(len(notes))
+        print(type(unseen_doc_features))
+        print(len(unseen_doc_features))
         string_notes = notes = " ".join(notes)
         notes = string_notes.split(" ")
         notes1 = ""
-        
+        red_words = ["movie", "film", "the"] # highlighted red
         yellow_words = ["the", "on"] # highlighted yellow
         green_words = ["kid", "dad"] # highlighted green
 
+        print(type(notes))
+        print(len(notes))
+        self.notes = notes
+        self.topic_to_word_matrix = topic_to_word_matrix
+        
         for word in notes:
             if(word in yellow_words):
                 notes1 = notes1 + '<span class="highlighted-yellow">'+word+'</span>'
             elif(word in green_words):
                 notes1 = notes1 + '<span class="highlighted-green">'+word+'</span>'
+            elif(word in red_words):
+                notes1 = notes1 + '<span class="highlighted-red">'+word+'</span>'
             else:
                 notes1 = notes1 + '<span>'+word+'</span>'
             notes1 = notes1 + " "
@@ -30,6 +43,9 @@ class DisplayNotes():
         }
         .highlighted-yellow{
             background:yellow;
+        }
+        .highlighted-red{
+            background:red;
         }
         </style>
         </head>
@@ -51,7 +67,7 @@ class DisplayNotes():
 
 
         # Create a method that finds the top n topics (input: n, output: list of numbers that represent topics)
-            # will use doc_neg_text and unseen_doc_features from demo_processor_load
+            # will use doc_neg_text (notes private instance variable for this class) and unseen_doc_features from demo_processor_load
         # Then given those topics (probably a list of numbers) get the list of m words. (input: list of numbers, output: shown below)
             # This will probably be a nested list.. because there are n topics.
             # Thus, there will be n elements in the list such that each element is a list of length m.

@@ -18,12 +18,7 @@ def main():
 
 
     doc_to_word_matrix = corpus.create_doc_to_word_matrix(list_of_list_of_words)
-    print("Here is the first row? of the doc_to_word_matrix: ")
-    print("\n")
-    print(doc_to_word_matrix)
-    print(doc_to_word_matrix[0])
-    print(type(doc_to_word_matrix))
-    print(type(doc_to_word_matrix[0]))
+    
    
     df_doc_to_word_matrix = pd.DataFrame((doc_to_word_matrix).toarray())
     df_doc_to_word_matrix.to_csv('doc_to_word_matrix.csv', encoding='utf-8', index=False)
@@ -31,16 +26,14 @@ def main():
 
     vectorizer = corpus.get_vectorizer()
 
-    # We are choosing 20 topics as second parameter
+    # We are choosing 7 topics as second parameter
     topic_model_creator = LDAProcessor(doc_to_word_matrix, 7, vectorizer, False)
 
     lda_model = topic_model_creator.get_lda_model()
 
     # returns Document to Topic matrix and creates a csv file of the matrix
     doc_to_topic_matrix = topic_model_creator.create_doc_to_topic_matrix()
-    print("\nHere is the first row? of the doc_to_topic matrix: ")
-    print("\n")
-    print(doc_to_topic_matrix[0])
+    
 
     df_doc_to_topic_matrix = pd.DataFrame(doc_to_topic_matrix)
     df_doc_to_topic_matrix.to_csv('doc_to_topic_matrix.csv', encoding='utf-8', index=False)
