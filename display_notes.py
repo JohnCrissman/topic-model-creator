@@ -1,5 +1,7 @@
 import webbrowser
 import pandas as pd
+import numpy as np  
+import heapq
 
 class DisplayNotes():
     def __init__(self, notes, unseen_doc_features, topic_to_word_matrix):
@@ -14,12 +16,15 @@ class DisplayNotes():
         red_words = ["movie", "film", "the"] # highlighted red
         yellow_words = ["the", "on"] # highlighted yellow
         green_words = ["kid", "dad"] # highlighted green
+        blue_words = ["that", "get"] # highlighted blue
 
         print(type(notes))
         print(len(notes))
-        self.notes = notes
+        print("Finding the greatest value in the unseen doc features:  ")
+        print(unseen_doc_features)
+        self.notes = notes 
         self.topic_to_word_matrix = topic_to_word_matrix
-        
+
         for word in notes:
             if(word in yellow_words):
                 notes1 = notes1 + '<span class="highlighted-yellow">'+word+'</span>'
@@ -27,6 +32,8 @@ class DisplayNotes():
                 notes1 = notes1 + '<span class="highlighted-green">'+word+'</span>'
             elif(word in red_words):
                 notes1 = notes1 + '<span class="highlighted-red">'+word+'</span>'
+            elif(word in blue_words):
+                notes1 = notes1 + '<span class="highlighted-blue">'+word+'</span>'
             else:
                 notes1 = notes1 + '<span>'+word+'</span>'
             notes1 = notes1 + " "
@@ -47,6 +54,9 @@ class DisplayNotes():
         .highlighted-red{
             background:red;
         }
+        .highlighted-blue{
+            background:blue;
+        }
         </style>
         </head>
         <body><p>""" + self.notes + """</p></body>
@@ -57,10 +67,68 @@ class DisplayNotes():
 
         f.close()
 
-        webbrowser.open_new_tab('helloworld.html')
 
-    def display_doc_n_topics_m_words(self, n = 2, m = 10):
+        webbrowser.open_new_tab('helloworld.html')
+        result_of_function = self.display_doc_n_topics_m_words(4,5)
+
+        print(result_of_function)
+        print(result_of_function)
+
+    def display_top_topic(self, topics):
+        print("Here is the value for the top topic: ")
+        print(np.max(topics))
+        print("Here is the index for the top topic: ")
+        argmax_top_topic = np.argmax(topics)
+        print(argmax_top_topic)
+        print("This would be topic number " + str(argmax_top_topic + 1))
+        
+        print(self.topic_to_word_matrix)
+        print()
         return 1
+
+
+    def display_doc_n_topics_m_words(self,n = 1, m = 5):
+        topics = self.unseen_doc_features
+        matrix = self.topic_to_word_matrix
+        a = self.display_top_topic(self.unseen_doc_features)
+        top_topic = np.argmax(topics) # which topic between topic 0 and topic n-1
+        print(top_topic)
+        print(type(matrix))  # pandas dataframe
+        list_of_words_in_topic = matrix.iloc[top_topic,0:m]
+        print(list_of_words_in_topic)
+        print(type(list_of_words_in_topic))
+        print(list_of_words_in_topic.size)
+        print(list_of_words_in_topic.tolist())
+        print(type(list_of_words_in_topic.tolist()))
+        print(len(list_of_words_in_topic.tolist()))
+        array = np.array(list_of_words_in_topic)
+        print(array)
+        print(type(array))
+        print(array.shape)
+        print(topics)
+        print(topics[0])
+        indices_of_n_top_topics = heapq.nlargest(n, range(len(topics[0])), topics[0].take) # [3, 6, 0, 5]
+        print(indices_of_n_top_topics) # list of indices where the highest value of topics are (sorted from largest to smallest)
+        print(type(indices_of_n_top_topics))
+        m_words_first_topic = matrix.iloc[indices_of_n_top_topics[0],0:m] # m = 5
+        print(m_words_first_topic)
+        print(type(m_words_first_topic))
+        print(m_words_first_topic.tolist())
+        print(type(m_words_first_topic.tolist()))
+
+        list_of_list_of_words = []
+        for topic_num in indices_of_n_top_topics:
+            top_m_words_in_topic = matrix.iloc[topic_num,0:m].tolist()
+            list_of_list_of_words.append(top_m_words_in_topic)
+
+        print(list_of_list_of_words)
+        print(type(list_of_list_of_words))
+
+
+
+
+
+        return list_of_list_of_words
         # display document to show the top n topics and
         # the top m words in each topic
         # Default for n = 2 and default for m = 10
