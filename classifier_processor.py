@@ -15,6 +15,11 @@ from sklearn.naive_bayes import ComplementNB
 from sklearn.metrics import classification_report, confusion_matrix
 
 class ClassifierProcessor():
+    """ Using a document to topic matrix, with each document's label added on, this class 
+        can classify documents using supervised learning algorithms.  Each document will 
+        have a multinomial distribution of topics amongst them.  This distribution of topics 
+        will be the attributes to help with the classifcation.
+    """
 
     def __init__(self, doc_to_topic_matrix, unseen_doc_features = [], classifier = 'ANN'):
         self.doc_to_topic_matrix = doc_to_topic_matrix

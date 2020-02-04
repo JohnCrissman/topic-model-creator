@@ -4,36 +4,54 @@ import numpy as np
 import heapq
 
 class DisplayNotes():
+    """ This class displays one document and highlights words different
+        colors that are associated with topics.
+        
+        Maximum ammount of topics that can be highlighted is 5.  This is ok
+        because most of the document will be associated with either 1 or 2 topics.
+
+        Two options:
+            1. Highlight the top m words from the top n topics.  Each word from
+                different topics will be highlighed with different colors.
+            2. Highlight the top m words from the topics that meet a specific
+                threshold.  Words from different topics will be highlighed differently.
+    """
+
     def __init__(self, notes, unseen_doc_features, topic_to_word_matrix):
+
         self.unseen_doc_features = unseen_doc_features
-        print(type(notes))
-        print(len(notes))
-        print(type(unseen_doc_features))
-        print(len(unseen_doc_features))
-        string_notes = notes = " ".join(notes)
+        self.topic_to_word_matrix = topic_to_word_matrix
+        self.notes = notes 
+
+    def highlight_words_associated_with_topics(self, lists_of_words_from_topics):
+
+        string_notes = self.notes = " ".join(self.notes)
         notes = string_notes.split(" ")
         notes1 = ""
-        red_words = ["movie", "film", "the"] # highlighted red
-        yellow_words = ["the", "on"] # highlighted yellow
-        green_words = ["kid", "dad"] # highlighted green
-        blue_words = ["that", "get"] # highlighted blue
 
-        print(type(notes))
-        print(len(notes))
-        print("Finding the greatest value in the unseen doc features:  ")
-        print(unseen_doc_features)
-        self.notes = notes 
-        self.topic_to_word_matrix = topic_to_word_matrix
-
+        blue_words, green_words, yellow_words, orange_words, red_words = [],[],[],[],[]
+        if len(lists_of_words_from_topics) >= 1:
+            blue_words = lists_of_words_from_topics[0]
+        if len(lists_of_words_from_topics) >= 2:
+            green_words = lists_of_words_from_topics[1]
+        if len(lists_of_words_from_topics) >= 3:
+            yellow_words = lists_of_words_from_topics[2]
+        if len(lists_of_words_from_topics) >= 4:
+            orange_words = lists_of_words_from_topics[3]
+        if len(lists_of_words_from_topics) >= 5:
+            red_words = lists_of_words_from_topics[4]
+        
         for word in notes:
-            if(word in yellow_words):
-                notes1 = notes1 + '<span class="highlighted-yellow">'+word+'</span>'
+            if(word in blue_words):
+                notes1 = notes1 + '<span class="highlighted-blue">'+word+'</span>'
             elif(word in green_words):
                 notes1 = notes1 + '<span class="highlighted-green">'+word+'</span>'
+            elif(word in yellow_words):
+                notes1 = notes1 + '<span class="highlighted-yellow">'+word+'</span>'
+            elif(word in orange_words):
+                notes1 = notes1 + '<span class="highlighted-orange">'+word+'</span>'
             elif(word in red_words):
                 notes1 = notes1 + '<span class="highlighted-red">'+word+'</span>'
-            elif(word in blue_words):
-                notes1 = notes1 + '<span class="highlighted-blue">'+word+'</span>'
             else:
                 notes1 = notes1 + '<span>'+word+'</span>'
             notes1 = notes1 + " "
@@ -45,106 +63,69 @@ class DisplayNotes():
         <html>
         <head>
         <style>
+        .highlighted-blue{
+            background: #98c9d4;
+        }
         .highlighted-green{
-            background: #66df66;
+            background: #bbd48d;
         }
         .highlighted-yellow{
-            background:yellow;
+            background: #f0ec97;
+        }
+        .highlighted-orange{
+            background: #f6cd69;
         }
         .highlighted-red{
-            background:red;
-        }
-        .highlighted-blue{
-            background:blue;
+            background: #f09fc8;
         }
         </style>
         </head>
         <body><p>""" + self.notes + """</p></body>
         </html>"""
 
-
         f.write(message)
-
         f.close()
-
-
         webbrowser.open_new_tab('helloworld.html')
-        result_of_function = self.display_doc_n_topics_m_words(4,5)
 
-        print(result_of_function)
-        print(result_of_function)
 
-    def display_top_topic(self, topics):
-        print("Here is the value for the top topic: ")
-        print(np.max(topics))
-        print("Here is the index for the top topic: ")
-        argmax_top_topic = np.argmax(topics)
-        print(argmax_top_topic)
-        print("This would be topic number " + str(argmax_top_topic + 1))
+    def display_threshold_topics_m_words(self, topic_threshold, m_words):
+
+        lists_of_words_from_topics = self.display_doc_threshold_m_words(threshold= topic_threshold, num_words= m_words)  # showing top topics over threshold
+        self.highlight_words_associated_with_topics(lists_of_words_from_topics)
+
+
+    def display_top_n_topics_m_words(self, n_topics, m_words):
+
+        lists_of_words_from_topics = self.display_doc_n_topics_m_words(num_topics= n_topics, num_words= m_words)   # showing top n topics
+        self.highlight_words_associated_with_topics(lists_of_words_from_topics)
         
-        print(self.topic_to_word_matrix)
-        print()
-        return 1
 
+    def display_doc_n_topics_m_words(self,num_topics = 1, num_words = 5):
+        # Input: number of topics and number of words as natural numbers
+        # Output: A list of lists.  Each element in the list is a list representing the top m words from that topic.
+        #         The first element is the top topic, the second element is the 2nd topic, and so on up to n topics.
 
-    def display_doc_n_topics_m_words(self,n = 1, m = 5):
         topics = self.unseen_doc_features
         matrix = self.topic_to_word_matrix
-        a = self.display_top_topic(self.unseen_doc_features)
-        top_topic = np.argmax(topics) # which topic between topic 0 and topic n-1
-        print(top_topic)
-        print(type(matrix))  # pandas dataframe
-        list_of_words_in_topic = matrix.iloc[top_topic,0:m]
-        print(list_of_words_in_topic)
-        print(type(list_of_words_in_topic))
-        print(list_of_words_in_topic.size)
-        print(list_of_words_in_topic.tolist())
-        print(type(list_of_words_in_topic.tolist()))
-        print(len(list_of_words_in_topic.tolist()))
-        array = np.array(list_of_words_in_topic)
-        print(array)
-        print(type(array))
-        print(array.shape)
-        print(topics)
-        print(topics[0])
-        indices_of_n_top_topics = heapq.nlargest(n, range(len(topics[0])), topics[0].take) # [3, 6, 0, 5]
-        print(indices_of_n_top_topics) # list of indices where the highest value of topics are (sorted from largest to smallest)
-        print(type(indices_of_n_top_topics))
-        m_words_first_topic = matrix.iloc[indices_of_n_top_topics[0],0:m] # m = 5
-        print(m_words_first_topic)
-        print(type(m_words_first_topic))
-        print(m_words_first_topic.tolist())
-        print(type(m_words_first_topic.tolist()))
-
+        indices_of_n_top_topics = heapq.nlargest(num_topics, range(len(topics[0])), topics[0].take) # [3, 6, 0, 5]
         list_of_list_of_words = []
         for topic_num in indices_of_n_top_topics:
-            top_m_words_in_topic = matrix.iloc[topic_num,0:m].tolist()
+            top_m_words_in_topic = matrix.iloc[topic_num,0:num_words].tolist()
             list_of_list_of_words.append(top_m_words_in_topic)
-
-        print(list_of_list_of_words)
-        print(type(list_of_list_of_words))
-
-
-
-
-
         return list_of_list_of_words
-        # display document to show the top n topics and
-        # the top m words in each topic
-        # Default for n = 2 and default for m = 10
+
+        
+    def display_doc_threshold_m_words(self, threshold = 0.2, num_words = 10):
+        topics = self.unseen_doc_features[0]
+        matrix = self.topic_to_word_matrix
+        indices_over_threshold = [idx for idx, val in enumerate(topics) if val > threshold]
+        list_of_list_of_words = []
+        for topic_num in indices_over_threshold:
+            top_m_words_in_topic = matrix.iloc[topic_num,0:num_words].tolist()
+            list_of_list_of_words.append(top_m_words_in_topic)
+        return list_of_list_of_words
 
 
-        # Create a method that finds the top n topics (input: n, output: list of numbers that represent topics)
-            # will use doc_neg_text (notes private instance variable for this class) and unseen_doc_features from demo_processor_load
-        # Then given those topics (probably a list of numbers) get the list of m words. (input: list of numbers, output: shown below)
-            # This will probably be a nested list.. because there are n topics.
-            # Thus, there will be n elements in the list such that each element is a list of length m.
-            # Once I have this list of lists, I should be able to display doc with highlighted sections.
-            # Example of output:  [[movie, review, cinema, shoot], [batman, superman, catwoman, penguin], [shark, fish, boat, water]]
-
-
-    def display_doc_threshold_m_words(self, threshold = 0.2, m = 10):
-        return 1
         # Will only display topics that are equal to or over the threshold
         # For example:  if threshold is 0.1, then all topics that make up 10% (0.1)
         #               or more of the document will be displayed.  If none of the topics
@@ -154,8 +135,4 @@ class DisplayNotes():
         # Default for threshold is 0.2 (20 %) and default for m is 10
 
 
-        # Create a method that finds topics given a threshold (input: threshold, output: list of numbers that represent topics)
-            # will use doc_neg_text and unseen_doc_features from demo_processor_load
-        # THEN I CAN USE THE METHOD I MADE BEFORE FOR THIS AS WELL!!!!!
-
-        # ONCE I HAVE THE ABOVE METHODS WORKING, HAVE THEM SET UP TO HANDLE UP TO 5 TOPICS.
+        

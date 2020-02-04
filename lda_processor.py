@@ -5,6 +5,9 @@ import numpy as np
 import pandas as pd
 
 class LDAProcessor():
+    """ This class creates a Latent Dirichlet Allocation (LDA) model and transforms
+        the output of the LDA in order to use as input for supervised learning algorithms.
+    """
 
     def __init__(self, doc_to_word_matrix, num_topics, vectorizer, exists, existing_lda_model = None):
         self.doc_to_word_matrix = doc_to_word_matrix

@@ -4,12 +4,20 @@ import spacy
 from sklearn.feature_extraction.text import CountVectorizer
 import re
 
-
 class CorpusProcessor():
+    """ This class prepares a collection of documents to use a 
+        vectorizer in order to make a document to word matrix
+    """
 
     def __init__(self, fileName1 = None, fileName2 = None):
-        self.path_neg = fileName1
-        self.path_pos = fileName2
+        """ Initializes instance variables:
+            path_1 = path name to get all the txt files in some directory
+            path_2 = path name to get all the txt files in another directory
+            vectorizer = return a CountVectorizer with specific parameters
+                            shown in method below.
+        """
+        self.path_1 = fileName1
+        self.path_2 = fileName2
         self.vectorizer = self.create_vectorizer()
 
     def get_vectorizer(self):
@@ -36,14 +44,14 @@ class CorpusProcessor():
         return texts_out
 
     def sent_to_words(self, sentences):
-        '''Tokenize each sentence into a list of words.'''
+        """Tokenize each sentence into a list of words."""
         for sentence in sentences:
             yield(gensim.utils.simple_preprocess(str(sentence), deacc=True))
             # deacc = True removes punctuations
 
     def create_one_doc(self):
-        files_neg_test = glob.glob(self.path_neg)
-        # files_pos = glob.glob(path_pos)
+        files_neg_test = glob.glob(self.path_1)
+        # files_pos = glob.glob(path_2)
 
         data_test = []
         one_document = ""
@@ -52,7 +60,6 @@ class CorpusProcessor():
         for name in files_neg_test:
             try:
                 with open(name, 'r', encoding = 'utf-8') as f:
-                    
                     lines = f.readlines()
                     for line in lines:
                         text = self.remove_punctuation(line.strip())
@@ -67,9 +74,10 @@ class CorpusProcessor():
         return data_test
 
     def create_list_of_docs(self):
-        '''Create a list of strings that has each document in the corpus.'''
-        files_neg = glob.glob(self.path_neg)
-        files_pos = glob.glob(self.path_pos)
+        """Create a list of strings such that each string is a document in the corpus."""
+
+        files_neg = glob.glob(self.path_1)
+        files_pos = glob.glob(self.path_2)
         data = []
         one_document = ""
         text = ""
@@ -141,7 +149,8 @@ class CorpusProcessor():
                                     min_df = 5,
                                     max_df = 0.9,
                                     #stop_words='english', # remove stop words
-                                    lowercase=True)  # convert all words to lowercase
+                                    lowercase=True,
+                                    stop_words='english')  # convert all words to lowercase
                                     # token_pattern='[a-zA-Z0-9]{1,}')# num chars >= 1
                                     # max_features = 50000, # max number of unique words
         return vectorizer

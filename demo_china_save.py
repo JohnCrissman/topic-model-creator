@@ -68,12 +68,6 @@ for i in range(len(df_no_missing)):
     list_of_documents.append(df_no_missing.iloc[i,0])
     list_of_barriers.append(df_no_missing.iloc[i,1])
 
-print("Here is the list of documents: ")
-print(list_of_documents)
-print()
-print("Here is the list of barriers: ")
-print(list_of_barriers)
-
 corpus = CorpusProcessor()
 list_of_list_of_words = corpus.create_list_of_list_of_words(list_of_documents)
 
