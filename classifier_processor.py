@@ -45,7 +45,7 @@ class ClassifierProcessor():
         else:
             self.classifier_name = 'ANN - Multilayer Perceptron'
             self.classifier = MLPClassifier(solver='lbfgs', alpha = 1e-5, 
-                                hidden_layer_sizes=(5,2), random_state =1)
+                                hidden_layer_sizes=(10,4), random_state =1)
 
     
 

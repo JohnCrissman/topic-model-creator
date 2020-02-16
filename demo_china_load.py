@@ -13,7 +13,7 @@ def main():
     with open('china_finalized_model.pkl', 'rb') as f:
         vectorizer, doc_to_word_matrix, lda_model, doc_to_topic_matrix, list_of_barriers = pickle.load(f)
 
-    topic_model_creator = LDAProcessor(doc_to_topic_matrix, 7, vectorizer, True, lda_model)
+    topic_model_creator = LDAProcessor(doc_to_word_matrix, 7, vectorizer, True, lda_model)
 
     # Create an excel file showing the top n words for each topic
     words = 10

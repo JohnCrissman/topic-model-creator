@@ -55,8 +55,8 @@ def main():
     display = DisplayNotes(doc_neg_text, unseen_doc_features, topic_to_word_matrix)
 
 
-    display.display_threshold_topics_m_words(0.03, 30)
-    # display.display_top_n_topics_m_words(2, 20)
+    display.display_threshold_topics_m_words(0.05, 30)
+    # display.display_top_n_topics_m_words(5, 100)
 
 
 main()

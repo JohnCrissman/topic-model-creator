@@ -1,11 +1,11 @@
 Word 0,Word 1,Word 2,Word 3,Word 4,Word 5,Word 6,Word 7,Word 8,Word 9
-dr,radiation,shuping,surgery,today,perez,interpreted,wong,shirazi,ln
-time,chemo,mastectomy,negative,lymph,need,node,needed,info,nodes
-surgery,need,come,month,ibccp,scheduled,dr,insurance,plan,lumpectomy
+dr,radiation,shuping,today,perez,surgery,interpreted,wong,shirazi,ln
+time,chemo,mastectomy,negative,start,lymph,need,weeks,node,info
+surgery,need,come,month,dr,scheduled,plan,ibccp,insurance,lumpectomy
 bx,breast,result,waiting,prescribed,tamoxifen,really,stereo,think,cal
-insurance,mercy,called,pt,appt,pcp,dr,explained,referral,told
-dr,breast,patient,need,left,right,come,dxmm,biopsy,pap
-pt,dr,perez,2016,accompanied,10,cindy,day,medication,24
-wong,scheduled,appt,scan,dr,11,chemo,bone,ct,muga
-come,12,2017,30,scmm,mri,17,16,hagen,blood
-patient,cancer,came,told,surgery,annual,pt,treatment,mri,screening
+insurance,pt,mercy,called,dr,appt,pcp,referral,explained,did
+dr,breast,need,patient,come,left,right,dxmm,pt,biopsy
+pt,dr,perez,accompanied,10,2016,cindy,day,scmm,scheduled
+wong,scheduled,dr,appt,scan,11,bone,chemo,ct,muga
+come,12,2017,30,scmm,mri,17,16,10,work
+patient,came,cancer,surgery,told,annual,mri,scmm,screening,treatment
