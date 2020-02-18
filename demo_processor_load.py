@@ -52,6 +52,8 @@ def main():
     classifying_movie_reviews.train_classifier()
     classifying_movie_reviews.predict_class_for_doc()
 
+    
+
     display = DisplayNotes(doc_neg_text, unseen_doc_features, topic_to_word_matrix)
 
 
