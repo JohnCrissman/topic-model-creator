@@ -1,4 +1,10 @@
-# demo_classify_LDA_patients_first.py
+# demo_classify_ALL_patients_first.py
+
+# How is this file different from demo_classify_LDA_patients_first.py?
+#   In this file we are not only using LDA on the patients first visit.
+#   We will be using other information gathered from the first visit (like type of service)
+#     as well as the patients demographics!
+
 '''In this file we are loading objects that were saved in
     demo_LDA_patients_first.py
 
@@ -88,12 +94,14 @@ def main():
     with open('china_LDA_patients_first_5_10_15_20_25_30.pkl', 'rb') as f:
         vectorizer, all_lda_processors, all_lda_models, all_doc_to_topic_matrices, list_of_documents, list_of_barriers, doc_to_word_matrix = pickle.load(f)
 
-    # Show 5 topics and top 10 words
-    show_top_n_words_for_each_topic(num_words= 10, lda_processor_object= all_lda_processors[0], filename= "topic_5_to_word_10_1st_visit.csv")
+    # # Show 5 topics and top 10 words
+    # show_top_n_words_for_each_topic(num_words= 10, lda_processor_object= all_lda_processors[0], filename= "topic_5_to_word_10_1st_visit.csv")
     
-    # Show 10 topics and top 10 words
-    show_top_n_words_for_each_topic(num_words= 10, lda_processor_object= all_lda_processors[1], filename= "topic_10_to_word_10_1st_visit.csv")
+    # # Show 10 topics and top 10 words
+    # show_top_n_words_for_each_topic(num_words= 10, lda_processor_object= all_lda_processors[1], filename= "topic_10_to_word_10_1st_visit.csv")
 
+    print(all_doc_to_topic_matrices[0])
+    print(all_doc_to_topic_matrices[1])
     # print("These are the 5 topics distribution for the first document: \n")
     # print(all_lda_models[0].transform(doc_to_word_matrix)[0])
 
@@ -127,10 +135,13 @@ def main():
         In the following tests we are taking out label/classification
         "5.0" or "language/interpreter" from our data set.  
     '''
-    pprint(all_doc_to_topic_matrices[0])
-    my_df = remove_rows_with_this_label(label=5.0, df = all_doc_to_topic_matrices[0])
+    # pprint(all_doc_to_topic_matrices[0])
+    # my_df = remove_rows_with_this_label(label=5.0, df = all_doc_to_topic_matrices[0])
     
-    pprint(my_df)
+    # pprint(my_df)
+
+
+
     # testing 5 topics without tuples with language/interpreter label
     # df = remove_rows_with_this_label(label=5.0, df = all_doc_to_topic_matrices[0])
     # train_and_test_classifier(input_for_classifier= df)
@@ -152,27 +163,30 @@ def main():
     # train_and_test_classifier(input_for_classifier= df)
 
     # testing 30 topics without tuples with language/interpreter label
-    df = remove_rows_with_this_label(label=5.0, df = all_doc_to_topic_matrices[5])
-    train_and_test_classifier(input_for_classifier= df)
+    # df = remove_rows_with_this_label(label=5.0, df = all_doc_to_topic_matrices[5])
+    # train_and_test_classifier(input_for_classifier= df)
 
 
-    # let's visuallize a document while highlighting most prevalent topics and their words
+    # # let's visuallize a document while highlighting most prevalent topics and their words
+    # "-----------------------------------------------------------------------------"
+    # topic_distribution_for_doc = all_lda_processors[3].show_topics_for_unseen([list_of_documents[2]]).reshape(1,-1)
+    # distribution = []
+    # distribution.append(topic_distribution_for_doc)
 
-    topic_distribution_for_doc = all_lda_processors[3].show_topics_for_unseen([list_of_documents[2]]).reshape(1,-1)
-    distribution = []
-    distribution.append(topic_distribution_for_doc)
-    document = []
-    document.append(list_of_documents[2])
-    words = 1000
-    filename = 'patients_topic_to_word_matrix' + str(words) + '.csv'
-    topic_to_word_matrix = all_lda_processors[3].topic_to_word_matrix_n_words(words, filename)
-    npa = np.asarray(distribution, dtype=np.float64)
-    display = DisplayNotes(document, npa[0], topic_to_word_matrix)
+    # document = []
+    # document.append(list_of_documents[2])
+    # words = 1000
+    # filename = 'patients_topic_to_word_matrix' + str(words) + '.csv'
+    # topic_to_word_matrix = all_lda_processors[3].topic_to_word_matrix_n_words(words, filename)
+    # npa = np.asarray(distribution, dtype=np.float64)
+    
+    
+    
+    # display = DisplayNotes(document, npa[0], topic_to_word_matrix)
+    # "-----------------------------------------------------------------------------"
 
-
-    display.display_threshold_topics_m_words(0.00000001, 10)
-    # display.display_top_n_topics_m_words(5, 1000)
-
+    # display.display_threshold_topics_m_words(0.0000000000001, 5)
+    # # display.display_top_n_topics_m_words(5, 1000)
 
 if __name__ == "__main__":
     main()

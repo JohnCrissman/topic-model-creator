@@ -57,10 +57,11 @@ def main():
     display = DisplayNotes(doc_neg_text, unseen_doc_features, topic_to_word_matrix)
 
 
-    display.display_threshold_topics_m_words(0.05, 30)
-    # display.display_top_n_topics_m_words(5, 100)
+    # display.display_threshold_topics_m_words(0.0000001, 30)
+    display.display_top_n_topics_m_words(5, 100)
 
 
-main()
+if __name__ == "__main__":
+    main()
 
 

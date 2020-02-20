@@ -37,6 +37,7 @@ def main():
 
     # display = DisplayNotes(doc_neg_text, unseen_doc_features, topic_to_word_matrix)
 
-main()
+if __name__ == "__main__":
+    main()
 
     

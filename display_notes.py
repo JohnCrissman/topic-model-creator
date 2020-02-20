@@ -106,6 +106,8 @@ class DisplayNotes():
         #         The first element is the top topic, the second element is the 2nd topic, and so on up to n topics.
 
         topics = self.unseen_doc_features
+        print(topics)
+        print(type(topics))
         matrix = self.topic_to_word_matrix
         indices_of_n_top_topics = heapq.nlargest(num_topics, range(len(topics[0])), topics[0].take) # [3, 6, 0, 5]
         list_of_list_of_words = []
@@ -117,6 +119,8 @@ class DisplayNotes():
         
     def display_doc_threshold_m_words(self, threshold = 0.2, num_words = 10):
         topics = self.unseen_doc_features[0]
+        print(topics)
+        print(type(topics))
         matrix = self.topic_to_word_matrix
         indices_over_threshold = [idx for idx, val in enumerate(topics) if val > threshold]
         list_of_list_of_words = []
