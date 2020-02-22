@@ -1,324 +1,275 @@
-record_id,age  ,occupational status,marital status , What is the highest grade or level of schooling you completed? ,6. 你是不是在美國出生？  Were you born in the United States? ,7. 你在哪一年來到美國居住？   In what year did you come to live in the United States? ,8. 你的英文說得多好？  How well do you speak English? ,9. 你來自哪裡？（中國的城市名或Other國家名）  Where are you from? (Chinese city name or other country name)  ,10. 你現在的家庭住址的郵政編碼是多少？    What is the zip code of your current household? ,"Including yourself, how many family members live in your household now? ",household_income,preferred_language,date_of_service1,type_of_service1___1,type_of_service1___2,type_of_service1___3,type_of_service1___4,type_of_service1___5,type_of_service1___6,type_of_service1___7,type_of_service1___8,type_of_service1___9,type_of_service1___10,type_of_service1___11,type_of_service1___12,type_of_service1___13,type_of_service1___14,type_of_service1___15,Classification
-391.0,43.0,Housewife,Married,Primary School,No,1999,Not Good,Fu jian,60616,3.0,"$15,000 至 $19,999",2.0,2016-07-25,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-391.0,34.0,Housewife,Married,Primary School,No,1999,Very Bad,xi jian,60616,3.0,"$15,000 至 $19,999",2.0,2016-07-25,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-393.0,56.0,Working,Single Never Married,High School,No,2000,Not Good,Shanghai ,60616,1.0,"$15,000 至 $19,999",2.0,2015-08-31,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,5.0
-395.0,35.0,Other,Single Never Married,High School,No,2003,Not Good,Taishan,60616,4.0,"$20,000 至 $34,999",1.0,2015-08-31,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,5.0
-397.0,51.0,Working,Married,High School,No,1990,Good,taishan,60609,4.0,"$35,000 至 $49,999",1.0,2015-08-06,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,5.0
-396.0,37.0,Unemployed,Married,University Graduate,No,2015,Not Good,Guang Zhou ,60616,2.0,"$10,000 至 $14,999",1.0,2015-08-03,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,5.0
-398.0,47.0,Working,Married,High School,No,2008,Not Good,jiangmen,60616,4.0,"$20,000 至 $34,999",1.0,2015-08-05,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,5.0
-400.0,62.0,Working,Married,Primary School,No,1984,Good,Hong Kong,60616,2.0,"$15,000 至 $19,999",1.0,2016-08-12,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4.0
-3.0,56.0,Working,Married,Vocational or technical school after high school,No,2006,,Shenyang,60616,2.0,"$20,000 至 $34,999",2.0,2015-08-11,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-402.0,46.0,Working,Married,High School,No,1995,Not Good,Guangdong ,60608,6.0,"$20,000 至 $34,999",1.0,2015-08-11,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-401.0,61.0,Unemployed,Married,High School,No,1985,Not Good,Gong Zhou,60616,3.0,"$10,000 至 $14,999",1.0,2016-08-31,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,22.0
-405.0,36.0,Working,Married,Attended college but did not graduate,No,2015,Very Bad,Ji nan,60616,1.0,"$10,000 至 $14,999",2.0,2015-08-20,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,5.0
-406.0,40.0,Unemployed,Married,Junior High,No,2014,Very Bad,Guangzhou ,60616,1.0,"<em>$0 至 $9,999",2.0,2015-09-10,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-407.0,45.0,Working,Divorced,Junior High,No,2011,Not Good,Taishan,60616,2.0,"$10,000 至 $14,999",1.0,2015-08-25,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-408.0,63.0,Unemployed,Married,Junior High,No,2002,Very Bad,Guangdong ,60616,6.0,"$10,000 至 $14,999",3.0,2015-08-28,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-409.0,29.0,Student,Married,Vocational or technical school after high school,No,2014,Not Good,Guongdong,60616,4.0,"$15,000 至 $19,999",1.0,2015-09-04,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,5.0
-403.0,46.0,Working,Married,Junior High,No,2005,Not Good,Guangdong ,60609,5.0,"$20,000 至 $34,999",1.0,2015-08-17,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,14.0
-10.0,53.0,Unemployed,Married,Junior High,No,1997,Very Bad,Guangdong ,60616,6.0,"$35,000 至 $49,999",1.0,2015-09-15,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-410.0,62.0,Working,Married,Primary School,No,2007,Very Bad,Guangdong ,60608,3.0,"$15,000 至 $19,999",1.0,2015-09-16,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,5.0
-102.0,66.0,Retired,Married,Junior High,No,1985,Very Bad,shanghai,60609,5.0,"$10,000 至 $14,999",2.0,2015-09-16,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-255.0,45.0,Housewife,Married,High School,No,2008,Not Good,Shan dong,60616,3.0,"$15,000 至 $19,999",2.0,2015-09-18,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-77.0,55.0,Working,Married,High School,No,1985,Not Good,Guangzhou,60616,4.0,"$35,000 至 $49,999",1.0,2015-09-21,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-411.0,69.0,Retired,Divorced,Junior High,No,1994,Very Bad,Guangdong ,60616,3.0,"$35,000 至 $49,999",1.0,2015-09-22,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-415.0,47.0,Housewife,Married,I have no education,No,2001,Not Good,Fuzhou,60616,4.0,"$20,000 至 $34,999",2.0,2015-10-12,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,5.0
-414.0,36.0,Working,Refuse to Answer</em>,University Graduate,No,2000,Good,Vietnam,60607,1.0,"$35,000 至 $49,999",1.0,2015-10-08,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-418.0,46.0,Working,Divorced,Junior High,No,1994,Not Good,Guangdong ,60616,1.0,"$10,000 至 $14,999",1.0,2015-10-19,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-421.0,73.0,Retired,Married,University Graduate,No,1993,,Shanghai ,60632,2.0,"$10,000 至 $14,999",2.0,2015-10-28,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-423.0,59.0,Working,Widowed,High School,No,1995,Not Good,guangzhou,60632,1.0,"$10,000 至 $14,999",1.0,2017-01-20,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,5.0
-423.0,38.0,Unemployed,Divorced,High School,<em>Yes（轉至Q10）,,,,60616,5.0,"<em>$0 至 $9,999",1.0,2017-01-20,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,5.0
-422.0,46.0,Unemployed,Married,Junior High,No,1996,Very Bad,Guangdong ,60616,5.0,"$15,000 至 $19,999",1.0,2015-11-12,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-424.0,48.0,Housewife,Married,Junior High,No,1999,Not Good,FuKin,60616,6.0,"$50,000 至 $74,999",2.0,2016-02-08,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,5.0
-425.0,69.0,Retired,Married,Primary School,No,2004,Very Bad,Hong kong,60616,1.0,"<em>$0 至 $9,999",1.0,2015-12-03,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-427.0,34.0,Working,Married,Junior High,No,2002,Not Good,Fijian ,60616,4.0,"$20,000 至 $34,999",2.0,2015-12-29,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-428.0,69.0,Housewife,Married,I have no education,,,,,60632,6.0,"$15,000 至 $19,999",3.0,2015-12-10,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,5.0
-429.0,40.0,Working,Married,University Graduate,No,2003,Not Good,Guangdong ,60616,5.0,"$20,000 至 $34,999",1.0,2016-07-14,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,4.0
-426.0,43.0,Working,Married,University Graduate,No,2010,Not Good,Guongzhou,60616,3.0,"$20,000 至 $34,999",1.0,2015-12-03,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,5.0
-430.0,66.0,Retired,Married,Primary School,No,1995,Very Bad,Hongkong ,60616,2.0,"<em>$0 至 $9,999",1.0,2015-12-11,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-341.0,58.0,Working,Married,Primary School,<em>Yes（轉至Q10）,,,,60616,3.0,"$15,000 至 $19,999",1.0,2015-05-13,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,5.0
-341.0,59.0,Working,Married,High School,No,1979,Not Good,taishan,60616,4.0,"$20,000 至 $34,999",1.0,2015-05-13,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,5.0
-435.0,45.0,Working,Married,Junior High,No,2007,Not Good,Guangdong ,60632,4.0,"$10,000 至 $14,999",1.0,2016-02-03,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-436.0,39.0,Working,Married,High School,No,2011,Not Good,Shen yang,60608,3.0,"$20,000 至 $34,999",2.0,2016-02-04,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-438.0,54.0,Working,Married,High School,No,1998,Very Bad,Guangdong ,60608,4.0,"$15,000 至 $19,999",1.0,2016-02-11,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,5.0
-441.0,61.0,Retired,Widowed,High School,No,1994,Very Bad,Toishan,60616,2.0,"<em>$0 至 $9,999",1.0,2016-08-08,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,4.0
-440.0,58.0,Working,Married,Junior High,No,2005,Very Bad,Guangdong ,60608,11.0,"$20,000 至 $34,999",3.0,2016-02-24,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,5.0
-439.0,53.0,Housewife,Married,Junior High,<em>Yes（轉至Q10）,,,,60616,4.0,"<em>$0 至 $9,999",1.0,2016-03-18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,5.0
-447.0,67.0,Retired,Widowed,Primary School,No,1999,Not Good,Taisan,60616,5.0,"$20,000 至 $34,999",3.0,2016-03-30,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,5.0
-447.0,67.0,Retired,Widowed,Primary School,No,1999,Very Bad,Taisan,60616,5.0,"$20,000 至 $34,999",3.0,2016-03-30,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,5.0
-450.0,50.0,Working,Married,Junior High,No,1987,Not Good,"Taishan ,Guangdong",60609,3.0,"$20,000 至 $34,999",1.0,2016-02-26,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,4.0
-453.0,41.0,Working,Married,High School,No,2004,Not Good,Taishan,60616,6.0,"$20,000 至 $34,999",1.0,2016-08-24,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-455.0,42.0,Working,Married,High School,No,2002,Very Bad,Taishan,60609,4.0,"$20,000 至 $34,999",1.0,2016-04-08,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-458.0,59.0,Working,Married,Junior High,No,2010,Very Bad,Taishan,60616,2.0,"<em>$0 至 $9,999",3.0,2017-03-09,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-464.0,53.0,Working,Widowed,High School,No,2000,Not Good,Hong kong,60616,2.0,"$10,000 至 $14,999",1.0,2016-03-30,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,5.0
-460.0,50.0,Working,Divorced,High School,No,2011,Very Bad,Henan,60616,2.0,"$20,000 至 $34,999",2.0,2016-03-18,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-465.0,58.0,Working,Married,Junior High,No,2010,Very Bad,Taishan,60616,2.0,"$10,000 至 $14,999",3.0,2016-04-21,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-468.0,50.0,Working,Married,High School,No,2000,Good,Tashian,60616,4.0,"$35,000 至 $49,999",1.0,2016-07-28,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-468.0,50.0,Working,Married,High School,No,2000,Good,Taishan,60616,4.0,"$35,000 至 $49,999",1.0,2016-07-28,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-470.0,46.0,Working,Married,High School,No,2003,Not Good,Toishanese ,60608,5.0,"$35,000 至 $49,999",1.0,2016-03-22,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-478.0,54.0,Working,Married,Junior High,No,2007,Very Bad,Taishan,60616,7.0,"$20,000 至 $34,999",1.0,2016-03-28,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,5.0
-479.0,30.0,Unemployed,Single Never Married,Attended college but did not graduate,No,2007,Not Good,Taishan,60616,7.0,"$20,000 至 $34,999",1.0,2016-04-25,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,5.0
-480.0,32.0,Working,Single Never Married,University Graduate,No,2006,Not Good,Dongbei,60616,2.0,"$15,000 至 $19,999",2.0,2016-03-31,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,5.0
-482.0,79.0,Retired,Widowed,Attended college but did not graduate,No,1981,Very Bad,Taishan,60616,1.0,"$15,000 至 $19,999",1.0,2016-08-04,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,5.0
-483.0,54.0,Working,Married,Junior High,No,2012,Very Bad,Guangdong ,60616,4.0,"<em>$0 至 $9,999",3.0,2016-03-31,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-490.0,58.0,Working,Married,Vocational or technical school after high school,No,1996,Very Bad, 上海,60609,1.0,"<em>$0 至 $9,999",2.0,2016-08-08,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,5.0
-495.0,59.0,Unemployed,Divorced,Junior High,No,1987,Not Good,,60616,3.0,"<em>$0 至 $9,999",1.0,2016-05-03,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-500.0,64.0,Working,Married,Primary School,No,guangdon,Very Bad,guangdon ,60616,2.0,"<em>$0 至 $9,999",3.0,2018-01-22,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-505.0,69.0,Retired,Married,Junior High,No,1996,Not Good,Taishan,60616,5.0,Do Not Know,1.0,2016-05-18,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-15.0,63.0,Retired,Married,Primary School,No,1983,Not Good,Taishan,60632,2.0,"$10,000 至 $14,999",1.0,2015-02-26,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,10.0
-520.0,40.0,Working,Married,Primary School,No,1999,Not Good,fu zhao,60609,4.0,"$15,000 至 $19,999",2.0,2018-02-27,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-518.0,49.0,Unemployed,Married,Junior High,No,2015,Very Bad,Lingni,60609,1.0,"<em>$0 至 $9,999",2.0,2016-06-20,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,5.0
-523.0,62.0,Working,Married,Vocational or technical school after high school,No,2013,Very Bad,Liaoning,60632,1.0,"<em>$0 至 $9,999",2.0,2016-06-01,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,4.0
-534.0,58.0,Housewife,Married,University Graduate,No,2015,Not Good,Shanghai ,60608,2.0,Do Not Know,2.0,2017-01-10,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-537.0,53.0,Working,Married,High School,No,2001,Not Good,Shangyang,60609,3.0,"$20,000 至 $34,999",2.0,2016-07-21,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,5.0
-630.0,75.0,Retired,Widowed,Junior High,No,2016,Very Bad,Guangdon ,60609,5.0,"$20,000 至 $34,999",1.0,2016-09-07,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-550.0,33.0,Working,Married,High School,No,2014,Not Good,Wulam,60616,1.0,"<em>$0 至 $9,999",1.0,2016-06-16,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-549.0,54.0,Working,Married,Junior High,No,2010,Not Good,He nan,60608,3.0,"$20,000 至 $34,999",2.0,2016-07-05,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,5.0
-552.0,63.0,Housewife,Married,High School,No,1996,Not Good,Beijing ,60632,2.0,"<em>$0 至 $9,999",2.0,2016-07-07,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-557.0,28.0,Working,Single Never Married,University Graduate,No,2008,Good,Taishan,60616,2.0,"$20,000 至 $34,999",1.0,2017-01-17,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,4.0
-559.0,66.0,Housewife,Married,Primary School,No,2016,Very Bad,Fughao ,60609,2.0,"<em>$0 至 $9,999",2.0,2016-08-02,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-570.0,54.0,Working,Married,Junior High,No,2002,Not Good,Fujian,60609,3.0,"$35,000 至 $49,999",2.0,2017-12-20,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,4.0
-572.0,43.0,Unemployed,Married,High School,No,2016,Not Good,Guangxi,60616,1.0,"<em>$0 至 $9,999",2.0,2016-07-14,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-576.0,34.0,Working,Single Never Married,Vocational or technical school after high school,No,2005,Not Good,Sun yang,60616,4.0,"$15,000 至 $19,999",2.0,2016-07-12,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-577.0,53.0,Working,Married,Vocational or technical school after high school,No,2006,Not Good,Shenyang,60616,4.0,"$10,000 至 $14,999",2.0,2016-07-21,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-590.0,47.0,Working,Widowed,University Graduate,No,1998,Good,Taishan,60632,3.0,"$20,000 至 $34,999",1.0,2016-08-04,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,4.0
-620.0,41.0,Working,Married,Junior High,No,2004,Not Good,Guangdong,60632,4.0,"$20,000 至 $34,999",1.0,2016-08-26,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-604.0,45.0,Housewife,Married,Junior High,No,1984,Good,Tashi ,60616,4.0,"$20,000 至 $34,999",1.0,2016-08-29,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,5.0
-606.0,47.0,Working,Married,High School,No,2016,Very Bad,Tashi ,60616,3.0,"$10,000 至 $14,999",1.0,2016-08-16,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,4.0
-613.0,59.0,Working,Married,Primary School,No,2011,Very Bad,Guangdon ,60616,6.0,"$10,000 至 $14,999",1.0,2016-08-31,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-615.0,53.0,Working,Widowed,High School,No,2004,Not Good,Guangdon ,60632,2.0,"$35,000 至 $49,999",1.0,2017-08-30,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-618.0,53.0,Working,Married,Junior High,No,2014,Very Bad,Taishan,60616,2.0,"<em>$0 至 $9,999",1.0,2016-09-13,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-68.0,52.0,Working,Married,Junior High,No,2011,Very Bad,Taishan,60608,4.0,"$20,000 至 $34,999",3.0,2016-08-22,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4.0
-645.0,,Working,Married,Junior High,No,1994,Not Good,Guangdong,60608,6.0,"$15,000 至 $19,999",1.0,2017-04-17,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-650.0,48.0,Working,Married,Junior High,No,1998,Not Good,Taishan,60616,4.0,"$20,000 至 $34,999",1.0,2017-04-06,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,4.0
-655.0,59.0,Housewife,Married,Junior High,No,2000,Good,Hk,60616,2.0,Do Not Know,1.0,2016-10-24,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,4.0
-659.0,42.0,Working,Divorced,Junior High,No,2014,Not Good,Fulan,60616,2.0,"$10,000 至 $14,999",2.0,2016-10-03,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-670.0,65.0,Retired,Married,Primary School,No,1993,Very Bad,Guangdong ,60616,2.0,"<em>$0 至 $9,999",1.0,2016-10-05,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-673.0,57.0,Working,Married,Junior High,No,2003,Very Bad,Gongxhou,60632,3.0,"$15,000 至 $19,999",1.0,2016-10-06,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-231.0,45.0,Working,Married,Junior High,No,2002,Very Bad,Guangdong,60616,4.0,"$10,000 至 $14,999",1.0,2015-09-08,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-685.0,48.0,Working,Married,Junior High,No,2010,Not Good,Taishan,60632,4.0,"$10,000 至 $14,999",1.0,2016-12-06,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-29.0,62.0,Working,Separated,Primary School,No,1994,Very Bad,Guangdon ,60609,5.0,"$15,000 至 $19,999",3.0,2016-10-31,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-46.0,67.0,Retired,Married,Junior High,No,1997,Not Good,Taishan,60616,5.0,"<em>$0 至 $9,999",1.0,2016-11-02,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-46.0,66.0,Unemployed,Separated,Junior High,No,1997,Not Good,Taishan,60616,3.0,Do Not Know,1.0,2016-11-02,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-695.0,40.0,Working,Married,Junior High,No,2015,Very Bad,Taishan,60616,4.0,"$10,000 至 $14,999",1.0,2016-11-17,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-698.0,64.0,Working,Married,Junior High,No,2009,Not Good,Guangdon ,60616,2.0,"$10,000 至 $14,999",1.0,2018-08-16,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,5.0
-698.0,68.0,Retired,Cohabit,High School,No,1996,Very Bad,Taishan,60616,6.0,"<em>$0 至 $9,999",1.0,2018-08-16,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,5.0
-30.0,54.0,Retired,Married,High School,No,1999,Not Good,Huiben,60609,3.0,"$15,000 至 $19,999",2.0,2016-11-30,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4.0
-710.0,44.0,Working,Married,Vocational or technical school after high school,No,1997,Good,Guangdon ,60616,4.0,"$20,000 至 $34,999",1.0,2016-12-06,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,5.0
-708.0,46.0,Working,Married,Junior High,No,2010,Very Bad,Guangzhou,60632,4.0,"$15,000 至 $19,999",1.0,2016-12-06,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,6.0
-709.0,62.0,Unemployed,Married,Primary School,No,2011,Not Good,Taishan,60616,2.0,"<em>$0 至 $9,999",1.0,2017-01-16,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-716.0,38.0,Unemployed,Divorced,Junior High,No,2015,Very Bad,Shengyang,60616,1.0,"$10,000 至 $14,999",2.0,2017-01-17,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,5.0
-721.0,53.0,Working,Married,University Graduate,No,1998,Not Good,Ha long jirong,60632,2.0,"$15,000 至 $19,999",2.0,2017-02-23,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,5.0
-724.0,52.0,Working,Married,Primary School,No,2007,Very Bad,Gaungzhou,60608,3.0,"$15,000 至 $19,999",1.0,2017-02-23,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-726.0,65.0,Retired,Married,High School,No,1986,Not Good,Hong Kong ,60632,2.0,"<em>$0 至 $9,999",1.0,2017-02-22,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-727.0,48.0,Working,Married,High School,No,1995,Not Good,Guangdong ,60608,4.0,"$20,000 至 $34,999",1.0,2017-02-28,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-725.0,38.0,Working,Married,Junior High,No,2015,Very Bad,Shangyang,60616,3.0,"<em>$0 至 $9,999",2.0,2017-02-16,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-715.0,70.0,Retired,Married,Primary School,No,1997,Very Bad,Guangdong,60608,4.0,"$15,000 至 $19,999",1.0,2018-05-17,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-731.0,59.0,Working,Married,Junior High,No,1992,Not Good,Hk,60632,2.0,"$20,000 至 $34,999",1.0,2017-03-09,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,5.0
-739.0,63.0,Working,Widowed,Primary School,No,2006,Very Bad,Taishan,60609,5.0,"$20,000 至 $34,999",1.0,2017-03-14,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,5.0
-743.0,38.0,Working,Married,High School,No,2011,Not Good,Guangdong ,60609,6.0,"$15,000 至 $19,999",1.0,2017-03-20,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,10.0
-745.0,62.0,Retired,Married,High School,No,2009,Very Bad,Taishan,60608,2.0,"$10,000 至 $14,999",1.0,2017-03-16,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-749.0,48.0,Retired,Married,Junior High,No,2013,Not Good,Taishan,60608,4.0,"$10,000 至 $14,999",1.0,2018-03-30,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,4.0
-752.0,62.0,Retired,Divorced,I have no education,No,2001,Very Bad,Guhui,60632,5.0,"<em>$0 至 $9,999",1.0,2017-04-28,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-755.0,54.0,Working,Widowed,Junior High,No,2004,Not Good,Guangdon ,60616,3.0,"$10,000 至 $14,999",1.0,2017-12-11,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,5.0
-757.0,88.0,Retired,Widowed,I have no education,No,1996,Very Bad,Toishan,60616,1.0,"<em>$0 至 $9,999",3.0,2017-11-02,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,4.0
-756.0,52.0,,Married,High School,No,2005,Not Good,guangdong,60616,3.0,"<em>$0 至 $9,999",1.0,2017-12-13,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,5.0
-759.0,69.0,Retired,Widowed,Junior High,No,1973,Not Good,Gwongzhou,60616,1.0,"<em>$0 至 $9,999",1.0,2018-01-08,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,5.0
-760.0,47.0,Working,Married,Vocational or technical school after high school,No,2004,Not Good,Toishan,60609,4.0,"$35,000 至 $49,999",1.0,2018-01-10,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,5.0
-762.0,42.0,Working,Married,High School,No,2016,Very Bad,Guangdon ,60632,3.0,"<em>$0 至 $9,999",1.0,2018-01-23,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,4.0
-763.0,66.0,Working,Married,High School,No,1976,Good,Hong Kong,60616,3.0,"$75,000 至 $99,999",1.0,2018-01-15,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,4.0
-764.0,54.0,Unemployed,Divorced,High School,No,2005,Very Bad,hainan,60616,4.0,"<em>$0 至 $9,999",2.0,2018-03-05,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,5.0
-765.0,61.0,Working,Married,Vocational or technical school after high school,No,1997,Good,HK,60608,3.0,"$15,000 至 $19,999",1.0,2018-03-06,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,4.0
-28.0,46.0,Working,Married,Junior High,No,2012,Very Bad,Toishan,60616,4.0,"$10,000 至 $14,999",1.0,2013-08-28,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,14.0
-89.0,62.0,Working,Married,Vocational or technical school after high school,No,2008,Not Good,Gongzhou,60616,2.0,"$15,000 至 $19,999",1.0,2015-02-12,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,10.0
-84.0,49.0,Working,Divorced,University Graduate,No,2004,Not Good,Liaoning,60616,2.0,"$10,000 至 $14,999",2.0,2015-02-11,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-86.0,59.0,Working,Married,Junior High,No,1993,Very Bad,Taishan,60616,4.0,"$15,000 至 $19,999",3.0,2016-12-14,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4.0
-90.0,42.0,Working,Divorced,High School,No,96,Not Good,Guangzhou,60616,2.0,"$10,000 至 $14,999",1.0,2014-12-29,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,18.0
-110.0,57.0,Working,Widowed,Vocational or technical school after high school,No,1980,Not Good,Hong Kong,60616,1.0,"<em>$0 至 $9,999",1.0,2014-12-29,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,4.0
-120.0,55.0,Working,Married,High School,No,2011,Very Bad,Guangzhou,60608,2.0,"$10,000 至 $14,999",1.0,2013-12-11,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,14.0
-49.0,47.0,Working,Married,Primary School,No,2010,Very Bad,Guangzhou,60632,5.0,"$10,000 至 $14,999",1.0,2013-09-24,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,
-116.0,50.0,Working,Married,Junior High,No,2006,Not Good,Gongzhou,60616,2.0,"$10,000 至 $14,999",1.0,2015-08-11,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-112.0,52.0,Working,Married,High School,No,1982,Not Good,Guongdong,60616,3.0,"$15,000 至 $19,999",1.0,2014-02-11,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,14.0
-127.0,45.0,Working,Married,Junior High,No,2006,Not Good,Toishan,60632,4.0,"$10,000 至 $14,999",1.0,2016-09-27,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-98.0,49.0,Working,Married,Junior High,No,6,Very Bad,Kaiping,60632,3.0,"$50,000 至 $74,999",1.0,2013-12-23,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,5.0
-97.0,71.0,Retired,Married,High School,No,2002,Very Bad,Shanghai,60616,2.0,"$10,000 至 $14,999",2.0,2016-08-08,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-103.0,47.0,Working,Widowed,Junior High,No,2009,Very Bad,Taishan,60616,2.0,"<em>$0 至 $9,999",1.0,2013-12-09,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-92.0,45.0,Working,Married,Vocational or technical school after high school,No,2009,Not Good,gongdong,60616,3.0,"$10,000 至 $14,999",1.0,2013-12-30,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,5.0
-131.0,48.0,Working,Single Never Married,High School,No,1999,Not Good,Taishan,60616,3.0,"$20,000 至 $34,999",1.0,2015-10-14,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-121.0,40.0,Working,Married,High School,No,2010,Good,Jiang men,60609,3.0,"$15,000 至 $19,999",1.0,2015-04-13,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-123.0,61.0,Retired,Married,Attended college but did not graduate,No,1969,Not Good,Taishan,60616,2.0,"$10,000 至 $14,999",1.0,2016-03-23,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,4.0
-124.0,55.0,Working,Divorced,Junior High,No,2005,Very Bad,Toishan,60616,3.0,"$15,000 至 $19,999",1.0,2016-04-08,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-128.0,58.0,Working,Married,Junior High,No,2000,Good,gongdong,60609,3.0,"$35,000 至 $49,999",1.0,2015-08-24,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-135.0,62.0,Working,Married,High School,No,2000,Not Good,Taishan,60616,2.0,"$10,000 至 $14,999",3.0,2015-01-27,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-129.0,57.0,Working,Married,Primary School,No,2010,Very Bad,Toishan,60632,4.0,"$15,000 至 $19,999",1.0,2015-08-24,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-136.0,57.0,Working,Married,High School,No,2001,Not Good,Toishan,60616,4.0,"$20,000 至 $34,999",1.0,2014-03-21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,6.0
-58.0,50.0,Housewife,Divorced,Junior High,No,1994,Not Good,Guangzhou,60608,2.0,"$10,000 至 $14,999",1.0,2013-09-24,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,5.0
-138.0,67.0,Working,Married,High School,No,1984,Very Bad,gongdong,60608,3.0,"$20,000 至 $34,999",1.0,2014-06-02,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,5.0
-4.0,58.0,Working,Widowed,Primary School,No,1990,Good,Hong Kong,60632,2.0,"$15,000 至 $19,999",1.0,2014-07-14,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,5.0
-51.0,45.0,Working,Married,High School,No,2004,Very Bad,Kaiping,60608,3.0,"$35,000 至 $49,999",3.0,2013-09-23,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,5.0
-75.0,40.0,Working,Married,High School,No,2003,Good,Jiang men,60616,4.0,"$20,000 至 $34,999",1.0,2013-10-18,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-27.0,44.0,Working,Married,High School,No,2010,Not Good,Gongdong,60616,4.0,"$15,000 至 $19,999",1.0,2013-08-28,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,14.0
-55.0,48.0,Working,Married,Junior High,No,1998,Not Good,Taishan,60608,5.0,"$20,000 至 $34,999",1.0,2013-09-30,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,2.0
-37.0,48.0,Working,Married,Junior High,No,2011,Not Good,toishan,60616,4.0,"$20,000 至 $34,999",1.0,2014-03-24,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,4.0
-32.0,40.0,Working,Divorced,Vocational or technical school after high school,No,2006,Good,kongmoon,60608,3.0,"$20,000 至 $34,999",1.0,2013-08-29,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-80.0,57.0,Housewife,Married,Junior High,No,2010,Very Bad,Fujian,60616,5.0,Do Not Know,2.0,2015-08-18,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-34.0,60.0,Working,Married,High School,No,1979,Good,goungzhou,60616,5.0,"$50,000 至 $74,999",1.0,2016-04-13,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4.0
-95.0,46.0,Housewife,Married,Junior High,No,2011,Not Good,Hebei,60616,3.0,"$15,000 至 $19,999",2.0,2014-05-08,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,5.0
-38.0,60.0,Working,Married,Junior High,No,1999,Very Bad,Kaiping,60616,4.0,"$10,000 至 $14,999",3.0,2015-08-24,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-44.0,58.0,Working,Married,Junior High,No,2010,Not Good,gongdong,60609,3.0,"$15,000 至 $19,999",1.0,2015-04-22,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,5.0
-94.0,49.0,Unemployed,Married,High School,No,2009,Not Good,Fujian,60632,3.0,"$35,000 至 $49,999",2.0,2016-06-23,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-139.0,51.0,Working,Divorced,Primary School,No,2007,Very Bad,Guangxi,60616,1.0,"$10,000 至 $14,999",1.0,2014-03-13,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,5.0
-293.0,46.0,Working,Married,High School,No,1992,Not Good,guongzhou,60608,2.0,"$35,000 至 $49,999",1.0,2015-03-30,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-299.0,47.0,Working,Married,University Graduate,No,1992,Good,gongdong,60608,5.0,"$35,000 至 $49,999",1.0,2015-04-27,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,5.0
-140.0,46.0,Working,Single Never Married,Vocational or technical school after high school,No,2000,Good,gongdong,60608,3.0,"$20,000 至 $34,999",1.0,2014-03-18,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,14.0
-141.0,52.0,Working,Divorced,High School,No,1994,Good,Hong Kong,60616,3.0,"$20,000 至 $34,999",1.0,2014-03-19,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,10.0
-144.0,63.0,Working,Married,Junior High,No,1993,Not Good,gongdong,60609,3.0,"$35,000 至 $49,999",1.0,2015-04-22,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-149.0,55.0,Working,Married,Vocational or technical school after high school,No,2005,Not Good,toishan,60608,3.0,"$20,000 至 $34,999",1.0,2015-04-16,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-153.0,64.0,Retired,Married,Primary School,No,1988,Very Bad,gongdong,60608,2.0,"$10,000 至 $14,999",1.0,2014-05-01,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-325.0,42.0,Working,Divorced,Primary School,No,2010,Very Bad,Fuzhou,60608,2.0,"$10,000 至 $14,999",2.0,2015-04-28,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,5.0
-156.0,57.0,Unemployed,Married,I have no education,No,1994,Very Bad,Taishan,60608,2.0,"<em>$0 至 $9,999",1.0,2014-04-23,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,5.0
-158.0,70.0,Retired,Married,I have no education,No,1982,Very Bad,gongdong,60632,2.0,Do Not Know,1.0,2013-12-12,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,5.0
-159.0,65.0,Working,Married,Junior High,No,2003,Very Bad,Hong Kong,60616,2.0,"$15,000 至 $19,999",1.0,2015-06-05,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,10.0
-161.0,62.0,Working,Married,Primary School,No,1993,Good,Hongkong,60608,2.0,"$20,000 至 $34,999",1.0,2014-05-01,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,5.0
-164.0,49.0,Working,Married,Junior High,No,2008,Not Good,Shenyang,60616,3.0,"<em>$0 至 $9,999",2.0,2015-05-19,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,5.0
-14.0,53.0,Working,Widowed,High School,No,2010,Very Bad,gongdong,60616,3.0,"$15,000 至 $19,999",1.0,2013-08-19,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,5.0
-169.0,60.0,Working,Married,High School,No,2007,Very Bad,Tai son,60616,3.0,"$20,000 至 $34,999",1.0,2015-05-26,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,5.0
-175.0,43.0,Working,Married,High School,No,2009,Very Bad,Changde,60616,3.0,"$20,000 至 $34,999",2.0,2014-06-09,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-165.0,40.0,Housewife,Married,Junior High,No,2011,Very Bad,gongzhou,60632,4.0,"$10,000 至 $14,999",1.0,2014-07-14,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,14.0
-181.0,53.0,Working,Married,Vocational or technical school after high school,No,2008,Not Good,taishan,60616,2.0,"$10,000 至 $14,999",3.0,2014-06-27,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,5.0
-183.0,57.0,Working,Married,Junior High,No,2006,Very Bad,Taishan,60616,4.0,"$10,000 至 $14,999",3.0,2014-06-30,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-184.0,47.0,Working,Married,Junior High,No,2012,Very Bad,Zhuhai,60616,3.0,"$15,000 至 $19,999",1.0,2015-04-20,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,12.0
-186.0,29.0,Working,Married,Junior High,No,2012,Not Good,Taishan,60616,3.0,"$10,000 至 $14,999",3.0,2014-07-07,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,14.0
-187.0,57.0,Working,Married,Junior High,No,1990,Not Good,taishan,60608,4.0,"$20,000 至 $34,999",1.0,2014-07-14,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,5.0
-191.0,49.0,Working,Married,Junior High,No,2001,Not Good,Fush,60616,3.0,"$20,000 至 $34,999",2.0,2014-07-29,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,12.0
-192.0,64.0,Working,Married,Junior High,No,2004,Not Good,GuanZhu,60616,2.0,"$15,000 至 $19,999",1.0,2014-07-29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,10.0
-193.0,58.0,Working,Married,High School,No,1992,Not Good,gongzhou,60632,3.0,"$20,000 至 $34,999",1.0,2016-06-09,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,4.0
-1.0,46.0,Working,Divorced,High School,No,1997,Not Good,Taishan,60632,3.0,"$10,000 至 $14,999",1.0,2013-07-25,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,5.0
-195.0,60.0,Working,Married,Vocational or technical school after high school,No,2008,Very Bad,gongzhou,60616,3.0,"$15,000 至 $19,999",1.0,2014-08-22,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-197.0,57.0,Working,Married,Primary School,No,2007,Very Bad,Taishan,60608,6.0,"$20,000 至 $34,999",3.0,2015-09-14,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,10.0
-201.0,55.0,Working,Married,Primary School,No,2004,Very Bad,Taishan,60632,5.0,"$10,000 至 $14,999",3.0,2017-01-10,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-20.0,60.0,Working,Married,Primary School,No,1999,Not Good,yanping,60616,2.0,"<em>$0 至 $9,999",1.0,2016-11-02,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4.0
-39.0,62.0,Retired,Married,High School,No,1998,Not Good,taishan,60632,3.0,"<em>$0 至 $9,999",1.0,2016-11-08,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-42.0,61.0,Working,Married,Vocational or technical school after high school,No,2006,Not Good,gongzhou,60623,2.0,"$15,000 至 $19,999",1.0,2015-09-22,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-206.0,61.0,Housewife,Divorced,High School,No,1986,Very Bad,taishan,60608,5.0,Do Not Know,3.0,2017-02-03,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4.0
-207.0,37.0,Working,Married,High School,No,2011,Very Bad,shenyang,60616,3.0,"$15,000 至 $19,999",2.0,2014-09-12,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-208.0,43.0,Working,Married,Junior High,No,2009,Not Good,fujian,60616,4.0,"$15,000 至 $19,999",2.0,2014-10-16,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,14.0
-31.0,52.0,Housewife,Married,High School,No,2012,Not Good,Taishan,60616,2.0,"$10,000 至 $14,999",3.0,2013-09-16,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,14.0
-26.0,60.0,Working,Widowed,High School,No,1992,Not Good,Hong Kong,60608,1.0,"<em>$0 至 $9,999",1.0,2015-11-05,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-209.0,46.0,Working,Married,Primary School,No,1991,Not Good,Kaiping,60632,4.0,"$20,000 至 $34,999",1.0,2014-10-22,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-211.0,56.0,Working,Widowed,Junior High,No,2007,Very Bad,taishan,60616,2.0,"$15,000 至 $19,999",3.0,2014-10-29,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-74.0,44.0,Working,Married,High School,No,1997,Very Bad,jiangsu,60616,3.0,"$20,000 至 $34,999",2.0,2013-10-08,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-215.0,73.0,Retired,Widowed,High School,No,2001,Not Good,taishan,60616,1.0,"<em>$0 至 $9,999",3.0,2014-09-26,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-217.0,48.0,Unemployed,Married,Junior High,No,2001,Not Good,liaoning,60608,3.0,"$20,000 至 $34,999",2.0,2015-01-12,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,17.0
-218.0,43.0,Unemployed,Divorced,University Graduate,No,2005,Not Good,shenyang,60609,1.0,"$10,000 至 $14,999",2.0,2014-10-06,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-70.0,46.0,Working,Married,High School,No,2000,Very Bad,Fujian,60608,1.0,"$10,000 至 $14,999",2.0,2016-06-29,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-56.0,66.0,Housewife,Divorced,Junior High,No,2011,Very Bad,Taishan,60608,5.0,Do Not Know,3.0,2016-04-18,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-222.0,57.0,Working,Married,Primary School,No,2006,Not Good,jiangmen,60616,3.0,"$20,000 至 $34,999",1.0,2014-11-03,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-57.0,57.0,Working,Divorced,Primary School,No,1988,Not Good,taishan,60632,2.0,"$15,000 至 $19,999",3.0,2015-11-05,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-223.0,67.0,Retired,Divorced,Primary School,No,1985,Not Good,taishan,60616,1.0,"<em>$0 至 $9,999",3.0,2014-10-01,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-225.0,46.0,Housewife,Married,University Graduate,No,1998,Good,Liaoning,60609,4.0,"$20,000 至 $34,999",2.0,2014-12-02,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,14.0
-224.0,63.0,Working,Married,High School,No,2008,Not Good,gongdong,60616,2.0,"$20,000 至 $34,999",1.0,2016-12-13,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-203.0,51.0,Working,Married,High School,No,2005,Good,tianjin,60616,2.0,"$15,000 至 $19,999",2.0,2014-08-25,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,5.0
-62.0,57.0,Housewife,Widowed,Junior High,No,2000,Very Bad,taishan,60608,4.0,"$20,000 至 $34,999",3.0,2014-07-07,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
-227.0,50.0,Other,Divorced,High School,No,2011,Very Bad,shenyang,60616,1.0,"$10,000 至 $14,999",2.0,2014-10-20,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-228.0,51.0,Working,Married,High School,No,2004,Very Bad,gongdong,60616,3.0,"$15,000 至 $19,999",1.0,2014-10-20,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,14.0
-230.0,28.0,Unemployed,Married,University Graduate,No,2015,Very Bad,heilongjiang,60608,4.0,"$15,000 至 $19,999",2.0,2014-10-27,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,14.0
-233.0,62.0,Housewife,Married,High School,No,2001,Very Bad,gongzhou,60616,3.0,"$20,000 至 $34,999",1.0,2017-01-20,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,5.0
-235.0,42.0,Working,Married,High School,No,2006,Not Good,Taishan,60632,4.0,"$20,000 至 $34,999",1.0,2017-01-10,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-237.0,61.0,Working,Married,Primary School,No,2006,Very Bad,gongdong,60616,2.0,"$20,000 至 $34,999",1.0,2014-11-05,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-239.0,46.0,Working,Divorced,University Graduate,No,2002,Not Good,shenyang,60616,2.0,"$15,000 至 $19,999",2.0,2014-11-05,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,14.0
-81.0,61.0,Housewife,Divorced,Junior High,No,2006,Very Bad,guangzhou,60616,5.0,Do Not Know,1.0,2014-11-05,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-241.0,51.0,Working,Married,High School,No,1987,Not Good,gongdong,60616,5.0,"$35,000 至 $49,999",1.0,2014-10-15,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,5.0
-243.0,46.0,Working,Divorced,University Graduate,No,2012,Not Good,tianjin,60616,1.0,"<em>$0 至 $9,999",2.0,2014-10-09,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,14.0
-242.0,66.0,Retired,Married,Primary School,No,2003,Very Bad,taishan,60632,6.0,"$20,000 至 $34,999",3.0,2015-03-03,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,10.0
-36.0,50.0,Working,Married,Junior High,No,1983,Good,gongdong,60608,4.0,"$20,000 至 $34,999",1.0,2014-11-10,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-245.0,49.0,Working,Married,Junior High,No,2008,Very Bad,Taishan,60616,4.0,"$10,000 至 $14,999",3.0,2014-11-10,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-69.0,57.0,Working,Married,High School,No,2000,Very Bad,shanghai,60616,2.0,"$10,000 至 $14,999",2.0,2014-11-10,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,14.0
-248.0,55.0,Working,Married,High School,No,1990,Not Good,Guangzhou,60609,4.0,"$20,000 至 $34,999",1.0,2016-01-06,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,5.0
-249.0,62.0,Working,Divorced,Junior High,No,2000,Not Good,Taishan,60608,6.0,"$20,000 至 $34,999",3.0,2016-05-19,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-250.0,56.0,Working,Married,University Graduate,No,2008,Not Good,shenyang,60608,2.0,"$15,000 至 $19,999",2.0,2014-11-17,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,5.0
-104.0,46.0,Working,Divorced,High School,No,2005,Not Good,Guangzhou,60616,3.0,"<em>$0 至 $9,999",1.0,2018-03-15,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,10.0
-251.0,47.0,Working,Married,High School,No,2004,Not Good,Taishan,60608,3.0,"$20,000 至 $34,999",3.0,2014-11-18,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-246.0,69.0,Retired,Married,Primary School,No,1997,Very Bad,Taishan,60608,1.0,"<em>$0 至 $9,999",3.0,2014-11-21,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-256.0,29.0,Working,Married,Junior High,No,2006,Very Bad,taishan,60632,5.0,"$50,000 至 $74,999",1.0,2014-12-22,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,10.0
-258.0,52.0,Retired,Married,High School,No,2014,Very Bad,Shanghai,60608,5.0,"$15,000 至 $19,999",2.0,2014-12-22,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-259.0,52.0,Working,Married,High School,No,1997,Not Good,gongdong,60608,5.0,"$75,000 至 $99,999",1.0,2014-12-23,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-260.0,48.0,Working,Married,Primary School,No,2005,Good,gongdong,60608,4.0,"$20,000 至 $34,999",3.0,2016-09-29,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4.0
-264.0,40.0,Working,Married,High School,No,2006,Not Good,taishan,60632,4.0,"$20,000 至 $34,999",1.0,2015-01-08,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-265.0,52.0,Working,Married,High School,No,1989,Good,gongdong,60608,2.0,"$20,000 至 $34,999",1.0,2016-04-06,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4.0
-106.0,58.0,Housewife,Married,High School,No,2000,Very Bad,gongdong,60608,6.0,"$20,000 至 $34,999",1.0,2015-01-13,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-269.0,27.0,Working,Married,High School,No,2012,Not Good,taishan,60632,3.0,"$15,000 至 $19,999",1.0,2015-01-15,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-270.0,38.0,Working,Divorced,High School,No,2013,Not Good,Guonan,60616,1.0,"$35,000 至 $49,999",2.0,2015-01-08,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,21.0
-271.0,42.0,Working,Divorced,High School,No,2005,Not Good,taishan,60616,3.0,"$20,000 至 $34,999",1.0,2015-03-10,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-288.0,48.0,Working,Married,Primary School,No,2006,Very Bad,Fujian,60616,7.0,"$20,000 至 $34,999",2.0,2015-03-02,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,5.0
-288.0,33.0,Working,Married,Vocational or technical school after high school,No,2010,Not Good,gaugdon,60616,4.0,"$20,000 至 $34,999",2.0,2015-03-02,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,5.0
-276.0,42.0,Working,Widowed,High School,No,2004,Good,guongzhou,60616,2.0,"$10,000 至 $14,999",1.0,2015-02-04,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,5.0
-277.0,35.0,Working,Married,Vocational or technical school after high school,No,2002,Not Good,Fujian,60616,3.0,"$15,000 至 $19,999",2.0,2015-01-06,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-291.0,35.0,Working,Married,University Graduate,No,2008,Good,Taishan,60616,4.0,"$20,000 至 $34,999",1.0,2015-05-21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,22.0
-278.0,76.0,Retired,Married,Primary School,No,1997,Very Bad,guongzhou,60616,2.0,"$10,000 至 $14,999",1.0,2015-02-09,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,5.0
-280.0,50.0,Working,Married,Junior High,No,2014,Not Good,guangdong,60616,4.0,"<em>$0 至 $9,999",3.0,2015-03-26,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,10.0
-283.0,35.0,Housewife,Married,Junior High,No,2004,Not Good,Fujian,60616,4.0,"$15,000 至 $19,999",2.0,2015-02-23,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-285.0,51.0,Working,Married,High School,No,2012,Not Good,sunyang,60616,2.0,"$15,000 至 $19,999",2.0,2015-03-30,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,5.0
-286.0,52.0,Working,Married,High School,No,2009,Not Good,guongzhou,60616,3.0,"$15,000 至 $19,999",1.0,2015-03-02,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-287.0,40.0,Unemployed,Married,University Graduate,No,18,Not Good,gou,60616,2.0,"$35,000 至 $49,999",1.0,2015-03-02,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,10.0
-290.0,61.0,Retired,Married,High School,No,2008,Very Bad,taishan,60616,4.0,"$20,000 至 $34,999",3.0,2015-03-23,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,5.0
-294.0,59.0,Unemployed,Married,High School,No,2006,Not Good,guang dong,60609,4.0,"$35,000 至 $49,999",1.0,2016-11-15,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4.0
-296.0,52.0,Unemployed,Divorced,High School,No,1999,Not Good,tan gang,60632,2.0,"<em>$0 至 $9,999",2.0,2015-03-17,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,5.0
-297.0,56.0,Working,Married,High School,No,2004,Very Bad,Guangzhou,60609,2.0,"$20,000 至 $34,999",1.0,2015-03-09,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,
-303.0,73.0,Retired,Married,Primary School,No,1986,Not Good,gangdon,60608,3.0,"<em>$0 至 $9,999",1.0,2015-03-12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-304.0,57.0,Working,Cohabit,High School,No,2003,Not Good,sijuan,60616,2.0,"$15,000 至 $19,999",2.0,2015-04-27,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,5.0
-305.0,55.0,Working,Married,High School,No,2008,Not Good,tia sun,60608,3.0,"$35,000 至 $49,999",1.0,2015-05-19,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,5.0
-306.0,70.0,Retired,Widowed,High School,No,1995,Not Good,taishan,60616,1.0,"$15,000 至 $19,999",1.0,2015-03-18,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,5.0
-307.0,56.0,Working,Married,Attended college but did not graduate,No,1993,Good,gong yu,60608,4.0,"$35,000 至 $49,999",1.0,2016-03-17,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-309.0,52.0,Unemployed,Married,Vocational or technical school after high school,No,2006,Not Good,sun yang,60609,3.0,"$20,000 至 $34,999",2.0,2015-05-11,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,5.0
-302.0,50.0,Working,Married,Vocational or technical school after high school,No,2003,Not Good,kung,60632,3.0,"$20,000 至 $34,999",1.0,2015-03-12,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,14.0
-315.0,52.0,Working,Divorced,Junior High,No,1987,Not Good,gangdon,60616,,"$20,000 至 $34,999",1.0,2015-05-11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,11.0
-316.0,59.0,Retired,Widowed,Vocational or technical school after high school,No,1980,Not Good,guongzhou,60608,1.0,"<em>$0 至 $9,999",1.0,2015-03-31,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,10.0
-317.0,34.0,Working,Married,High School,No,2001,Not Good,ban qut,60608,2.0,"$15,000 至 $19,999",1.0,2015-04-29,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,5.0
-319.0,51.0,Working,Widowed,High School,No,2003,Very Bad,guangdong,60609,3.0,"$20,000 至 $34,999",1.0,2015-02-09,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-320.0,42.0,Working,Married,Junior High,No,2014,Very Bad,Hong Kong,60616,3.0,"$15,000 至 $19,999",1.0,2015-04-08,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,5.0
-321.0,25.0,Working,Cohabit,High School,No,2011,Good,???,60616,2.0,"$10,000 至 $14,999",2.0,2015-04-14,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-322.0,63.0,Working,Married,Junior High,No,2008,Very Bad,guang dong,60632,4.0,"$35,000 至 $49,999",3.0,2015-04-09,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-333.0,56.0,Housewife,Married,Primary School,No,2003,Very Bad,hu chen,60616,7.0,"$20,000 至 $34,999",2.0,2015-04-13,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,5.0
-323.0,54.0,Working,Married,High School,No,1988,Not Good,guang dong,60608,4.0,"$35,000 至 $49,999",1.0,2015-04-13,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,10.0
-327.0,50.0,Working,Married,Vocational or technical school after high school,No,2010,Not Good,sun yang,60616,2.0,"$20,000 至 $34,999",2.0,2015-05-12,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,5.0
-326.0,62.0,Working,Married,Junior High,No,2002,Very Bad,taishan,60616,2.0,"$15,000 至 $19,999",3.0,2015-04-16,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-328.0,42.0,Working,Married,Junior High,No,2012,Very Bad,gangdon,60608,4.0,"$20,000 至 $34,999",1.0,2015-04-28,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-318.0,44.0,Other,Married,Vocational or technical school after high school,No,2012,Not Good,Dalin,60616,3.0,"$20,000 至 $34,999",2.0,2015-04-21,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-45.0,56.0,Working,Married,Junior High,No,1988,Not Good,zhongshan,60616,4.0,"$35,000 至 $49,999",1.0,2015-04-21,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,5.0
-329.0,45.0,Working,Divorced,High School,No,1998,Good,gangdon,60605,2.0,"$20,000 至 $34,999",1.0,2015-05-28,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,10.0
-334.0,46.0,Working,Married,Junior High,No,2005,Not Good,gongdong,60632,4.0,"$20,000 至 $34,999",1.0,2015-04-29,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,5.0
-331.0,46.0,Working,Divorced,High School,No,2010,Not Good,hu bing,60608,3.0,"$20,000 至 $34,999",2.0,2015-05-14,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-100.0,61.0,Working,Married,Primary School,No,1989,Very Bad,hong Kong,60608,4.0,"$35,000 至 $49,999",1.0,2015-04-30,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-335.0,55.0,Working,Married,Junior High,No,1980,Not Good,gongdong,60616,4.0,"$20,000 至 $34,999",1.0,2015-04-30,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-336.0,47.0,Working,Married,University Graduate,No,2013,Not Good,big gau,60605,1.0,"$35,000 至 $49,999",2.0,2014-12-19,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,5.0
-337.0,32.0,Unemployed,Single Never Married,High School,No,2006,Not Good,Guangdong,60609,4.0,"$20,000 至 $34,999",1.0,2015-05-06,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,5.0
-93.0,44.0,Working,Married,Primary School,No,2005,Not Good,taishan,60608,4.0,"$20,000 至 $34,999",3.0,2015-05-07,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-340.0,66.0,Working,Married,Primary School,No,1970,Good,hong Kong,60616,2.0,"$10,000 至 $14,999",1.0,2015-05-12,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-71.0,60.0,Working,Single Never Married,Vocational or technical school after high school,No,2001,Good,sin gapore,60632,1.0,"<em>$0 至 $9,999",1.0,2015-05-19,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-345.0,61.0,Housewife,Married,High School,No,2000,Good,guongzhou,60608,4.0,"$20,000 至 $34,999",1.0,2015-05-26,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-346.0,57.0,Working,Married,Junior High,No,2012,Good,gongdong,60616,3.0,"$20,000 至 $34,999",1.0,2015-05-26,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-350.0,53.0,Unemployed,Divorced,Vocational or technical school after high school,No,2005,Very Bad,tan ka,60616,1.0,"<em>$0 至 $9,999",2.0,2017-01-26,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-349.0,52.0,Working,Married,Junior High,No,2007,Not Good,wohan,60616,3.0,"$20,000 至 $34,999",2.0,2015-08-10,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,5.0
-351.0,39.0,Working,Married,High School,No,2005,Not Good,Tianjin,60616,4.0,"$20,000 至 $34,999",2.0,2015-06-10,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,13.0
-355.0,59.0,Retired,Divorced,University Graduate,No,1975,Good,tun sun,60616,1.0,"<em>$0 至 $9,999",1.0,2015-09-21,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,5.0
-358.0,69.0,Retired,Married,Primary School,No,1985,Very Bad,taishan,60616,2.0,"$10,000 至 $14,999",3.0,2015-06-10,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-359.0,31.0,Working,Married,University Graduate,No,2006,Good,Trisha,60632,7.0,"$50,000 至 $74,999",1.0,2015-06-10,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,10.0
-361.0,64.0,Working,Married,Vocational or technical school after high school,No,1998,Not Good,gongdong,60616,2.0,"$15,000 至 $19,999",1.0,2015-06-11,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,5.0
-347.0,61.0,Housewife,Married,Vocational or technical school after high school,No,2003,Not Good,Guangdong,60616,2.0,"$10,000 至 $14,999",1.0,2015-05-29,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,5.0
-367.0,47.0,Working,Married,Junior High,No,2009,Good,taisha,60632,4.0,"$20,000 至 $34,999",1.0,2015-08-18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,22.0
-370.0,75.0,Retired,Married,Junior High,No,1994,Not Good,hu bing,60616,2.0,"<em>$0 至 $9,999",3.0,2015-06-25,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-376.0,60.0,Working,Married,Primary School,<em>Yes（轉至Q10）,,,,60632,3.0,"$20,000 至 $34,999",1.0,2015-06-30,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-364.0,66.0,Housewife,Married,Primary School,No,2003,Not Good,kaiping,60616,2.0,"<em>$0 至 $9,999",1.0,2015-06-17,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,5.0
-379.0,40.0,Working,Single Never Married,High School,No,2014,Not Good,guangdong,60616,1.0,"<em>$0 至 $9,999",1.0,2015-10-06,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,13.0
-50.0,46.0,Working,Married,Junior High,No,2010,Very Bad,Guangzhou,60616,3.0,"$15,000 至 $19,999",1.0,2013-09-16,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,14.0
-372.0,40.0,Working,Divorced,Junior High,No,2001,Good,gongdong,60616,2.0,"$15,000 至 $19,999",1.0,2016-07-14,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4.0
-384.0,41.0,Working,Married,Junior High,No,2005,Very Bad,fuzhou,60616,3.0,"$15,000 至 $19,999",2.0,2015-08-03,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-388.0,53.0,Working,Married,High School,No,1993,Good,taishan,60608,4.0,"$20,000 至 $34,999",1.0,2015-07-23,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,5.0
-389.0,25.0,Student,Married,Attended college but did not graduate,No,2011,Good,gongdong,60608,5.0,"$20,000 至 $34,999",1.0,2015-07-24,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,13.0
-767.0,64.0,Retired,Married,High School,No,1980,Good,Hong Kong,60632,4.0,"$35,000 至 $49,999",1.0,2018-05-03,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,5.0
-768.0,74.0,Retired,Married,Vocational or technical school after high school,No,2010,Not Good,Hong Kong ,60660,2.0,"$15,000 至 $19,999",1.0,2018-04-24,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,4.0
-769.0,63.0,Housewife,Married,Vocational or technical school after high school,No,2011,Very Bad,Shanyang,60605,2.0,"<em>$0 至 $9,999",2.0,2018-05-24,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,4.0
-771.0,61.0,Working,Married,Primary School,No,2008,Very Bad,Toishan,60616,4.0,"$50,000 至 $74,999",3.0,2018-08-02,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,5.0
-772.0,60.0,Housewife,Married,Junior High,No,2005,Very Bad,Toishanese ,60616,2.0,"<em>$0 至 $9,999",3.0,2018-08-22,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,5.0
-774.0,64.0,Retired,Married,Junior High,No,1997,Not Good,Guangdon ,60616,2.0,"$10,000 至 $14,999",1.0,2018-11-01,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,5.0
+record_id,age  ,occupational status,marital status ,education,born_in_US,year_entered_US,english_fluency,native_land,zip_code,family_members_in_household,household_income,0,1,2,3,4,Classification
+393.0,56.0,Working,Single Never Married,High School,No,2000,Not Good,Shanghai ,60616,1.0,"$15,000 至 $19,999",0.01824294291918109,0.018420744580990904,0.926363015349057,0.018709205652563107,0.018264091498207857,5.0
+395.0,35.0,Other,Single Never Married,High School,No,2003,Not Good,Taishan,60616,4.0,"$20,000 至 $34,999",0.2800796248229235,0.013801459359096121,0.6792073000903683,0.013490721688944041,0.013420894038668035,5.0
+397.0,51.0,Working,Married,High School,No,1990,Good,taishan,60609,4.0,"$35,000 至 $49,999",0.0222229963446946,0.9100921475599072,0.022758120684572856,0.022295287708913928,0.022631447701911542,5.0
+396.0,37.0,Unemployed,Married,University Graduate,No,2015,Not Good,Guang Zhou ,60616,2.0,"$10,000 至 $14,999",0.040001050991104695,0.04052142647758879,0.8391850620902152,0.04000190764646294,0.04029055279462843,5.0
+400.0,62.0,Working,Married,Primary School,No,1984,Good,Hong Kong,60616,2.0,"$15,000 至 $19,999",0.5080177820105025,0.04058791708266896,0.3708596355039627,0.04000411737663594,0.04053054802622992,4.0
+3.0,56.0,Working,Married,Vocational or technical school after high school,No,2006,,Shenyang,60616,2.0,"$20,000 至 $34,999",0.020485854263203554,0.020532514129284116,0.9186792965535134,0.020002155226686805,0.020300179827312054,5.0
+402.0,46.0,Working,Married,High School,No,1995,Not Good,Guangdong ,60608,6.0,"$20,000 至 $34,999",0.10000096282354494,0.5983669647469142,0.1005079208592226,0.1011223559257179,0.10000179564460031,5.0
+401.0,61.0,Unemployed,Married,High School,No,1985,Not Good,Gong Zhou,60616,3.0,"$10,000 至 $14,999",0.3750737528199325,0.03394832629430239,0.5231288861967418,0.03368293834697102,0.034166096342052435,22.0
+405.0,36.0,Working,Married,Attended college but did not graduate,No,2015,Very Bad,Ji nan,60616,1.0,"$10,000 至 $14,999",0.028626465162828886,0.8843803535509044,0.029342116638059065,0.028687436519387696,0.028963628128819984,5.0
+406.0,40.0,Unemployed,Married,Junior High,No,2014,Very Bad,Guangzhou ,60616,1.0,"<em>$0 至 $9,999",0.05000052147105983,0.7984054551030391,0.050885086756098694,0.050307735743777844,0.05040120092602471,5.0
+407.0,45.0,Working,Divorced,Junior High,No,2011,Not Good,Taishan,60616,2.0,"$10,000 至 $14,999",0.05116111460607644,0.7986223641107932,0.050152620495038325,0.050062195886727306,0.05000170490136477,5.0
+408.0,63.0,Unemployed,Married,Junior High,No,2002,Very Bad,Guangdong ,60616,6.0,"$10,000 至 $14,999",0.04000505380599181,0.8371234585857089,0.04273065268707978,0.04013143264565714,0.040009402275562427,5.0
+409.0,29.0,Student,Married,Vocational or technical school after high school,No,2014,Not Good,Guongdong,60616,4.0,"$15,000 至 $19,999",0.020144223397294325,0.020050051420539842,0.655683614127603,0.2837724191384643,0.020349691916098357,5.0
+403.0,46.0,Working,Married,Junior High,No,2005,Not Good,Guangdong ,60609,5.0,"$20,000 至 $34,999",0.040001453364559895,0.042740796881141525,0.8364844085502943,0.040770736251463394,0.040002604952540946,14.0
+77.0,55.0,Working,Married,High School,No,1985,Not Good,Guangzhou,60616,4.0,"$35,000 至 $49,999",0.23956463371411443,0.050001113171212745,0.05088615671236204,0.05115361226642768,0.608394484135883,5.0
+415.0,47.0,Housewife,Married,I have no education,No,2001,Not Good,Fuzhou,60616,4.0,"$20,000 至 $34,999",0.025001100776618452,0.35408915377674605,0.5704940980418869,0.025325896857056756,0.025089750547691882,5.0
+414.0,36.0,Working,Refuse to Answer</em>,University Graduate,No,2000,Good,Vietnam,60607,1.0,"$35,000 至 $49,999",0.040001696121822014,0.838791080954658,0.04041448166949483,0.040038350092154694,0.04075439116187037,5.0
+418.0,46.0,Working,Divorced,Junior High,No,1994,Not Good,Guangdong ,60616,1.0,"$10,000 至 $14,999",0.028571793362571176,0.8845308447952923,0.028934892618801455,0.029283843458077462,0.028678625765257544,5.0
+421.0,73.0,Retired,Married,University Graduate,No,1993,,Shanghai ,60632,2.0,"$10,000 至 $14,999",0.2201308530590612,0.2757255103978316,0.4538164422600498,0.025001797855842556,0.025325396427214895,5.0
+423.0,59.0,Working,Widowed,High School,No,1995,Not Good,guangzhou,60632,1.0,"$10,000 至 $14,999",0.9332178408206603,0.01672140322112495,0.016698378609965474,0.01668003503462516,0.016682342313624254,5.0
+423.0,38.0,Unemployed,Divorced,High School,<em>Yes（轉至Q10）,,,,60616,5.0,"<em>$0 至 $9,999",0.9332178408206603,0.01672140322112495,0.016698378609965474,0.01668003503462516,0.016682342313624254,5.0
+424.0,48.0,Housewife,Married,Junior High,No,1999,Not Good,FuKin,60616,6.0,"$50,000 至 $74,999",0.44024434954965214,0.04016332383141526,0.439475625286644,0.04000258089252467,0.04011412043976379,5.0
+425.0,69.0,Retired,Married,Primary School,No,2004,Very Bad,Hong kong,60616,1.0,"<em>$0 至 $9,999",0.10000096916058489,0.10000040807040698,0.5999950387260392,0.10000178721015379,0.10000179683281518,5.0
+427.0,34.0,Working,Married,Junior High,No,2002,Not Good,Fijian ,60616,4.0,"$20,000 至 $34,999",0.03333405835297144,0.8660076429468715,0.033655553077854776,0.03351707220492072,0.03348567341738151,5.0
+428.0,69.0,Housewife,Married,I have no education,,,,,60632,6.0,"$15,000 至 $19,999",0.028633187811370007,0.029363033068931215,0.8838847777633652,0.029145421813771284,0.028973579542562383,5.0
+429.0,40.0,Working,Married,University Graduate,No,2003,Not Good,Guangdong ,60616,5.0,"$20,000 至 $34,999",0.0077894927639559595,0.7171938181106609,0.2594889404575401,0.007768642034061877,0.00775910663378113,4.0
+426.0,43.0,Working,Married,University Graduate,No,2010,Not Good,Guongzhou,60616,3.0,"$20,000 至 $34,999",0.050002835969521396,0.7985611656635276,0.05021702188316858,0.050172823706769114,0.05104615277701323,5.0
+430.0,66.0,Retired,Married,Primary School,No,1995,Very Bad,Hongkong ,60616,2.0,"<em>$0 至 $9,999",0.06666786323445856,0.3337185386514094,0.46547980669525596,0.06746490458075015,0.06666888683812595,5.0
+341.0,58.0,Working,Married,Primary School,<em>Yes（轉至Q10）,,,,60616,3.0,"$15,000 至 $19,999",0.02857198036447958,0.8855378719648723,0.028627272673398898,0.028612136381095964,0.028650738616153318,5.0
+341.0,59.0,Working,Married,High School,No,1979,Not Good,taishan,60616,4.0,"$20,000 至 $34,999",0.02857198036447958,0.8855378719648723,0.028627272673398898,0.028612136381095964,0.028650738616153318,5.0
+435.0,45.0,Working,Married,Junior High,No,2007,Not Good,Guangdong ,60632,4.0,"$10,000 至 $14,999",0.03333405835297144,0.8660076429468715,0.033655553077854776,0.03351707220492072,0.03348567341738151,5.0
+436.0,39.0,Working,Married,High School,No,2011,Not Good,Shen yang,60608,3.0,"$20,000 至 $34,999",0.050001252543186284,0.7985209388315018,0.05068560637293583,0.05041495565152232,0.05037724660085383,5.0
+438.0,54.0,Working,Married,High School,No,1998,Very Bad,Guangdong ,60608,4.0,"$15,000 至 $19,999",0.03333420730559216,0.8651279461908354,0.033954687482087534,0.034174347018313775,0.03340881200317099,5.0
+441.0,61.0,Retired,Widowed,High School,No,1994,Very Bad,Toishan,60616,2.0,"<em>$0 至 $9,999",0.01592767584969024,0.9370408324927063,0.015699234725662238,0.015886863549995797,0.015445393381945375,4.0
+440.0,58.0,Working,Married,Junior High,No,2005,Very Bad,Guangdong ,60608,11.0,"$20,000 至 $34,999",0.10000035385145659,0.10086329462235316,0.10168490840860361,0.5974507750103012,0.10000066810728539,5.0
+439.0,53.0,Housewife,Married,Junior High,<em>Yes（轉至Q10）,,,,60616,4.0,"<em>$0 至 $9,999",0.05078020662844182,0.2996999823411908,0.05115133372097771,0.05210059824351172,0.5462678790658779,5.0
+447.0,67.0,Retired,Widowed,Primary School,No,1999,Not Good,Taisan,60616,5.0,"$20,000 至 $34,999",0.0202661786928042,0.020263237416267697,0.02027909671844306,0.9187137827473121,0.020477704425173125,5.0
+447.0,67.0,Retired,Widowed,Primary School,No,1999,Very Bad,Taisan,60616,5.0,"$20,000 至 $34,999",0.0202661786928042,0.020263237416267697,0.02027909671844306,0.9187137827473121,0.020477704425173125,5.0
+450.0,50.0,Working,Married,Junior High,No,1987,Not Good,"Taishan ,Guangdong",60609,3.0,"$20,000 至 $34,999",0.5969014194728475,0.10165376679389229,0.10143053986583796,0.1000064191009485,0.10000785476647388,4.0
+453.0,41.0,Working,Married,High School,No,2004,Not Good,Taishan,60616,6.0,"$20,000 至 $34,999",0.010344955213955363,0.7619617523470383,0.20732770301294026,0.010045459775392384,0.010320129650673724,5.0
+455.0,42.0,Working,Married,High School,No,2002,Very Bad,Taishan,60609,4.0,"$20,000 至 $34,999",0.10000096916058489,0.10000040807040698,0.5999950387260392,0.10000178721015379,0.10000179683281518,5.0
+458.0,59.0,Working,Married,Junior High,No,2010,Very Bad,Taishan,60616,2.0,"<em>$0 至 $9,999",0.944597605635205,0.013552409194269758,0.013452989215582306,0.013613860934609772,0.01478313502033302,5.0
+464.0,53.0,Working,Widowed,High School,No,2000,Not Good,Hong kong,60616,2.0,"$10,000 至 $14,999",0.050001382920681854,0.7991285657004813,0.05067126017615621,0.05000243723583096,0.050196353966849745,5.0
+465.0,58.0,Working,Married,Junior High,No,2010,Very Bad,Taishan,60616,2.0,"$10,000 至 $14,999",0.0666673207252926,0.7324815398100689,0.06681173560312181,0.06737149143314436,0.06666791242837244,5.0
+468.0,50.0,Working,Married,High School,No,2000,Good,Tashian,60616,4.0,"$35,000 至 $49,999",0.08699777316092751,0.8811347178302482,0.010659794786274617,0.010563773576069514,0.010643940646480308,5.0
+468.0,50.0,Working,Married,High School,No,2000,Good,Taishan,60616,4.0,"$35,000 至 $49,999",0.08699777316092751,0.8811347178302482,0.010659794786274617,0.010563773576069514,0.010643940646480308,5.0
+478.0,54.0,Working,Married,Junior High,No,2007,Very Bad,Taishan,60616,7.0,"$20,000 至 $34,999",0.02027699427928191,0.020042992591704976,0.020217907386182763,0.9193699479004267,0.020092157842403643,5.0
+479.0,30.0,Unemployed,Single Never Married,Attended college but did not graduate,No,2007,Not Good,Taishan,60616,7.0,"$20,000 至 $34,999",0.04283288349196261,0.04076650200570384,0.8359369115788614,0.040002449106245584,0.0404612538172266,5.0
+480.0,32.0,Working,Single Never Married,University Graduate,No,2006,Not Good,Dongbei,60616,2.0,"$15,000 至 $19,999",0.014472147156109332,0.33537978517158,0.014398185121426063,0.6214234994780163,0.014326383072868256,5.0
+482.0,79.0,Retired,Widowed,Attended college but did not graduate,No,1981,Very Bad,Taishan,60616,1.0,"$15,000 至 $19,999",0.04022981458649296,0.040607154307977976,0.040245197150929134,0.8387971983969778,0.04012063555762216,5.0
+483.0,54.0,Working,Married,Junior High,No,2012,Very Bad,Guangdong ,60616,4.0,"<em>$0 至 $9,999",0.050000956350882156,0.7994597764713702,0.050389417392696007,0.05014831932722548,0.05000153045782607,5.0
+490.0,58.0,Working,Married,Vocational or technical school after high school,No,1996,Very Bad, 上海,60609,1.0,"<em>$0 至 $9,999",0.012243697286018502,0.011893198309862652,0.835293257825145,0.011871095686668012,0.12869875089230592,5.0
+495.0,59.0,Unemployed,Divorced,Junior High,No,1987,Not Good,,60616,3.0,"<em>$0 至 $9,999",0.8392811714347275,0.04001441938436626,0.04003881114223373,0.0403123586392833,0.040353239399389236,5.0
+500.0,64.0,Working,Married,Primary School,No,guangdon,Very Bad,guangdon ,60616,2.0,"<em>$0 至 $9,999",0.5996852689316817,0.10000025235749037,0.10000026692043948,0.10000070816829362,0.10031350362209482,5.0
+505.0,69.0,Retired,Married,Junior High,No,1996,Not Good,Taishan,60616,5.0,Do Not Know,0.5330853080568869,0.36636428143531335,0.03341571864980178,0.033773295061990324,0.03336139679600779,5.0
+15.0,63.0,Retired,Married,Primary School,No,1983,Not Good,Taishan,60632,2.0,"$10,000 至 $14,999",0.2808728876391614,0.016907411507155287,0.6680687959949895,0.017009354600364214,0.017141550258329717,10.0
+518.0,49.0,Unemployed,Married,Junior High,No,2015,Very Bad,Lingni,60609,1.0,"<em>$0 至 $9,999",0.2658870819626838,0.020080865601715077,0.6735708469012106,0.02045332928464216,0.020007876249748306,5.0
+523.0,62.0,Working,Married,Vocational or technical school after high school,No,2013,Very Bad,Liaoning,60632,1.0,"<em>$0 至 $9,999",0.033923269339599015,0.47672243674695597,0.4212396267802269,0.034047729597246015,0.03406693753597204,4.0
+534.0,58.0,Housewife,Married,University Graduate,No,2015,Not Good,Shanghai ,60608,2.0,Do Not Know,0.3781014608812226,0.3432985289839634,0.26830507551484456,0.005177060942413528,0.005117873677555907,5.0
+537.0,53.0,Working,Married,High School,No,2001,Not Good,Shangyang,60609,3.0,"$20,000 至 $34,999",0.010319447001829225,0.7874202483730599,0.18205585555363965,0.010099789913395983,0.010104659158075291,5.0
+630.0,75.0,Retired,Widowed,Junior High,No,2016,Very Bad,Guangdon ,60609,5.0,"$20,000 至 $34,999",0.02504898371893476,0.8987233716668068,0.025621990214292355,0.025067608474233595,0.02553804592573244,5.0
+550.0,33.0,Working,Married,High School,No,2014,Not Good,Wulam,60616,1.0,"<em>$0 至 $9,999",0.9102053545101485,0.022892602878320668,0.02237093969530977,0.0223062984214311,0.022224804494789672,5.0
+549.0,54.0,Working,Married,Junior High,No,2010,Not Good,He nan,60608,3.0,"$20,000 至 $34,999",0.8837853792507969,0.028966865444314642,0.029937805628131586,0.028716616792184447,0.028593332884572328,5.0
+552.0,63.0,Housewife,Married,High School,No,1996,Not Good,Beijing ,60632,2.0,"<em>$0 至 $9,999",0.18246012091747216,0.7672441883053143,0.01680467369408136,0.016705398130041405,0.01678561895309076,5.0
+557.0,28.0,Working,Single Never Married,University Graduate,No,2008,Good,Taishan,60616,2.0,"$20,000 至 $34,999",0.2778642470143577,0.6617173223560671,0.020175310722582745,0.020172179211748627,0.020070940695243657,4.0
+559.0,66.0,Housewife,Married,Primary School,No,2016,Very Bad,Fughao ,60609,2.0,"<em>$0 至 $9,999",0.03547595034455947,0.8629621850557874,0.034388463099238625,0.033336284914988676,0.03383711658542592,5.0
+570.0,54.0,Working,Married,Junior High,No,2002,Not Good,Fujian,60609,3.0,"$35,000 至 $49,999",0.03708380491792058,0.860390161200343,0.034121947694464895,0.03441375930746381,0.03399032687980779,4.0
+577.0,53.0,Working,Married,Vocational or technical school after high school,No,2006,Not Good,Shenyang,60616,4.0,"$10,000 至 $14,999",0.34058042889690854,0.5917897789814771,0.022257324322123895,0.022560925292441376,0.022811542507049174,5.0
+590.0,47.0,Working,Widowed,University Graduate,No,1998,Good,Taishan,60632,3.0,"$20,000 至 $34,999",0.020162152934399304,0.9189843445521433,0.020298938792486357,0.020472143699996958,0.020082420020973872,4.0
+620.0,41.0,Working,Married,Junior High,No,2004,Not Good,Guangdong,60632,4.0,"$20,000 至 $34,999",0.020034940837463357,0.3337527066511398,0.6055325139458814,0.020619782342953738,0.020060056222561826,5.0
+604.0,45.0,Housewife,Married,Junior High,No,1984,Good,Tashi ,60616,4.0,"$20,000 至 $34,999",0.0666684226790129,0.7315778282274027,0.06789533984484046,0.0671883548513346,0.06667005439740928,5.0
+606.0,47.0,Working,Married,High School,No,2016,Very Bad,Tashi ,60616,3.0,"$10,000 至 $14,999",0.02505959043409217,0.16016976206260752,0.7639616403281377,0.025323416577716584,0.025485590597446057,4.0
+613.0,59.0,Working,Married,Primary School,No,2011,Very Bad,Guangdon ,60616,6.0,"$10,000 至 $14,999",0.03333437598218299,0.8660320049396988,0.03356684099911869,0.03357991856761812,0.033486859511381514,5.0
+615.0,53.0,Working,Widowed,High School,No,2004,Not Good,Guangdon ,60632,2.0,"$35,000 至 $49,999",0.05024021302585785,0.7988816491347871,0.05067784299751538,0.050003109112268476,0.050197185729571145,5.0
+618.0,53.0,Working,Married,Junior High,No,2014,Very Bad,Taishan,60616,2.0,"<em>$0 至 $9,999",0.013393786245888106,0.8427739702326564,0.11689448055514245,0.01357047612403254,0.013367286842280474,5.0
+68.0,52.0,Working,Married,Junior High,No,2011,Very Bad,Taishan,60608,4.0,"$20,000 至 $34,999",0.7274857273966039,0.0679939882951443,0.0691086142577507,0.06666775233207238,0.0687439177184286,4.0
+645.0,,Working,Married,Junior High,No,1994,Not Good,Guangdong,60608,6.0,"$15,000 至 $19,999",0.8397411949497615,0.04008226382521879,0.040062857751791,0.040030323934232115,0.04008335953899662,5.0
+650.0,48.0,Working,Married,Junior High,No,1998,Not Good,Taishan,60616,4.0,"$20,000 至 $34,999",0.22801915022290506,0.7384549112497909,0.011146557277452703,0.011168362274921018,0.011211018974930388,4.0
+655.0,59.0,Housewife,Married,Junior High,No,2000,Good,Hk,60616,2.0,Do Not Know,0.18903774546452437,0.013399813605003554,0.7706117467944319,0.013571516129658795,0.013379178006381272,4.0
+659.0,42.0,Working,Divorced,Junior High,No,2014,Not Good,Fulan,60616,2.0,"$10,000 至 $14,999",0.015990536754407217,0.9374006621320558,0.015564157731450621,0.015659213303747952,0.01538543007833856,5.0
+670.0,65.0,Retired,Married,Primary School,No,1993,Very Bad,Guangdong ,60616,2.0,"<em>$0 至 $9,999",0.040207807915651726,0.3054274348643482,0.5735978372797106,0.0404944741615577,0.040272445778731736,5.0
+673.0,57.0,Working,Married,Junior High,No,2003,Very Bad,Gongxhou,60632,3.0,"$15,000 至 $19,999",0.030037280369437005,0.8834934399871271,0.028800575053185926,0.02909607430274295,0.028572630287506947,5.0
+685.0,48.0,Working,Married,Junior High,No,2010,Not Good,Taishan,60632,4.0,"$10,000 至 $14,999",0.8394616306365391,0.040082101620198964,0.04006287337123068,0.040030436533981736,0.04036295783804954,5.0
+29.0,62.0,Working,Separated,Primary School,No,1994,Very Bad,Guangdon ,60609,5.0,"$15,000 至 $19,999",0.19998227553324324,0.6989962073559944,0.033767579333473366,0.03353391633656836,0.033720021440720636,5.0
+46.0,67.0,Retired,Married,Junior High,No,1997,Not Good,Taishan,60616,5.0,"<em>$0 至 $9,999",0.7919047594580708,0.05257690137250422,0.05284364982279566,0.051751132373068005,0.05092355697356125,5.0
+46.0,66.0,Unemployed,Separated,Junior High,No,1997,Not Good,Taishan,60616,3.0,Do Not Know,0.7919047594580708,0.05257690137250422,0.05284364982279566,0.051751132373068005,0.05092355697356125,5.0
+695.0,40.0,Working,Married,Junior High,No,2015,Very Bad,Taishan,60616,4.0,"$10,000 至 $14,999",0.06666713699664209,0.732740048395547,0.06681146197562783,0.06711380289165884,0.0666675497405243,5.0
+698.0,64.0,Working,Married,Junior High,No,2009,Not Good,Guangdon ,60616,2.0,"$10,000 至 $14,999",0.23996298412155634,0.6392192804606431,0.04053682713589087,0.04000171786551639,0.04027919041639346,5.0
+698.0,68.0,Retired,Cohabit,High School,No,1996,Very Bad,Taishan,60616,6.0,"<em>$0 至 $9,999",0.23996298412155634,0.6392192804606431,0.04053682713589087,0.04000171786551639,0.04027919041639346,5.0
+30.0,54.0,Retired,Married,High School,No,1999,Not Good,Huiben,60609,3.0,"$15,000 至 $19,999",0.839615789317571,0.04021148653690073,0.040082637771039376,0.04003052778832845,0.040059558586160476,4.0
+710.0,44.0,Working,Married,Vocational or technical school after high school,No,1997,Good,Guangdon ,60616,4.0,"$20,000 至 $34,999",0.022329928672926283,0.02247111705858761,0.9093311492052644,0.022658202441757997,0.023209602621463907,5.0
+708.0,46.0,Working,Married,Junior High,No,2010,Very Bad,Guangzhou,60632,4.0,"$15,000 至 $19,999",0.6863952902367149,0.008749936668255206,0.009146394992396794,0.28684643959602296,0.00886193850661007,6.0
+709.0,62.0,Unemployed,Married,Primary School,No,2011,Not Good,Taishan,60616,2.0,"<em>$0 至 $9,999",0.17850936176102306,0.7812943668762901,0.013410940030217207,0.013451325669509484,0.013334005662960221,5.0
+716.0,38.0,Unemployed,Divorced,Junior High,No,2015,Very Bad,Shengyang,60616,1.0,"$10,000 至 $14,999",0.26742604368826906,0.014372060610457977,0.35207628752574377,0.014464268724853057,0.351661339450676,5.0
+721.0,53.0,Working,Married,University Graduate,No,1998,Not Good,Ha long jirong,60632,2.0,"$15,000 至 $19,999",0.033709602141566694,0.03351979412990263,0.8657613378252748,0.03366061543386927,0.03334865046938666,5.0
+724.0,52.0,Working,Married,Primary School,No,2007,Very Bad,Gaungzhou,60608,3.0,"$15,000 至 $19,999",0.1619391267825003,0.7829294800483604,0.01833265737217496,0.018585864238636684,0.018212871558327844,5.0
+726.0,65.0,Retired,Married,High School,No,1986,Not Good,Hong Kong ,60632,2.0,"<em>$0 至 $9,999",0.033333788144146115,0.8662916897681043,0.033609140569686495,0.03335736556257352,0.03340801595548945,5.0
+727.0,48.0,Working,Married,High School,No,1995,Not Good,Guangdong ,60608,4.0,"$20,000 至 $34,999",0.02891905371029051,0.8847712469423167,0.02882309807970112,0.028913240455277257,0.028573360812414374,5.0
+725.0,38.0,Working,Married,Junior High,No,2015,Very Bad,Shangyang,60616,3.0,"<em>$0 至 $9,999",0.03388108945091609,0.41680960296548375,0.27214977319824135,0.03361315183620046,0.2435463825491583,5.0
+715.0,70.0,Retired,Married,Primary School,No,1997,Very Bad,Guangdong,60608,4.0,"$15,000 至 $19,999",0.06666890390946298,0.7328610896172111,0.06681274163014521,0.06698631541333752,0.06667094942984328,5.0
+731.0,59.0,Working,Married,Junior High,No,1992,Not Good,Hk,60632,2.0,"$20,000 至 $34,999",0.8395865365142804,0.04006764849499341,0.040024197938554495,0.04003076794027038,0.04029084911190135,5.0
+739.0,63.0,Working,Widowed,Primary School,No,2006,Very Bad,Taishan,60609,5.0,"$20,000 至 $34,999",0.026858500583227484,0.8978429626204886,0.025160520587250434,0.025002159490489048,0.025135856718544305,5.0
+743.0,38.0,Working,Married,High School,No,2011,Not Good,Guangdong ,60609,6.0,"$15,000 至 $19,999",0.37070492387094056,0.0222794184729456,0.02269162020827946,0.022614039254394345,0.5617099981934401,10.0
+745.0,62.0,Retired,Married,High School,No,2009,Very Bad,Taishan,60608,2.0,"$10,000 至 $14,999",0.20060433715745168,0.7320111720928132,0.02243399160361836,0.022690942508671434,0.022259556637445287,5.0
+749.0,48.0,Retired,Married,Junior High,No,2013,Not Good,Taishan,60608,4.0,"$10,000 至 $14,999",0.5174123266282221,0.41416276035796273,0.023731863812951327,0.02228651645828564,0.022406532742578273,4.0
+752.0,62.0,Retired,Divorced,I have no education,No,2001,Very Bad,Guhui,60632,5.0,"<em>$0 至 $9,999",0.014651789622440512,0.9417935216909102,0.014736796328491631,0.014450581742601495,0.014367310615556312,5.0
+755.0,54.0,Working,Widowed,Junior High,No,2004,Not Good,Guangdon ,60616,3.0,"$10,000 至 $14,999",0.29963423411816614,0.012682288354566727,0.012662754706746836,0.6624282980667309,0.012592424753789456,5.0
+757.0,88.0,Retired,Widowed,I have no education,No,1996,Very Bad,Toishan,60616,1.0,"<em>$0 至 $9,999",0.025160392819820042,0.02507624002880519,0.8993296736043664,0.025325174828379378,0.025108518718628948,4.0
+756.0,52.0,,Married,High School,No,2005,Not Good,guangdong,60616,3.0,"<em>$0 至 $9,999",0.010024768361771054,0.6805982586439188,0.16709324018688967,0.132252700954588,0.010031031852832606,5.0
+759.0,69.0,Retired,Widowed,Junior High,No,1973,Not Good,Gwongzhou,60616,1.0,"<em>$0 至 $9,999",0.020091084090513554,0.020678264336317618,0.3140561164507882,0.4262381719452298,0.21893636317715093,5.0
+760.0,47.0,Working,Married,Vocational or technical school after high school,No,2004,Not Good,Toishan,60609,4.0,"$35,000 至 $49,999",0.20625946342375295,0.47918770655048926,0.2737811090772031,0.020186569219593546,0.020585151728961158,5.0
+763.0,66.0,Working,Married,High School,No,1976,Good,Hong Kong,60616,3.0,"$75,000 至 $99,999",0.5993624994827641,0.100285167355941,0.10000064064876721,0.10000190282253645,0.10034978968999138,4.0
+764.0,54.0,Unemployed,Divorced,High School,No,2005,Very Bad,hainan,60616,4.0,"<em>$0 至 $9,999",0.24553031641553746,0.2573917551991545,0.4165248752005059,0.040162329052887885,0.040390724131914156,5.0
+765.0,61.0,Working,Married,Vocational or technical school after high school,No,1997,Good,HK,60608,3.0,"$15,000 至 $19,999",0.5660781658250938,0.3122398075024591,0.04059441907645853,0.040339041031818276,0.0407485665641702,4.0
+28.0,46.0,Working,Married,Junior High,No,2012,Very Bad,Toishan,60616,4.0,"$10,000 至 $14,999",0.020223783116055983,0.48610012471915676,0.02102691951188676,0.45248053401371247,0.020168638639188073,14.0
+89.0,62.0,Working,Married,Vocational or technical school after high school,No,2008,Not Good,Gongzhou,60616,2.0,"$15,000 至 $19,999",0.1855196411744854,0.028671928410870334,0.4243112414584814,0.028678833397795558,0.3328183555583672,10.0
+84.0,49.0,Working,Divorced,University Graduate,No,2004,Not Good,Liaoning,60616,2.0,"$10,000 至 $14,999",0.03355872427365704,0.03344132274542823,0.033506277641472966,0.03405053797486459,0.8654431373645772,5.0
+86.0,59.0,Working,Married,Junior High,No,1993,Very Bad,Taishan,60616,4.0,"$15,000 至 $19,999",0.8855221049223749,0.02867187495104492,0.028609812937741255,0.028585870762628505,0.028610336426210328,4.0
+90.0,42.0,Working,Divorced,High School,No,96,Not Good,Guangzhou,60616,2.0,"$10,000 至 $14,999",0.022278736110392196,0.6490183234444317,0.022788944881334882,0.022835529246459266,0.283078466317382,18.0
+110.0,57.0,Working,Widowed,Vocational or technical school after high school,No,1980,Not Good,Hong Kong,60616,1.0,"<em>$0 至 $9,999",0.040160193196931794,0.04000042209957636,0.04039553430048056,0.04011796035426029,0.8393258900487509,4.0
+120.0,55.0,Working,Married,High School,No,2011,Very Bad,Guangzhou,60608,2.0,"$10,000 至 $14,999",0.018254063496207746,0.9268054676810605,0.018471244873368785,0.01828576452863051,0.018183459420732444,14.0
+116.0,50.0,Working,Married,Junior High,No,2006,Not Good,Gongzhou,60616,2.0,"$10,000 至 $14,999",0.06672762616637425,0.06666678562442814,0.06666685969873867,0.06666718287859001,0.7332715456318689,5.0
+112.0,52.0,Working,Married,High School,No,1982,Not Good,Guongdong,60616,3.0,"$15,000 至 $19,999",0.02522090219090149,0.8990120549775275,0.02543746526428971,0.02512188627861905,0.025207691288662286,14.0
+127.0,45.0,Working,Married,Junior High,No,2006,Not Good,Toishan,60632,4.0,"$10,000 至 $14,999",0.38031315070089355,0.02515352481505142,0.5442606970429646,0.025129866455459244,0.025142760985631087,5.0
+98.0,49.0,Working,Married,Junior High,No,6,Very Bad,Kaiping,60632,3.0,"$50,000 至 $74,999",0.018851512552142017,0.018380917793413155,0.9259686864298121,0.01856900540540429,0.01822987781922838,5.0
+97.0,71.0,Retired,Married,High School,No,2002,Very Bad,Shanghai,60616,2.0,"$10,000 至 $14,999",0.8656122532601002,0.03357133351062221,0.03375649184931391,0.03333419594660592,0.0337257254333579,5.0
+103.0,47.0,Working,Widowed,Junior High,No,2009,Very Bad,Taishan,60616,2.0,"<em>$0 至 $9,999",0.017360635081209143,0.9312692867839204,0.016962439425496956,0.017651787791414332,0.016755850917959128,5.0
+92.0,45.0,Working,Married,Vocational or technical school after high school,No,2009,Not Good,gongdong,60616,3.0,"$10,000 至 $14,999",0.02607064730321572,0.025149099876874817,0.025968821265592867,0.8978096685642529,0.025001762990063566,5.0
+121.0,40.0,Working,Married,High School,No,2010,Good,Jiang men,60609,3.0,"$15,000 至 $19,999",0.5118806136497248,0.050988411272636446,0.051587063530291834,0.05000302573489995,0.335540885812447,5.0
+123.0,61.0,Retired,Married,Attended college but did not graduate,No,1969,Not Good,Taishan,60616,2.0,"$10,000 至 $14,999",0.03338001081330722,0.8659440052432672,0.03353774422097633,0.03333586178319559,0.033802377939253586,4.0
+135.0,62.0,Working,Married,High School,No,2000,Not Good,Taishan,60616,2.0,"$10,000 至 $14,999",0.02570393030601822,0.15281188942784027,0.025772192573421875,0.025001105743997467,0.7707108819487222,5.0
+136.0,57.0,Working,Married,High School,No,2001,Not Good,Toishan,60616,4.0,"$20,000 至 $34,999",0.32312910545299384,0.17122448341146806,0.30060662149414935,0.02870257131246592,0.17633721832892282,6.0
+58.0,50.0,Housewife,Divorced,Junior High,No,1994,Not Good,Guangzhou,60608,2.0,"$10,000 至 $14,999",0.028719312203824548,0.3593232259316106,0.34877350638857496,0.2333900313652189,0.029793924110770996,5.0
+138.0,67.0,Working,Married,High School,No,1984,Very Bad,gongdong,60608,3.0,"$20,000 至 $34,999",0.013472213681059662,0.013664015039541065,0.9456599898250971,0.013718260476100455,0.013485520978201564,5.0
+4.0,58.0,Working,Widowed,Primary School,No,1990,Good,Hong Kong,60632,2.0,"$15,000 至 $19,999",0.5265536136852821,0.03371369783973186,0.3711304410921169,0.03333775629950549,0.03526449108336361,5.0
+51.0,45.0,Working,Married,High School,No,2004,Very Bad,Kaiping,60608,3.0,"$35,000 至 $49,999",0.020000669753849298,0.020272370454188955,0.9192717266267234,0.020358846206458923,0.020096386958779428,5.0
+75.0,40.0,Working,Married,High School,No,2003,Good,Jiang men,60616,4.0,"$20,000 至 $34,999",0.022577243591351246,0.9100282712793674,0.022558966764253285,0.022612381135167312,0.022223137229860954,5.0
+27.0,44.0,Working,Married,High School,No,2010,Not Good,Gongdong,60616,4.0,"$15,000 至 $19,999",0.030268999069747136,0.35114895760039366,0.028990402146065516,0.028652352664416902,0.5609392885193769,14.0
+55.0,48.0,Working,Married,Junior High,No,1998,Not Good,Taishan,60608,5.0,"$20,000 至 $34,999",0.02048066771001224,0.9189102196693739,0.020318892866747023,0.020226058729112085,0.0200641610247548,2.0
+37.0,48.0,Working,Married,Junior High,No,2011,Not Good,toishan,60616,4.0,"$20,000 至 $34,999",0.022282209711867167,0.02222239772072059,0.02233626206143127,0.02254129600342608,0.9106178345025548,4.0
+32.0,40.0,Working,Divorced,Vocational or technical school after high school,No,2006,Good,kongmoon,60608,3.0,"$20,000 至 $34,999",0.007569832187400108,0.6975078002007508,0.1531354412726264,0.007557167107429834,0.13422975923179292,5.0
+34.0,60.0,Working,Married,High School,No,1979,Good,goungzhou,60616,5.0,"$50,000 至 $74,999",0.7325353752758114,0.06684854560851539,0.06666730600071805,0.06712836372225692,0.06682040939269822,4.0
+95.0,46.0,Housewife,Married,Junior High,No,2011,Not Good,Hebei,60616,3.0,"$15,000 至 $19,999",0.03334561787191207,0.033921406067527145,0.8656137659689768,0.03354545654597044,0.03357375354561375,5.0
+38.0,60.0,Working,Married,Junior High,No,1999,Very Bad,Kaiping,60616,4.0,"$10,000 至 $14,999",0.06666765292096835,0.7314458157257466,0.06813739394906551,0.06666841685906366,0.06708072054515564,5.0
+94.0,49.0,Unemployed,Married,High School,No,2009,Not Good,Fujian,60632,3.0,"$35,000 至 $49,999",0.012421045005873512,0.01199408205597743,0.012145262499282447,0.011924962133244154,0.9515146483056226,5.0
+139.0,51.0,Working,Divorced,Primary School,No,2007,Very Bad,Guangxi,60616,1.0,"$10,000 至 $14,999",0.06680574024957785,0.06666715358687396,0.06666742722659975,0.7324526308054602,0.06740704813148819,5.0
+293.0,46.0,Working,Married,High School,No,1992,Not Good,guongzhou,60608,2.0,"$35,000 至 $49,999",0.30647295010184605,0.050000451302964335,0.5430395778743128,0.050001973219562096,0.05048504750131483,5.0
+299.0,47.0,Working,Married,University Graduate,No,1992,Good,gongdong,60608,5.0,"$35,000 至 $49,999",0.04075863779543217,0.838998842027774,0.040046353820780145,0.04019343710416874,0.040002729251844976,5.0
+140.0,46.0,Working,Single Never Married,Vocational or technical school after high school,No,2000,Good,gongdong,60608,3.0,"$20,000 至 $34,999",0.022560402423234628,0.9105072402785462,0.02234201227481959,0.022366453241597892,0.022223891781801678,14.0
+141.0,52.0,Working,Divorced,High School,No,1994,Good,Hong Kong,60616,3.0,"$20,000 至 $34,999",0.10000260768800634,0.10000103400985415,0.10086646740346607,0.10000443489412308,0.5991254560045504,10.0
+149.0,55.0,Working,Married,Vocational or technical school after high school,No,2005,Not Good,toishan,60608,3.0,"$20,000 至 $34,999",0.4061267739398189,0.5265139631406971,0.022440337544314987,0.022291852242906092,0.02262707313226298,5.0
+153.0,64.0,Retired,Married,Primary School,No,1988,Very Bad,gongdong,60608,2.0,"$10,000 至 $14,999",0.28493566930336883,0.23776698069589747,0.029561991835253758,0.419160525239877,0.028574832925602915,5.0
+156.0,57.0,Unemployed,Married,I have no education,No,1994,Very Bad,Taishan,60608,2.0,"<em>$0 至 $9,999",0.06709459663166131,0.7321620379270595,0.06683268839116425,0.06723871490281767,0.0666719621472972,5.0
+158.0,70.0,Retired,Married,I have no education,No,1982,Very Bad,gongdong,60632,2.0,Do Not Know,0.10184099780945409,0.10232858070168814,0.5923071160380604,0.10000151481179459,0.10352179063900283,5.0
+159.0,65.0,Working,Married,Junior High,No,2003,Very Bad,Hong Kong,60616,2.0,"$15,000 至 $19,999",0.01609414481253487,0.01592572354012249,0.936784884039022,0.01554979989154006,0.015645447716780583,10.0
+161.0,62.0,Working,Married,Primary School,No,1993,Good,Hongkong,60608,2.0,"$20,000 至 $34,999",0.040002098785110386,0.540382619175724,0.33850956459198955,0.04110178129333395,0.04000393615384204,5.0
+14.0,53.0,Working,Widowed,High School,No,2010,Very Bad,gongdong,60616,3.0,"$15,000 至 $19,999",0.012507075776207698,0.012628863526065601,0.9496099810821735,0.012632109984668868,0.01262196963088435,5.0
+175.0,43.0,Working,Married,High School,No,2009,Very Bad,Changde,60616,3.0,"$20,000 至 $34,999",0.04061419328236906,0.8386089329400164,0.04067319085020856,0.04010046482207898,0.04000321810532709,5.0
+165.0,40.0,Housewife,Married,Junior High,No,2011,Very Bad,gongzhou,60632,4.0,"$10,000 至 $14,999",0.02863890626388692,0.029168383619284807,0.02905841043586868,0.8845611527077151,0.028573146973244503,14.0
+181.0,53.0,Working,Married,Vocational or technical school after high school,No,2008,Not Good,taishan,60616,2.0,"$10,000 至 $14,999",0.020089117924712914,0.020677971022387144,0.02055624855400562,0.9180903374177393,0.020586325081154933,5.0
+183.0,57.0,Working,Married,Junior High,No,2006,Very Bad,Taishan,60616,4.0,"$10,000 至 $14,999",0.02228152633163306,0.7654026876489277,0.022753108300598065,0.022948450978297834,0.16661422674054335,5.0
+184.0,47.0,Working,Married,Junior High,No,2012,Very Bad,Zhuhai,60616,3.0,"$15,000 至 $19,999",0.02225767577490893,0.02234912152773506,0.9101608295892074,0.022932813828076257,0.022299559280072254,12.0
+186.0,29.0,Working,Married,Junior High,No,2012,Not Good,Taishan,60616,3.0,"$10,000 至 $14,999",0.014763625651669898,0.014450008849605837,0.9415234940949312,0.014904921511577757,0.014357949892215175,14.0
+187.0,57.0,Working,Married,Junior High,No,1990,Not Good,taishan,60608,4.0,"$20,000 至 $34,999",0.020043037438590768,0.021125393174528186,0.9182325428915742,0.020128530068695496,0.020470496426611397,5.0
+191.0,49.0,Working,Married,Junior High,No,2001,Not Good,Fush,60616,3.0,"$20,000 至 $34,999",0.05000034261858633,0.050000154469075166,0.05048779079065901,0.05000060970034232,0.7995111024213372,12.0
+193.0,58.0,Working,Married,High School,No,1992,Not Good,gongzhou,60632,3.0,"$20,000 至 $34,999",0.7349696725607788,0.18941851922643538,0.025260789711688214,0.02515328073928798,0.02519773776180964,4.0
+1.0,46.0,Working,Divorced,High School,No,1997,Not Good,Taishan,60632,3.0,"$10,000 至 $14,999",0.020018522960610702,0.02009162823551132,0.9196543239910582,0.020026994455246694,0.020208530357573112,5.0
+195.0,60.0,Working,Married,Vocational or technical school after high school,No,2008,Very Bad,gongzhou,60616,3.0,"$15,000 至 $19,999",0.028676953744874625,0.8846435008579796,0.02942001264702643,0.028686596004370613,0.028572936745748494,5.0
+197.0,57.0,Working,Married,Primary School,No,2007,Very Bad,Taishan,60608,6.0,"$20,000 至 $34,999",0.3068446064332336,0.017006194586547403,0.6425788891269216,0.016709888130370214,0.01686042172292725,10.0
+201.0,55.0,Working,Married,Primary School,No,2004,Very Bad,Taishan,60632,5.0,"$10,000 至 $14,999",0.2804840246236009,0.6589701129646875,0.020060947934699737,0.020164595810365792,0.020320318666646114,5.0
+39.0,62.0,Retired,Married,High School,No,1998,Not Good,taishan,60632,3.0,"<em>$0 至 $9,999",0.7996055545304399,0.05009175139695574,0.05010776474016866,0.05005170873182442,0.05014322060061131,5.0
+206.0,61.0,Housewife,Divorced,High School,No,1986,Very Bad,taishan,60608,5.0,Do Not Know,0.8397411949497615,0.04008226382521879,0.040062857751791,0.040030323934232115,0.04008335953899662,4.0
+207.0,37.0,Working,Married,High School,No,2011,Very Bad,shenyang,60616,3.0,"$15,000 至 $19,999",0.01430617652785175,0.39413519934145247,0.460804202364435,0.11622309258296504,0.014531329183295739,5.0
+208.0,43.0,Working,Married,Junior High,No,2009,Not Good,fujian,60616,4.0,"$15,000 至 $19,999",0.02003649416342093,0.020386714576682136,0.91920920639873,0.020262802358876102,0.020104782502290735,14.0
+31.0,52.0,Housewife,Married,High School,No,2012,Not Good,Taishan,60616,2.0,"$10,000 至 $14,999",0.02896683256440741,0.8848289204383651,0.028627220309085943,0.02892547857839096,0.028651548109750628,14.0
+209.0,46.0,Working,Married,Primary School,No,1991,Not Good,Kaiping,60632,4.0,"$20,000 至 $34,999",0.04027773136116652,0.04124172445775388,0.04083190666469764,0.040110951317200855,0.8375376861991811,5.0
+211.0,56.0,Working,Widowed,Junior High,No,2007,Very Bad,taishan,60616,2.0,"$15,000 至 $19,999",0.02507001399343758,0.6539673924125432,0.27024370890125987,0.02559795570308643,0.02512092898967295,5.0
+74.0,44.0,Working,Married,High School,No,1997,Very Bad,jiangsu,60616,3.0,"$20,000 至 $34,999",0.022274641362020807,0.9106318248640118,0.022419953277600237,0.022389047464451594,0.022284533031915816,5.0
+215.0,73.0,Retired,Widowed,High School,No,2001,Not Good,taishan,60616,1.0,"<em>$0 至 $9,999",0.020259710050855962,0.4474869695771719,0.020355773289057213,0.16302510275570586,0.34887244432720915,5.0
+217.0,48.0,Unemployed,Married,Junior High,No,2001,Not Good,liaoning,60608,3.0,"$20,000 至 $34,999",0.025089806215681517,0.02635313536939881,0.8981382255555773,0.02541671083990415,0.02500212201943814,17.0
+218.0,43.0,Unemployed,Divorced,University Graduate,No,2005,Not Good,shenyang,60609,1.0,"$10,000 至 $14,999",0.008415061847446455,0.5868247787253552,0.38771693824457726,0.00843661430855835,0.008606606874062799,5.0
+70.0,46.0,Working,Married,High School,No,2000,Very Bad,Fujian,60608,1.0,"$10,000 至 $14,999",0.5311292528905472,0.38285370422738085,0.02859465535464725,0.028830228766840667,0.02859215876058409,5.0
+56.0,66.0,Housewife,Divorced,Junior High,No,2011,Very Bad,Taishan,60608,5.0,Do Not Know,0.9097052767061731,0.022787729845501713,0.022614956213411135,0.02222368672522906,0.022668350509684906,5.0
+222.0,57.0,Working,Married,Primary School,No,2006,Not Good,jiangmen,60616,3.0,"$20,000 至 $34,999",0.01571802001215099,0.31042273511855184,0.01573968828999421,0.015452206178154893,0.642667350401148,5.0
+223.0,67.0,Retired,Divorced,Primary School,No,1985,Not Good,taishan,60616,1.0,"<em>$0 至 $9,999",0.026771806649143824,0.897460509351723,0.025382143346251,0.025084588617587947,0.025300952035294234,5.0
+225.0,46.0,Housewife,Married,University Graduate,No,1998,Good,Liaoning,60609,4.0,"$20,000 至 $34,999",0.05000252760015025,0.05085398701011956,0.05014089461638796,0.050619457721556786,0.7983831330517855,14.0
+224.0,63.0,Working,Married,High School,No,2008,Not Good,gongdong,60616,2.0,"$20,000 至 $34,999",0.9103770957670482,0.02231236679724475,0.022409229124526624,0.02228667625838935,0.0226146320527911,5.0
+203.0,51.0,Working,Married,High School,No,2005,Good,tianjin,60616,2.0,"$15,000 至 $19,999",0.015425236704382471,0.015616184703205999,0.502729361160109,0.45075203707643346,0.01547718035586901,5.0
+227.0,50.0,Other,Divorced,High School,No,2011,Very Bad,shenyang,60616,1.0,"$10,000 至 $14,999",0.02958276834729058,0.03039110514814531,0.8824473813285912,0.028688408020142348,0.028890337155830503,5.0
+228.0,51.0,Working,Married,High School,No,2004,Very Bad,gongdong,60616,3.0,"$15,000 至 $19,999",0.023374869987238162,0.9097231093772905,0.02224128266881442,0.02234739836663457,0.022313339600022283,14.0
+230.0,28.0,Unemployed,Married,University Graduate,No,2015,Very Bad,heilongjiang,60608,4.0,"$15,000 至 $19,999",0.01436768579387887,0.014514255348099574,0.6206801422585637,0.3360487937239984,0.014389122875459442,14.0
+233.0,62.0,Housewife,Married,High School,No,2001,Very Bad,gongzhou,60616,3.0,"$20,000 至 $34,999",0.8664964154496885,0.03338723594503652,0.033374632134436595,0.03335352204326047,0.033388194427577844,5.0
+235.0,42.0,Working,Married,High School,No,2006,Not Good,Taishan,60632,4.0,"$20,000 至 $34,999",0.3393543278825267,0.6056906560207221,0.01825006019447283,0.018309000964652582,0.018395954937625643,5.0
+237.0,61.0,Working,Married,Primary School,No,2006,Very Bad,gongdong,60616,2.0,"$20,000 至 $34,999",0.2883282835266769,0.6511148286290885,0.020410068396963077,0.020001722896725888,0.020145096550545673,5.0
+239.0,46.0,Working,Divorced,University Graduate,No,2002,Not Good,shenyang,60616,2.0,"$15,000 至 $19,999",0.01648571242656527,0.9363568499438207,0.01566082586443966,0.015430160628396406,0.01606645113677798,14.0
+241.0,51.0,Working,Married,High School,No,1987,Not Good,gongdong,60616,5.0,"$35,000 至 $49,999",0.040103478713987645,0.04000031492591757,0.04002874215155035,0.6187806526592082,0.2610868115493361,5.0
+243.0,46.0,Working,Divorced,University Graduate,No,2012,Not Good,tianjin,60616,1.0,"<em>$0 至 $9,999",0.022265904226207993,0.32748179404560424,0.6052746065218633,0.02227593630606824,0.02270175890025635,14.0
+242.0,66.0,Retired,Married,Primary School,No,2003,Very Bad,taishan,60632,6.0,"$20,000 至 $34,999",0.025127316062445393,0.025130466050434386,0.7558908167144679,0.02585482744981166,0.16799657372284063,10.0
+36.0,50.0,Working,Married,Junior High,No,1983,Good,gongdong,60608,4.0,"$20,000 至 $34,999",0.04000126541435142,0.040786317124871435,0.8374801143173692,0.041050851785567805,0.04068145135784011,5.0
+245.0,49.0,Working,Married,Junior High,No,2008,Very Bad,Taishan,60616,4.0,"$10,000 至 $14,999",0.12629294390787618,0.8415220445372787,0.010606184534753108,0.010628818935362433,0.010950008084729514,5.0
+69.0,57.0,Working,Married,High School,No,2000,Very Bad,shanghai,60616,2.0,"$10,000 至 $14,999",0.010567927294569934,0.010714668280604108,0.9573016335836618,0.010852440806922669,0.010563330034241356,14.0
+248.0,55.0,Working,Married,High School,No,1990,Not Good,Guangzhou,60609,4.0,"$20,000 至 $34,999",0.05040047067951604,0.7990905087265792,0.05000176361712674,0.05050234621000525,0.05000491076677276,5.0
+249.0,62.0,Working,Divorced,Junior High,No,2000,Not Good,Taishan,60608,6.0,"$20,000 至 $34,999",0.8834645627040801,0.028640328999321264,0.029147156836119563,0.030163452480216756,0.02858449898026235,5.0
+250.0,56.0,Working,Married,University Graduate,No,2008,Not Good,shenyang,60608,2.0,"$15,000 至 $19,999",0.015404431916483458,0.015841366405264453,0.8320218770335234,0.12131355639697254,0.015418768247756067,5.0
+104.0,46.0,Working,Divorced,High School,No,2005,Not Good,Guangzhou,60616,3.0,"<em>$0 至 $9,999",0.02191142262731974,0.02096634739226962,0.5790056451206663,0.020121681979647334,0.3579949028800969,10.0
+251.0,47.0,Working,Married,High School,No,2004,Not Good,Taishan,60608,3.0,"$20,000 至 $34,999",0.01579892152821619,0.016161036437876714,0.01571224596003396,0.9368701729661799,0.015457623107693207,5.0
+246.0,69.0,Retired,Married,Primary School,No,1997,Very Bad,Taishan,60608,1.0,"<em>$0 至 $9,999",0.028727494942917223,0.4176745017299719,0.4963255918183224,0.028698441593918038,0.028573969914870496,5.0
+256.0,29.0,Working,Married,Junior High,No,2006,Very Bad,taishan,60632,5.0,"$50,000 至 $74,999",0.5369988209744132,0.21533811387721297,0.03333424703941354,0.03333573761320246,0.18099308049575777,10.0
+258.0,52.0,Retired,Married,High School,No,2014,Very Bad,Shanghai,60608,5.0,"$15,000 至 $19,999",0.01826745905914457,0.28255029016603334,0.6623006210232335,0.01823573073718666,0.018645899014402074,5.0
+260.0,48.0,Working,Married,Primary School,No,2005,Good,gongdong,60608,4.0,"$20,000 至 $34,999",0.8845862924263537,0.0286228223071342,0.028880358005427858,0.028683350547290144,0.02922717671379414,4.0
+264.0,40.0,Working,Married,High School,No,2006,Not Good,taishan,60632,4.0,"$20,000 至 $34,999",0.025504286966811174,0.7506042158089591,0.02578084131927943,0.025057877996720566,0.17305277790822976,5.0
+265.0,52.0,Working,Married,High School,No,1989,Good,gongdong,60608,2.0,"$20,000 至 $34,999",0.7325353752758114,0.06684854560851539,0.06666730600071805,0.06712836372225692,0.06682040939269822,4.0
+106.0,58.0,Housewife,Married,High School,No,2000,Very Bad,gongdong,60608,6.0,"$20,000 至 $34,999",0.7317764646497096,0.06671820075815917,0.06680634572717092,0.06666757611404404,0.0680314127509163,5.0
+269.0,27.0,Working,Married,High School,No,2012,Not Good,taishan,60632,3.0,"$15,000 至 $19,999",0.01668809511606245,0.017150696055510933,0.01683821666247361,0.9320913315341546,0.01723166063179836,5.0
+270.0,38.0,Working,Divorced,High School,No,2013,Not Good,Guonan,60616,1.0,"$35,000 至 $49,999",0.46638893038959406,0.03362843092159305,0.20386840284823904,0.03337465502213135,0.26273958081844273,21.0
+288.0,48.0,Working,Married,Primary School,No,2006,Very Bad,Fujian,60616,7.0,"$20,000 至 $34,999",0.018311527690712856,0.4128469131187338,0.43931325036659535,0.01901132199903645,0.11051698682492161,5.0
+288.0,33.0,Working,Married,Vocational or technical school after high school,No,2010,Not Good,gaugdon,60616,4.0,"$20,000 至 $34,999",0.018311527690712856,0.4128469131187338,0.43931325036659535,0.01901132199903645,0.11051698682492161,5.0
+276.0,42.0,Working,Widowed,High School,No,2004,Good,guongzhou,60616,2.0,"$10,000 至 $14,999",0.03333511474601729,0.03421404611023861,0.033772821187684626,0.033586851044000006,0.8650911669120596,5.0
+277.0,35.0,Working,Married,Vocational or technical school after high school,No,2002,Not Good,Fujian,60616,3.0,"$15,000 至 $19,999",0.027167169418012612,0.02543486964003108,0.7574949457905691,0.025582344316632623,0.16432067083475463,5.0
+291.0,35.0,Working,Married,University Graduate,No,2008,Good,Taishan,60616,4.0,"$20,000 至 $34,999",0.599083993639526,0.10000050450385446,0.10000080680672423,0.10000215756757769,0.1009125374823176,22.0
+278.0,76.0,Retired,Married,Primary School,No,1997,Very Bad,guongzhou,60616,2.0,"$10,000 至 $14,999",0.028922068444722417,0.029323456481916296,0.029637862582438806,0.6443691779226682,0.26774743456825423,5.0
+280.0,50.0,Working,Married,Junior High,No,2014,Not Good,guangdong,60616,4.0,"<em>$0 至 $9,999",0.1000028159918671,0.10000123020915466,0.5999859985017973,0.10000479691056051,0.1000051583866205,10.0
+283.0,35.0,Housewife,Married,Junior High,No,2004,Not Good,Fujian,60616,4.0,"$15,000 至 $19,999",0.01818264039270824,0.9264274423907934,0.018512759424450437,0.01855975506987357,0.01831740272217438,5.0
+285.0,51.0,Working,Married,High School,No,2012,Not Good,sunyang,60616,2.0,"$15,000 至 $19,999",0.05028091422327692,0.05046574230266933,0.05134530071197811,0.05000173939031437,0.7979063033717613,5.0
+286.0,52.0,Working,Married,High School,No,2009,Not Good,guongzhou,60616,3.0,"$15,000 至 $19,999",0.04000111900326479,0.8390285687760085,0.040343731647995096,0.04039227684738583,0.040234303725345796,5.0
+287.0,40.0,Unemployed,Married,University Graduate,No,18,Not Good,gou,60616,2.0,"$35,000 至 $49,999",0.2736282824138761,0.04016213290392169,0.04048602014503518,0.04012586511558492,0.6055976994215821,10.0
+290.0,61.0,Retired,Married,High School,No,2008,Very Bad,taishan,60616,4.0,"$20,000 至 $34,999",0.04000159624909534,0.04128278793772009,0.6168890260634867,0.26103797006375506,0.04078861968594287,5.0
+296.0,52.0,Unemployed,Divorced,High School,No,1999,Not Good,tan gang,60632,2.0,"<em>$0 至 $9,999",0.8632508444300594,0.03365622501973662,0.03371840658398413,0.0349575010700156,0.03441702289620422,5.0
+304.0,57.0,Working,Cohabit,High School,No,2003,Not Good,sijuan,60616,2.0,"$15,000 至 $19,999",0.020512795963733135,0.020288013147288342,0.9186901448980984,0.02013905599882931,0.02036998999205064,5.0
+305.0,55.0,Working,Married,High School,No,2008,Not Good,tia sun,60608,3.0,"$35,000 至 $49,999",0.23116838723248015,0.03383365195541505,0.6678798811747603,0.033635128167612265,0.0334829514697323,5.0
+306.0,70.0,Retired,Widowed,High School,No,1995,Not Good,taishan,60616,1.0,"$15,000 至 $19,999",0.020188620740092242,0.45923059746170175,0.020348829480159453,0.021008338740749862,0.4792236135772967,5.0
+307.0,56.0,Working,Married,Attended college but did not graduate,No,1993,Good,gong yu,60608,4.0,"$35,000 至 $49,999",0.2400608759914967,0.638898553915286,0.04026218615445678,0.04033600369659266,0.040442380242167744,5.0
+302.0,50.0,Working,Married,Vocational or technical school after high school,No,2003,Not Good,kung,60632,3.0,"$20,000 至 $34,999",0.14579230130137252,0.28316402757234826,0.02915088844463912,0.5132144946354424,0.028678288046197705,14.0
+315.0,52.0,Working,Divorced,Junior High,No,1987,Not Good,gangdon,60616,,"$20,000 至 $34,999",0.9096167770918879,0.02248645265121888,0.02289325386120918,0.022454730861885697,0.022548785533798316,11.0
+316.0,59.0,Retired,Widowed,Vocational or technical school after high school,No,1980,Not Good,guongzhou,60608,1.0,"<em>$0 至 $9,999",0.013394008305297344,0.01343533690287949,0.9460535288589952,0.013492816848448577,0.013624309084379456,10.0
+319.0,51.0,Working,Widowed,High School,No,2003,Very Bad,guangdong,60609,3.0,"$20,000 至 $34,999",0.7980076110059756,0.050292543399564245,0.05108110586413082,0.05000217983406722,0.05061655989626221,5.0
+320.0,42.0,Working,Married,Junior High,No,2014,Very Bad,Hong Kong,60616,3.0,"$15,000 至 $19,999",0.018276486329511128,0.9266952391912903,0.018407774384875956,0.018418594134379063,0.018201905959943455,5.0
+321.0,25.0,Working,Cohabit,High School,No,2011,Good,???,60616,2.0,"$10,000 至 $14,999",0.06666971087370624,0.43433428305758687,0.0685281520303867,0.3633092459390171,0.06715860809930316,5.0
+322.0,63.0,Working,Married,Junior High,No,2008,Very Bad,guang dong,60632,4.0,"$35,000 至 $49,999",0.03091481707305021,0.028571611897799543,0.028634365496286975,0.028627673262683635,0.8832515322701797,5.0
+333.0,56.0,Housewife,Married,Primary School,No,2003,Very Bad,hu chen,60616,7.0,"$20,000 至 $34,999",0.03347245254205357,0.03372295259326915,0.03374219562247764,0.8656610601241476,0.03340133911805198,5.0
+323.0,54.0,Working,Married,High School,No,1988,Not Good,guang dong,60608,4.0,"$35,000 至 $49,999",0.05050616446565006,0.050000992849012216,0.05210535447227782,0.05067984813037456,0.7967076400826854,10.0
+327.0,50.0,Working,Married,Vocational or technical school after high school,No,2010,Not Good,sun yang,60616,2.0,"$20,000 至 $34,999",0.5993624994827641,0.100285167355941,0.10000064064876721,0.10000190282253645,0.10034978968999138,5.0
+326.0,62.0,Working,Married,Junior High,No,2002,Very Bad,taishan,60616,2.0,"$15,000 至 $19,999",0.01831687151507191,0.7359795930167541,0.2087893211067931,0.018636914882377682,0.01827729947900333,5.0
+328.0,42.0,Working,Married,Junior High,No,2012,Very Bad,gangdon,60608,4.0,"$20,000 至 $34,999",0.14993586720179866,0.02579292407888857,0.7734253812140645,0.02544753432694056,0.02539829317830768,5.0
+318.0,44.0,Other,Married,Vocational or technical school after high school,No,2012,Not Good,Dalin,60616,3.0,"$20,000 至 $34,999",0.02000414165023101,0.02020356081216623,0.919225542149823,0.020438203175540206,0.020128552212239553,5.0
+329.0,45.0,Working,Divorced,High School,No,1998,Good,gangdon,60605,2.0,"$20,000 至 $34,999",0.016720879521661028,0.635623721230115,0.12307263984881923,0.20773519999629458,0.01684755940311019,10.0
+334.0,46.0,Working,Married,Junior High,No,2005,Not Good,gongdong,60632,4.0,"$20,000 至 $34,999",0.015811468443302085,0.6454352604838363,0.015631886152144118,0.015478142284700899,0.30764324263601656,5.0
+331.0,46.0,Working,Divorced,High School,No,2010,Not Good,hu bing,60608,3.0,"$20,000 至 $34,999",0.040001412876016836,0.838732803070207,0.040818171347988944,0.040092889071146755,0.0403547236346403,5.0
+335.0,55.0,Working,Married,Junior High,No,1980,Not Good,gongdong,60616,4.0,"$20,000 至 $34,999",0.033335948137839716,0.49812452556102493,0.399207477792293,0.03452418155534379,0.03480786695349859,5.0
+336.0,47.0,Working,Married,University Graduate,No,2013,Not Good,big gau,60605,1.0,"$35,000 至 $49,999",0.2,0.2,0.2,0.2,0.2,5.0
+337.0,32.0,Unemployed,Single Never Married,High School,No,2006,Not Good,Guangdong,60609,4.0,"$20,000 至 $34,999",0.028939451219955344,0.7224461753126509,0.028958055396058658,0.028702806402649456,0.19095351166868552,5.0
+93.0,44.0,Working,Married,Primary School,No,2005,Not Good,taishan,60608,4.0,"$20,000 至 $34,999",0.040281824223040046,0.04036135897464879,0.04045017520458154,0.8385598686171355,0.04034677298059418,5.0
+345.0,61.0,Housewife,Married,High School,No,2000,Good,guongzhou,60608,4.0,"$20,000 至 $34,999",0.3681456802647785,0.43064769738131825,0.06696893860776336,0.06733139345482606,0.06690629029131372,5.0
+346.0,57.0,Working,Married,Junior High,No,2012,Good,gongdong,60616,3.0,"$20,000 至 $34,999",0.35605989548499056,0.5934753941549245,0.016696149470831874,0.016668161618005564,0.017100399271247655,5.0
+350.0,53.0,Unemployed,Divorced,Vocational or technical school after high school,No,2005,Very Bad,tan ka,60616,1.0,"<em>$0 至 $9,999",0.010374161695417019,0.8087740682100167,0.01010558991904877,0.01003090920732541,0.16071527096819202,5.0
+351.0,39.0,Working,Married,High School,No,2005,Not Good,Tianjin,60616,4.0,"$20,000 至 $34,999",0.02018219510707971,0.91863929175024,0.020576894943242958,0.020550318558947678,0.020051299640489673,13.0
+355.0,59.0,Retired,Divorced,University Graduate,No,1975,Good,tun sun,60616,1.0,"<em>$0 至 $9,999",0.02872138860987801,0.029054182799846704,0.8840973587142015,0.028574060990980685,0.029553008885093303,5.0
+358.0,69.0,Retired,Married,Primary School,No,1985,Very Bad,taishan,60616,2.0,"$10,000 至 $14,999",0.24142343397410007,0.6080845046577583,0.05009609855370608,0.05020702561880705,0.050188937195628315,5.0
+359.0,31.0,Working,Married,University Graduate,No,2006,Good,Trisha,60632,7.0,"$50,000 至 $74,999",0.028978596539112007,0.8848382995563131,0.028877338307234414,0.02865391299217977,0.028651852605160785,10.0
+361.0,64.0,Working,Married,Vocational or technical school after high school,No,1998,Not Good,gongdong,60616,2.0,"$15,000 至 $19,999",0.0402683877898779,0.04031695997345086,0.8373954837152233,0.041539121645295,0.04048004687615282,5.0
+347.0,61.0,Housewife,Married,Vocational or technical school after high school,No,2003,Not Good,Guangdong,60616,2.0,"$10,000 至 $14,999",0.7953280012037067,0.050231947990150634,0.05020424020358796,0.05422973900316194,0.050006071599392694,5.0
+367.0,47.0,Working,Married,Junior High,No,2009,Good,taisha,60632,4.0,"$20,000 至 $34,999",0.03423608024722417,0.03355674709343602,0.03369419176536522,0.03343839597121423,0.8650745849227603,22.0
+364.0,66.0,Housewife,Married,Primary School,No,2003,Not Good,kaiping,60616,2.0,"<em>$0 至 $9,999",0.01669777229130708,0.017630594009876252,0.6167559718738401,0.33172732648223424,0.017188335342742198,5.0
+379.0,40.0,Working,Single Never Married,High School,No,2014,Not Good,guangdong,60616,1.0,"<em>$0 至 $9,999",0.023600556335220395,0.6615716798048289,0.022512869930263375,0.022516008230081246,0.26979888569960603,13.0
+50.0,46.0,Working,Married,Junior High,No,2010,Very Bad,Guangzhou,60616,3.0,"$15,000 至 $19,999",0.018182682148022367,0.6946656688390346,0.01848842522590061,0.01842043762957506,0.2502427861574673,14.0
+372.0,40.0,Working,Divorced,Junior High,No,2001,Good,gongdong,60616,2.0,"$15,000 至 $19,999",0.8391885883543168,0.040200404326962896,0.04014581824610296,0.04039847204932572,0.04006671702329169,4.0
+388.0,53.0,Working,Married,High School,No,1993,Good,taishan,60608,4.0,"$20,000 至 $34,999",0.028573256996418144,0.42416743120246575,0.028904213312615928,0.20341036794876954,0.3149447305397306,5.0
+389.0,25.0,Student,Married,Attended college but did not graduate,No,2011,Good,gongdong,60608,5.0,"$20,000 至 $34,999",0.017223666750303495,0.017128061711777633,0.7209906746017841,0.2279612853549113,0.016696311581223425,13.0
+767.0,64.0,Retired,Married,High School,No,1980,Good,Hong Kong,60632,4.0,"$35,000 至 $49,999",0.39944999985374435,0.06685678595181009,0.0666674413985286,0.3992107944357249,0.06781497836019204,5.0
+768.0,74.0,Retired,Married,Vocational or technical school after high school,No,2010,Not Good,Hong Kong ,60660,2.0,"$15,000 至 $19,999",0.7976086125442303,0.05003972406845096,0.05070832323931842,0.05105236684226247,0.05059097330573784,4.0
+769.0,63.0,Housewife,Married,Vocational or technical school after high school,No,2011,Very Bad,Shanyang,60605,2.0,"<em>$0 至 $9,999",0.8848619190725764,0.028847695109592862,0.028852018455065465,0.028808697904025887,0.02862966945873938,4.0
+771.0,61.0,Working,Married,Primary School,No,2008,Very Bad,Toishan,60616,4.0,"$50,000 至 $74,999",0.39944999985374435,0.06685678595181009,0.0666674413985286,0.3992107944357249,0.06781497836019204,5.0
+772.0,60.0,Housewife,Married,Junior High,No,2005,Very Bad,Toishanese ,60616,2.0,"<em>$0 至 $9,999",0.040310668694274396,0.04110021139166823,0.04016025605791071,0.8383273918643837,0.040101471991763026,5.0
+774.0,64.0,Retired,Married,Junior High,No,1997,Not Good,Guangdon ,60616,2.0,"$10,000 至 $14,999",0.5366729794119164,0.05046664486802495,0.050374637676773464,0.3124825120064526,0.050003226036832694,5.0

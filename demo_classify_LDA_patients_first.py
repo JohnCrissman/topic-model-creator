@@ -170,9 +170,8 @@ def main():
     display = DisplayNotes(document, npa[0], topic_to_word_matrix)
 
 
-    display.display_threshold_topics_m_words(0.00000001, 10)
+    display.display_threshold_topics_m_words(0.000001, 10)
     # display.display_top_n_topics_m_words(5, 1000)
-
 
 if __name__ == "__main__":
     main()

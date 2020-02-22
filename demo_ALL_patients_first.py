@@ -1,7 +1,15 @@
+# demo_ALL_patients_first.py
+
+# This file is different from demo_LDA_patients_first.py because we are adding the
+#  record_id to the doc_to_topic matrix so we can add all of the 
+#   demographics of patients and other data from patients visit for classification
+#    in demo_classify_ALL_patients_first.py
+
 """ This demonstraction file will create LDA models for the following number of topics:
         5, 10, 15, 20, 25, 30
 
-       We will use the document to topic matrices along with the barrier (label) to classify 
+       We will use the document to topic matrices, the demographics data, and other data
+       gathered from the patients visit along with the barrier (label) to classify 
         them in demo_classify_LDA_first.py.  We will save all the models in this file and 
         load them in demo_classify_LDA_first.py
         
@@ -36,10 +44,12 @@ def main():
     # creating dataframe from excel file
     df = pd.read_excel('Tracking_Log_1-10_for_NEIU_excel.xlsx')
 
-    print(df)
+    # print(df)
     # creating new dataframe file with columns barrier1 and 
     #    navigation_comments1 from df in the previous line.
     # size[330 X 2]
+    
+
     dfObj = pd.DataFrame(columns=['record_id', 'navigation_comments', 'barrier'])
     dfObj['record_id'], dfObj['navigation_comments'], dfObj['barrier']= df['record_id'], df['navigation_comments1'], df['barrier1'] 
 
@@ -60,12 +70,18 @@ def main():
 
     list_of_documents = []
     list_of_barriers = []
+    list_of_record_ids = []
     for i in range(len(dfObj)):
         list_of_documents.append(dfObj.iloc[i,1])
         list_of_barriers.append(dfObj.iloc[i,2])
+        list_of_record_ids.append(dfObj.iloc[i,0])
 
     print(list_of_documents)
     print(list_of_barriers)
+    print(list_of_record_ids)
+    print(len(list_of_documents))
+    print(len(list_of_barriers))
+    print(len(list_of_record_ids))
     # create a CorpusProcessor object to transform our lists into input for LDA
     corpus = CorpusProcessor()
     
@@ -100,13 +116,14 @@ def main():
     all_lda_models = [lda_model_5_topics, lda_model_10_topics, lda_model_15_topics, lda_model_20_topics,
                         lda_model_25_topics, lda_model_30_topics]
 
-    # creates a doc_to_topic_matrix and appends the barriers (labels) to them
-    doc_to_5_topic_matrix = lda_processor_5_topics.create_doc_to_topic_matrix(list_of_barriers)
-    doc_to_10_topic_matrix = lda_processor_10_topics.create_doc_to_topic_matrix(list_of_barriers)
-    doc_to_15_topic_matrix = lda_processor_15_topics.create_doc_to_topic_matrix(list_of_barriers)
-    doc_to_20_topic_matrix = lda_processor_20_topics.create_doc_to_topic_matrix(list_of_barriers)
-    doc_to_25_topic_matrix = lda_processor_25_topics.create_doc_to_topic_matrix(list_of_barriers)
-    doc_to_30_topic_matrix = lda_processor_30_topics.create_doc_to_topic_matrix(list_of_barriers)
+    # creates a doc_to_topic_matrix and appends the barriers (labels) and the record_id to them
+    doc_to_5_topic_matrix = lda_processor_5_topics.create_doc_to_topic_matrix(list_of_barriers, list_of_record_ids)
+    doc_to_10_topic_matrix = lda_processor_10_topics.create_doc_to_topic_matrix(list_of_barriers, list_of_record_ids)
+    doc_to_15_topic_matrix = lda_processor_15_topics.create_doc_to_topic_matrix(list_of_barriers, list_of_record_ids)
+    doc_to_20_topic_matrix = lda_processor_20_topics.create_doc_to_topic_matrix(list_of_barriers, list_of_record_ids)
+    doc_to_25_topic_matrix = lda_processor_25_topics.create_doc_to_topic_matrix(list_of_barriers, list_of_record_ids)
+    doc_to_30_topic_matrix = lda_processor_30_topics.create_doc_to_topic_matrix(list_of_barriers, list_of_record_ids)
+
 
     all_doc_to_topic_matrices = [doc_to_5_topic_matrix, doc_to_10_topic_matrix, doc_to_15_topic_matrix,
                                 doc_to_20_topic_matrix, doc_to_25_topic_matrix, doc_to_30_topic_matrix]
@@ -120,7 +137,7 @@ def main():
         5. list_of_documents
         6. list_of_barriers
     '''
-    with open('china_LDA_patients_first_5_10_15_20_25_30.pkl', 'wb') as fout:
+    with open('china_ALL_patients_first_5_10_15_20_25_30.pkl', 'wb') as fout:
         pickle.dump((vectorizer, all_lda_processors, all_lda_models, all_doc_to_topic_matrices, list_of_documents, list_of_barriers, doc_to_word_matrix), fout)
 
 

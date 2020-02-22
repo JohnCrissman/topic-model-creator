@@ -77,6 +77,7 @@ from display_notes import DisplayNotes
 def train_and_test_classifier(input_for_classifier, tuple_to_predict=[]):
     print("Training and testing multiple classifiers classifiers for", len(input_for_classifier.columns)-1,"topics")
     classifier = ClassifierProcessor(doc_to_topic_matrix= input_for_classifier, unseen_doc_features= tuple_to_predict)
+    print(input_for_classifier)
     classifier.train_and_test_classifier_k_fold()
 
 
@@ -90,8 +91,65 @@ def remove_rows_with_this_label(label, df):
     new_df.reset_index(drop=True, inplace=True) # reset index
     return new_df
 
+''' add demographics and types of service to document_to_topic_matrix '''
+def add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix):
+
+    df_demographics = pd.read_excel('PN_demographics_neiu.xlsx')
+    df_all_INFO = df_demographics.merge(document_to_topic_matrix, on='record_id', how='inner')
+    df_all_INFO.rename(columns={df_all_INFO.columns[4]: "education", df_all_INFO.columns[5]: "born_in_US",
+                                df_all_INFO.columns[6]: "year_entered_US", df_all_INFO.columns[7]: "english_fluency",
+                                df_all_INFO.columns[8]: "native_land", df_all_INFO.columns[9]: "zip_code",
+                                df_all_INFO.columns[10]: "family_members_in_household", df_all_INFO.columns[11]: "household_income"}, inplace = True)
+
+    ## one hot encoding for all attributes that need it
+    # First, create a dataframe that is a one hot encoding of a column
+    # Second, merge the two dataframes
+    # Third, delete the original column (no longer needed)
+    # Below, this is performed on each relevant column
+    dummy = pd.get_dummies(df_all_INFO['education'])
+    df = df_all_INFO.merge(dummy, left_index=True, right_index=True)
+    del df['education']
+    del df['born_in_US']
+    dummy = pd.get_dummies(df['occupational status'])
+    df = df.merge(dummy, left_index=True, right_index=True)
+    del df['occupational status']
+    dummy = pd.get_dummies(df['english_fluency'])
+    df = df.merge(dummy, left_index=True, right_index=True)
+    del df['english_fluency']
+
+    # I could probably delete this one because there are over 100 values for this attribute
+    dummy = pd.get_dummies(df['native_land'])
+    df = df.merge(dummy, left_index=True, right_index=True)
+    del df['native_land']
+
+    dummy = pd.get_dummies(df['family_members_in_household'])
+    df = df.merge(dummy, left_index=True, right_index=True)
+    del df['family_members_in_household']
+
+    dummy = pd.get_dummies(df['marital status '])
+    df = df.merge(dummy, left_index=True, right_index=True)
+    del df['marital status ']
+
+    dummy = pd.get_dummies(df['household_income'])
+    df = df.merge(dummy, left_index=True, right_index=True)
+    del df['household_income']
+    
+    cols = [0, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+    df_type_of_service = pd.read_excel('Tracking_Log_1-10_for_NEIU_excel.xlsx', usecols=cols)
+    
+    df_ready_for_classification = df.merge(df_type_of_service, on='record_id', how='inner')
+
+    # take out record id for classification purposes
+    del df_ready_for_classification['record_id']
+    
+    df_ready_for_classification.at[53,'year_entered_US'] = 2000
+    df_ready_for_classification.fillna(method='pad', inplace=True)
+    
+    df_ready_for_classification.to_csv('df_ALL_patients_first.csv', encoding='utf-8', index=False)
+    return df_ready_for_classification
+
 def main():
-    with open('china_LDA_patients_first_5_10_15_20_25_30.pkl', 'rb') as f:
+    with open('china_ALL_patients_first_5_10_15_20_25_30.pkl', 'rb') as f:
         vectorizer, all_lda_processors, all_lda_models, all_doc_to_topic_matrices, list_of_documents, list_of_barriers, doc_to_word_matrix = pickle.load(f)
 
     # # Show 5 topics and top 10 words
@@ -99,9 +157,9 @@ def main():
     
     # # Show 10 topics and top 10 words
     # show_top_n_words_for_each_topic(num_words= 10, lda_processor_object= all_lda_processors[1], filename= "topic_10_to_word_10_1st_visit.csv")
+    
 
-    print(all_doc_to_topic_matrices[0])
-    print(all_doc_to_topic_matrices[1])
+    
     # print("These are the 5 topics distribution for the first document: \n")
     # print(all_lda_models[0].transform(doc_to_word_matrix)[0])
 
@@ -114,22 +172,28 @@ def main():
     # print(all_doc_to_topic_matrices[0])
 
     # testing 5 topics
-    # train_and_test_classifier(input_for_classifier= all_doc_to_topic_matrices[0])
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier)
 
     # # testing 10 topics
-    # train_and_test_classifier(input_for_classifier= all_doc_to_topic_matrices[1])
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[1])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier)
 
     # # testing 15 topics
-    # train_and_test_classifier(input_for_classifier= all_doc_to_topic_matrices[2])
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[2])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier)
 
     # # testing 20 topics
-    # train_and_test_classifier(input_for_classifier= all_doc_to_topic_matrices[3])
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[3])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier)
 
     # # testing 25 topics
-    # train_and_test_classifier(input_for_classifier= all_doc_to_topic_matrices[4])
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[4])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier)
 
     # # testing 30 topics
-    # train_and_test_classifier(input_for_classifier= all_doc_to_topic_matrices[5])  
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[5])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier)
 
     '''
         In the following tests we are taking out label/classification
@@ -143,28 +207,34 @@ def main():
 
 
     # testing 5 topics without tuples with language/interpreter label
-    # df = remove_rows_with_this_label(label=5.0, df = all_doc_to_topic_matrices[0])
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0])
+    # df = remove_rows_with_this_label(label=5.0, df = matrix_for_classifier)
     # train_and_test_classifier(input_for_classifier= df)
 
     # testing 10 topics without tuples with language/interpreter label
-    # df = remove_rows_with_this_label(label=5.0, df = all_doc_to_topic_matrices[1])
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[1])
+    # df = remove_rows_with_this_label(label=5.0, df = matrix_for_classifier)
     # train_and_test_classifier(input_for_classifier= df)
 
     # testing 15 topics without tuples with language/interpreter label
-    # df = remove_rows_with_this_label(label=5.0, df = all_doc_to_topic_matrices[2])
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[2])
+    # df = remove_rows_with_this_label(label=5.0, df = matrix_for_classifier)
     # train_and_test_classifier(input_for_classifier= df)
 
     # testing 20 topics without tuples with language/interpreter label
-    # df = remove_rows_with_this_label(label=5.0, df = all_doc_to_topic_matrices[3])
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[3])
+    # df = remove_rows_with_this_label(label=5.0, df = matrix_for_classifier)
     # train_and_test_classifier(input_for_classifier= df)
 
     # testing 25 topics without tuples with language/interpreter label
-    # df = remove_rows_with_this_label(label=5.0, df = all_doc_to_topic_matrices[4])
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[4])
+    # df = remove_rows_with_this_label(label=5.0, df = matrix_for_classifier)
     # train_and_test_classifier(input_for_classifier= df)
 
     # testing 30 topics without tuples with language/interpreter label
-    # df = remove_rows_with_this_label(label=5.0, df = all_doc_to_topic_matrices[5])
-    # train_and_test_classifier(input_for_classifier= df)
+    matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[5])
+    df = remove_rows_with_this_label(label=5.0, df = matrix_for_classifier)
+    train_and_test_classifier(input_for_classifier= df)
 
 
     # # let's visuallize a document while highlighting most prevalent topics and their words

@@ -40,7 +40,7 @@ class LDAProcessor():
         matrix['Classification'] = list_of_classifications
         return matrix
 
-    def create_doc_to_topic_matrix(self, classes = []):
+    def create_doc_to_topic_matrix(self, classes = [], record_ids =[]):
         # lda_output = self.lda_model.fit_transform(self.doc_to_word_matrix) ### __
 
         lda_output = self.lda_model.transform(self.doc_to_word_matrix)
@@ -52,6 +52,8 @@ class LDAProcessor():
             return fin_matrix
         else:
             df_doc_to_topic['Classification'] = classes
+            if len(record_ids) is not 0:
+                df_doc_to_topic['record_id'] = record_ids
             return df_doc_to_topic
 
     def show_topics(self, n_words):
