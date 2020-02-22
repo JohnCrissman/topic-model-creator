@@ -74,6 +74,8 @@ from lda_processor import LDAProcessor
 from classifier_processor import ClassifierProcessor
 from display_notes import DisplayNotes
 
+from sklearn.datasets import load_iris
+
 def train_and_test_classifier(input_for_classifier, tuple_to_predict=[]):
     print("Training and testing multiple classifiers classifiers for", len(input_for_classifier.columns)-1,"topics")
     classifier = ClassifierProcessor(doc_to_topic_matrix= input_for_classifier, unseen_doc_features= tuple_to_predict)
@@ -148,6 +150,11 @@ def add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix):
     df_ready_for_classification.to_csv('df_ALL_patients_first.csv', encoding='utf-8', index=False)
     return df_ready_for_classification
 
+def sklearn_to_df(sklearn_dataset):
+    df = pd.DataFrame(sklearn_dataset.data, columns=sklearn_dataset.feature_names)
+    df['Classification'] = pd.Series(sklearn_dataset.target)
+    return df
+
 def main():
     with open('china_ALL_patients_first_5_10_15_20_25_30.pkl', 'rb') as f:
         vectorizer, all_lda_processors, all_lda_models, all_doc_to_topic_matrices, list_of_documents, list_of_barriers, doc_to_word_matrix = pickle.load(f)
@@ -170,6 +177,14 @@ def main():
     # print(all_lda_models[0].transform(doc_to_word_matrix)[2])
 
     # print(all_doc_to_topic_matrices[0])
+
+    ''' testing my code on a dataset that I know will perform well'''
+    iris = sklearn_to_df(load_iris())
+    print(iris)
+    print(type(iris))
+    iris.to_csv('IRIS_TESTING.csv', encoding='utf-8', index=False)
+    ##### TEST MY CLASSIFIER ON DATA THAT I KNOW SHOULD PERFORM WELL
+    train_and_test_classifier(input_for_classifier= iris)
 
     # testing 5 topics
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0])
@@ -232,9 +247,9 @@ def main():
     # train_and_test_classifier(input_for_classifier= df)
 
     # testing 30 topics without tuples with language/interpreter label
-    matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[5])
-    df = remove_rows_with_this_label(label=5.0, df = matrix_for_classifier)
-    train_and_test_classifier(input_for_classifier= df)
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[5])
+    # df = remove_rows_with_this_label(label=5.0, df = matrix_for_classifier)
+    # train_and_test_classifier(input_for_classifier= df)
 
 
     # # let's visuallize a document while highlighting most prevalent topics and their words
