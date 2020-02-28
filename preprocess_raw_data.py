@@ -54,26 +54,27 @@ def main():
     ### sending the one big joined file to csv
     df_all_INFO.to_csv('df_visits_all_together.csv', encoding='utf-8', index=False)
 
-    ### TESTING ######## YES!! to the question below.  It works!
+    ### TESTING ######## YES!! to the question below. 
+    ''' Yes, it works!!!!!! '''
     ### Can I join on a record_id even if I have multiple rows with the same record_id???
-    lst0 = [1, 2, 3]
-    lst1 = ['A1', 'A2', 'A3']
-    lst2 = ['B1', 'B2', 'B3']
-    # Calling DataFrame constructor after ziping
-    # both lists, with columns specified
-    dfAB = pd.DataFrame(list(zip(lst0,lst1,lst2)),
-                    columns =['record_id', 'A', 'B'])
-    print(dfAB)
-    lst3 = [1, 2, 3, 1, 2, 3]
-    lst4 = ['C1', 'C2', 'C3', 'C11', 'C21', 'C31']
-    lst5 = ['D1', 'D2', 'D3', 'D11', 'D21', 'D31']
-    # Calling DataFrame constructor after ziping
-    # both lists, with columns specified
-    dfCD = pd.DataFrame(list(zip(lst3, lst4, lst5)),
-                    columns =['record_id', 'C', 'D'])
-    print(dfCD)
-    dfABCD = dfAB.merge(dfCD, on='record_id', how='inner')
-    print(dfABCD)
+    # lst0 = [1, 2, 3]
+    # lst1 = ['A1', 'A2', 'A3']
+    # lst2 = ['B1', 'B2', 'B3']
+    # # Calling DataFrame constructor after ziping
+    # # both lists, with columns specified
+    # dfAB = pd.DataFrame(list(zip(lst0,lst1,lst2)),
+    #                 columns =['record_id', 'A', 'B'])
+    # print(dfAB)
+    # lst3 = [1, 2, 3, 1, 2, 3]
+    # lst4 = ['C1', 'C2', 'C3', 'C11', 'C21', 'C31']
+    # lst5 = ['D1', 'D2', 'D3', 'D11', 'D21', 'D31']
+    # # Calling DataFrame constructor after ziping
+    # # both lists, with columns specified
+    # dfCD = pd.DataFrame(list(zip(lst3, lst4, lst5)),
+    #                 columns =['record_id', 'C', 'D'])
+    # print(dfCD)
+    # dfABCD = dfAB.merge(dfCD, on='record_id', how='inner')
+    # print(dfABCD)
 
 
 
