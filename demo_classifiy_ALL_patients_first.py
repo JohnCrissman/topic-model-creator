@@ -8,11 +8,13 @@
 '''In this file we are loading objects that were saved in
     demo_LDA_patients_first.py
 
-    We are going to use the doc_to_topic matrices to test 
+    We are going to use the doc_to_topic matrices,
+    and demographic information and other data collected during patient visits to test 
     various classifiers.  We are interested whether the topic distribution
     of documents have some impact on the label/class/barrier.
 
-    Latent Dirichlet Allocation (topic models) will be the only attributes
+    Latent Dirichlet Allocation (topic models) will be the attributes,
+    along with demographics and other data collected during patient visits,
     for the tuples used to train and test the varous supervised learning
     classifiers used.
 

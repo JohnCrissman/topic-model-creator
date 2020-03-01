@@ -6,6 +6,10 @@
         4. visits_31-40.csv
         5. visits_41-50.csv
 
+        This file creates the csv used by 
+        demo_classify_ALL_patients_first.py   (taking entire matrix as input into classification algorithms)
+        demo_LDA_patients_all.py   (creating topics distribution from comments)
+
 '''
 from pprint import pprint
 import time
@@ -41,7 +45,13 @@ def main():
     df = df[df.comments.notnull()]
     df.reset_index(drop=True, inplace=True)
 
-    df.to_csv('df_each_visit_one_hot_encoding.csv', encoding='utf-8', index=False)
+    # df.to_csv('df_each_visit_one_hot_encoding.csv', encoding='utf-8', index=False)
+
+
+
+
+
+    
     # ### Reading in .csv files and turning the into pandas dataframes
     # df_visits_1_through_10 = pd.read_csv('visits_1-10.csv')
     # df_visits_11_through_20 = pd.read_csv('visits_11-20.csv')

@@ -6,7 +6,7 @@ from sklearn.model_selection import StratifiedKFold
 from sklearn.model_selection import cross_val_score
 
 # CLASSIFIERS
-
+import tensorflow as tf 
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.neural_network import MLPClassifier
 from sklearn.naive_bayes import GaussianNB
@@ -20,6 +20,9 @@ from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
 
 from sklearn.metrics import classification_report, confusion_matrix
+
+import pandas as pd
+import numpy 
 
 class ClassifierProcessor():
     """ Using a document to topic matrix, with each document's label added on, this class 
@@ -58,24 +61,36 @@ class ClassifierProcessor():
 
     def train_classifier(self):
         X = self.doc_to_topic_matrix.drop('Classification', axis=1)
-        y = self.doc_to_topic_matrix['Classification']
-
+        y = pd.factorize( self.doc_to_topic_matrix['Classification'] )[0]
+        
+        # y = self.doc_to_topic_matrix['Classification']
+        print(y)
+        print(numpy.unique(y).size)
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20)
-        self.classifier.fit(X_train, y_train)
-        y_pred = self.classifier.predict(X_test)
-        print(confusion_matrix(y_test, y_pred))
-        print(classification_report(y_test, y_pred))
+        # self.classifier.fit(X_train, y_train)
+
+        feature_columns = [tf.contrib.layers.real_valued_column("", dimension=4)]
+
+        classifier = tf.contrib.learn.DNNClassifier(feature_columns=feature_columns,hidden_units=[100, 200, 100], n_classes=18)
+        classifier.fit(X_train, y_train, steps=2000)
+
+        accuracy_score = classifier.evaluate(x=X,
+                                     y=y)["accuracy"]
+        print('Accuracy: {0:f}'.format(accuracy_score))
+
+
+        
 
     def train_and_test_classifier_k_fold(self, num_folds = 10):
         X = self.doc_to_topic_matrix.drop('Classification', axis=1)
         y = self.doc_to_topic_matrix['Classification']
 
-        scores_lr = cross_val_score(LogisticRegression(multi_class='auto', solver='lbfgs', max_iter=1000), X, y, cv=num_folds)
+        scores_lr = cross_val_score(LogisticRegression(multi_class='auto', solver='lbfgs', max_iter=10000), X, y, cv=num_folds)
         scores_svm = cross_val_score(SVC(gamma='auto'), X, y, cv=num_folds)
-        scores_rf = cross_val_score(RandomForestClassifier(max_depth=5, n_estimators=50), X, y, cv=num_folds)
+        scores_rf = cross_val_score(RandomForestClassifier(max_depth=50, n_estimators=100), X, y, cv=num_folds)
         scores_dt = cross_val_score(DecisionTreeClassifier(), X, y, cv=num_folds)
         scores_gnb = cross_val_score(GaussianNB(), X, y, cv=num_folds)
-        scores_ann = cross_val_score(MLPClassifier(), X, y, cv=num_folds)
+        scores_ann = cross_val_score(MLPClassifier(max_iter=1000), X, y, cv=num_folds)
         
 
         print("Average score for Logistic Regression:", round(mean(scores_lr),2))
