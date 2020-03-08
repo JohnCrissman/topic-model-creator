@@ -70,7 +70,13 @@ def convert_df_using_technique(df):
                         print(new_data)   # rows up to barrier != Language/interpreter
                         print(new_data.iloc[len(new_data) - 1]['Classification'])   # barrier for the last row (will not be language/interpreter)
 
-                        
+                        # trying to aggregating the rows.. first taking the sum
+                        # pprint(new_data.append(new_data.sum().rename('Total')))
+                        print("HEY!!!!!!!!!!!!!!")
+                        new_new_data = new_data.append(new_data.sum().rename('000'))
+                        print(new_new_data)
+                        # print(new_new_data[len(new_new_data)-1]['Classification'])
+
 
                         
         else:
