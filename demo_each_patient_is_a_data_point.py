@@ -29,6 +29,7 @@ import csv
 import math
 import time
 import pickle
+import numpy as np
 
 from corpus_processor import CorpusProcessor
 from lda_processor import LDAProcessor
@@ -36,8 +37,58 @@ from lda_processor import LDAProcessor
 ''' Input is a list of patients visits sorted by patient number and then for
 each patient the list is sorted from 1st visit to the their last visit'''
 def convert_df_using_technique(df):
+    how_many_records = [0] * len(df)
+    can_we_append = True # flag to let us know when to skip rows we are not using (when flag is false)
+    input_data = pd.DataFrame() # creates a new dataframe that is empty
+    
+    for i in range(len(df)):
+        x = df.loc[i, 'record_id']
+        if i < (len(df) - 1):
+            if df.loc[i+1, 'record_id'] == x:
+                continue
+            else:
+                new_data = df.loc[df['record_id'] == x]
+                if len(new_data) is 1:
+                    input_data = input_data.append(new_data)
+                else:
+                    if len(np.unique(new_data.Classification)) == 1 or new_data.iloc[0]['Classification'] != 'Language/interpreter':
+                        input_data = input_data.append(new_data.iloc[[0]])
+                    
+                        
+                         
+                    else:
+                        print(np.where(new_data['Classification'] != 'Language/interpreter'))
+                        print(type(np.where(new_data['Classification'] != 'Language/interpreter')))
+                        print(np.where(new_data['Classification'] != 'Language/interpreter')[0])
+                        print(type(np.where(new_data['Classification'] != 'Language/interpreter')[0]))
+                        print(np.where(new_data['Classification'] != 'Language/interpreter')[0].size)
+                        print(np.where(new_data['Classification'] != 'Language/interpreter')[0][0])
 
+                        last_index_of_new_data = np.where(new_data['Classification'] != 'Language/interpreter')[0][0]
+                        new_data = new_data[0:np.where(new_data['Classification'] != 'Language/interpreter')[0][0]+1]
+                        print(type(np.where(new_data['Classification'] != 'Language/interpreter')[0][0]))
+                        print(new_data)   # rows up to barrier != Language/interpreter
+                        print(new_data.iloc[len(new_data) - 1]['Classification'])   # barrier for the last row (will not be language/interpreter)
 
+                        
+
+                        
+        else:
+            
+            new_data = df.loc[df['record_id'] == x]
+            if len(new_data) is 1:
+                input_data = input_data.append(new_data)
+            else:
+                if len(np.unique(new_data.Classification)) == 1:
+                    input_data = input_data.append(new_data.iloc[[0]])
+                    
+
+            
+
+    print(input_data)
+    
+
+    return 5
 
 def main():
 
@@ -52,7 +103,7 @@ def main():
     df = convert_df_using_technique(df = dataframe)
 
     print(df)
-    df.to_csv('df_each_patient_is_a_data_point.csv', encoding='utf-8', index=False)
+    # df.to_csv('df_each_patient_is_a_data_point.csv', encoding='utf-8', index=False)
 
     # # creating new dataframe file with columns Classification
     # # comments and record_id from df in the previous line.
