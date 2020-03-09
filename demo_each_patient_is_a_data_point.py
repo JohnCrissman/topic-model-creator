@@ -49,32 +49,41 @@ def convert_df_using_technique(df):
             else:
                 new_data = df.loc[df['record_id'] == x]
                 if len(new_data) is 1:
-                    input_data = input_data.append(new_data)
+                    input_data = input_data.append(new_data, ignore_index=True)
                 else:
                     if len(np.unique(new_data.Classification)) == 1 or new_data.iloc[0]['Classification'] != 'Language/interpreter':
-                        input_data = input_data.append(new_data.iloc[[0]])
+                        input_data = input_data.append(new_data.iloc[[0]],ignore_index=True)
                     
                         
                          
                     else:
-                        print(np.where(new_data['Classification'] != 'Language/interpreter'))
-                        print(type(np.where(new_data['Classification'] != 'Language/interpreter')))
-                        print(np.where(new_data['Classification'] != 'Language/interpreter')[0])
-                        print(type(np.where(new_data['Classification'] != 'Language/interpreter')[0]))
-                        print(np.where(new_data['Classification'] != 'Language/interpreter')[0].size)
-                        print(np.where(new_data['Classification'] != 'Language/interpreter')[0][0])
+                        # print(np.where(new_data['Classification'] != 'Language/interpreter'))
+                        # print(type(np.where(new_data['Classification'] != 'Language/interpreter')))
+                        # print(np.where(new_data['Classification'] != 'Language/interpreter')[0])
+                        # print(type(np.where(new_data['Classification'] != 'Language/interpreter')[0]))
+                        # print(np.where(new_data['Classification'] != 'Language/interpreter')[0].size)
+                        # print(np.where(new_data['Classification'] != 'Language/interpreter')[0][0])
 
-                        last_index_of_new_data = np.where(new_data['Classification'] != 'Language/interpreter')[0][0]
+                        # last_index_of_new_data = np.where(new_data['Classification'] != 'Language/interpreter')[0][0]
                         new_data = new_data[0:np.where(new_data['Classification'] != 'Language/interpreter')[0][0]+1]
-                        print(type(np.where(new_data['Classification'] != 'Language/interpreter')[0][0]))
-                        print(new_data)   # rows up to barrier != Language/interpreter
-                        print(new_data.iloc[len(new_data) - 1]['Classification'])   # barrier for the last row (will not be language/interpreter)
+                        # print(type(np.where(new_data['Classification'] != 'Language/interpreter')[0][0]))
+                        # print(new_data)   # rows up to barrier != Language/interpreter
+                        # print(new_data.iloc[len(new_data) - 1]['Classification'])   # barrier for the last row (will not be language/interpreter)
 
                         # trying to aggregating the rows.. first taking the sum
                         # pprint(new_data.append(new_data.sum().rename('Total')))
-                        print("HEY!!!!!!!!!!!!!!")
+                        # print("HEY!!!!!!!!!!!!!!")
                         new_new_data = new_data.append(new_data.sum().rename('000'))
-                        print(new_new_data)
+                        new_new_data.iloc[len(new_new_data)-1, new_new_data.columns.get_loc('record_id')] = x
+                        
+
+                        ### ISSUE:  summing up barriers as well as one long string
+                        ### 1. first, check to see if that is the only issue (compare new csv with one_hot_encoding csv)
+                        ### 2. fix the issue.
+
+                        # print(new_new_data)
+                        # print(new_new_data[len(new_new_data)-1])
+                        input_data = input_data.append(new_new_data.iloc[[len(new_new_data)-1]], ignore_index=True)
                         # print(new_new_data[len(new_new_data)-1]['Classification'])
 
 
@@ -83,10 +92,35 @@ def convert_df_using_technique(df):
             
             new_data = df.loc[df['record_id'] == x]
             if len(new_data) is 1:
-                input_data = input_data.append(new_data)
+                input_data = input_data.append(new_data, ignore_index=True)
             else:
-                if len(np.unique(new_data.Classification)) == 1:
-                    input_data = input_data.append(new_data.iloc[[0]])
+                if len(np.unique(new_data.Classification)) == 1 or new_data.iloc[0]['Classification'] != 'Language/interpreter':
+                        input_data = input_data.append(new_data.iloc[[0]], ignore_index=True)         
+                else:
+                    # print(np.where(new_data['Classification'] != 'Language/interpreter'))
+                    # print(type(np.where(new_data['Classification'] != 'Language/interpreter')))
+                    # print(np.where(new_data['Classification'] != 'Language/interpreter')[0])
+                    # print(type(np.where(new_data['Classification'] != 'Language/interpreter')[0]))
+                    # print(np.where(new_data['Classification'] != 'Language/interpreter')[0].size)
+                    # print(np.where(new_data['Classification'] != 'Language/interpreter')[0][0])
+
+                    # last_index_of_new_data = np.where(new_data['Classification'] != 'Language/interpreter')[0][0]
+                    new_data = new_data[0:np.where(new_data['Classification'] != 'Language/interpreter')[0][0]+1]
+                    # print(type(np.where(new_data['Classification'] != 'Language/interpreter')[0][0]))
+                    # print(new_data)   # rows up to barrier != Language/interpreter
+                    # print(new_data.iloc[len(new_data) - 1]['Classification'])   # barrier for the last row (will not be language/interpreter)
+
+                    # trying to aggregating the rows.. first taking the sum
+                    # pprint(new_data.append(new_data.sum().rename('Total')))
+                    # print("HEY!!!!!!!!!!!!!!")
+                    new_new_data = new_data.append(new_data.sum().rename('000'))
+                    new_new_data.iloc[len(new_new_data)-1, new_new_data.columns.get_loc('record_id')] = x
+                    
+                    # print(new_new_data)
+                    # print(new_new_data[len(new_new_data)-1])
+                    input_data = input_data.append(new_new_data.iloc[[len(new_new_data)-1]], ignore_index=True)
+                    # print(new_new_data[len(new_new_data)-1]['Classification'])
+                
                     
 
             
@@ -94,7 +128,7 @@ def convert_df_using_technique(df):
     print(input_data)
     
 
-    return 5
+    return input_data
 
 def main():
 
@@ -107,9 +141,9 @@ def main():
 
 
     df = convert_df_using_technique(df = dataframe)
-
-    print(df)
-    # df.to_csv('df_each_patient_is_a_data_point.csv', encoding='utf-8', index=False)
+    
+    
+    df.to_csv('df_each_patient_is_a_data_point.csv', encoding='utf-8', index=False)
 
     # # creating new dataframe file with columns Classification
     # # comments and record_id from df in the previous line.
