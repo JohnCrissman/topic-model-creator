@@ -43,6 +43,7 @@ def convert_df_using_technique(df):
     
     for i in range(len(df)):
         x = df.loc[i, 'record_id']
+        
         if i < (len(df) - 1):
             if df.loc[i+1, 'record_id'] == x:
                 continue
@@ -66,6 +67,9 @@ def convert_df_using_technique(df):
 
                         # last_index_of_new_data = np.where(new_data['Classification'] != 'Language/interpreter')[0][0]
                         new_data = new_data[0:np.where(new_data['Classification'] != 'Language/interpreter')[0][0]+1]
+                        new_data = new_data.reset_index(drop=True)
+                        
+                        # barrier = new_data.iloc[0, 'Classification']
                         # print(type(np.where(new_data['Classification'] != 'Language/interpreter')[0][0]))
                         # print(new_data)   # rows up to barrier != Language/interpreter
                         # print(new_data.iloc[len(new_data) - 1]['Classification'])   # barrier for the last row (will not be language/interpreter)
@@ -75,6 +79,8 @@ def convert_df_using_technique(df):
                         # print("HEY!!!!!!!!!!!!!!")
                         new_new_data = new_data.append(new_data.sum().rename('000'))
                         new_new_data.iloc[len(new_new_data)-1, new_new_data.columns.get_loc('record_id')] = x
+                        barrier = new_data.loc[len(new_data)-1, 'Classification']
+                        new_new_data.iloc[len(new_new_data)-1, new_new_data.columns.get_loc('Classification')] = barrier
                         
 
                         ### ISSUE:  summing up barriers as well as one long string
@@ -106,6 +112,8 @@ def convert_df_using_technique(df):
 
                     # last_index_of_new_data = np.where(new_data['Classification'] != 'Language/interpreter')[0][0]
                     new_data = new_data[0:np.where(new_data['Classification'] != 'Language/interpreter')[0][0]+1]
+                    new_data = new_data.reset_index(drop=True)
+                    
                     # print(type(np.where(new_data['Classification'] != 'Language/interpreter')[0][0]))
                     # print(new_data)   # rows up to barrier != Language/interpreter
                     # print(new_data.iloc[len(new_data) - 1]['Classification'])   # barrier for the last row (will not be language/interpreter)
@@ -115,6 +123,8 @@ def convert_df_using_technique(df):
                     # print("HEY!!!!!!!!!!!!!!")
                     new_new_data = new_data.append(new_data.sum().rename('000'))
                     new_new_data.iloc[len(new_new_data)-1, new_new_data.columns.get_loc('record_id')] = x
+                    barrier = new_data.loc[len(new_data)-1, 'Classification']
+                    new_new_data.iloc[len(new_new_data)-1, new_new_data.columns.get_loc('Classification')] = barrier
                     
                     # print(new_new_data)
                     # print(new_new_data[len(new_new_data)-1])
@@ -145,96 +155,101 @@ def main():
     
     df.to_csv('df_each_patient_is_a_data_point.csv', encoding='utf-8', index=False)
 
-    # # creating new dataframe file with columns Classification
-    # # comments and record_id from df in the previous line.
-    # dfObj = pd.DataFrame(columns=['record_id', 'navigation_comments', 'barrier'])
-    # dfObj['record_id'], dfObj['navigation_comments'], dfObj['barrier'] = df['record_id'], df['comments'], df['Classification']
-    # print(dfObj) # [1486 rows x 3 columns]
+    # creating new dataframe file with columns Classification
+    # comments and record_id from df in the previous line.
+    dfObj = pd.DataFrame(columns=['record_id', 'navigation_comments', 'barrier'])
+    dfObj['record_id'], dfObj['navigation_comments'], dfObj['barrier'] = df['record_id'], df['comments'], df['Classification']
+    print(dfObj) # [1486 rows x 3 columns]
 
-    # del df['comments']
-    # del df['Classification']
-    # del df['record_id']
-    # other_patient_visit_data = df
+    del df['comments']
+    del df['Classification']
+    del df['record_id']
+    other_patient_visit_data = df
     
-    # print('Here is the dataframe!!!!!')
-    # print(other_patient_visit_data)
-    # # create list of strings s.t. each string is a comment
-    # # create list of strings s.t. each string is a barrier
-    # list_of_documents = []
-    # list_of_barriers = []
-    # list_of_record_ids = []
-    # for i in range(len(dfObj)):
-    #     list_of_documents.append(dfObj.iloc[i,1])
-    #     list_of_barriers.append(dfObj.iloc[i,2])
-    #     list_of_record_ids.append(dfObj.iloc[i,0])
+    print('Here is the dataframe!!!!!')
+    print(other_patient_visit_data)
+    # create list of strings s.t. each string is a comment
+    # create list of strings s.t. each string is a barrier
+    list_of_documents = []
+    list_of_barriers = []
+    list_of_record_ids = []
+    for i in range(len(dfObj)):
+        list_of_documents.append(dfObj.iloc[i,1])
+        list_of_barriers.append(dfObj.iloc[i,2])
+        list_of_record_ids.append(dfObj.iloc[i,0])
     
-    # print(len(list_of_documents))
-    # print(len(list_of_barriers))
-    # print(len(list_of_record_ids))
+    print(len(list_of_documents))
+    print(len(list_of_barriers))
+    print(len(list_of_record_ids))
 
-    # # create a CorpusProcessor object to transform our lists into input for LDA
-    # corpus = CorpusProcessor()
+    print(list_of_documents)
+    print(list_of_barriers)
+    print(list_of_record_ids)
 
-    # list_of_list_of_words = corpus.create_list_of_list_of_words(list_of_documents)
-    # doc_to_word_matrix = corpus.create_doc_to_word_matrix(list_of_list_of_words)
+    # create a CorpusProcessor object to transform our lists into input for LDA
+    corpus = CorpusProcessor()
 
-    # vectorizer = corpus.get_vectorizer()
+    list_of_list_of_words = corpus.create_list_of_list_of_words(list_of_documents)
+    doc_to_word_matrix = corpus.create_doc_to_word_matrix(list_of_list_of_words)
 
-    # # creating distinct LDA models for different number of topics (5, 10, 15, 20, 25, 30)
-    # lda_processor_5_topics = LDAProcessor(doc_to_word_matrix= doc_to_word_matrix, num_topics=5, vectorizer= vectorizer, exists= False)
-    # lda_processor_10_topics = LDAProcessor(doc_to_word_matrix= doc_to_word_matrix, num_topics=10, vectorizer= vectorizer, exists= False)
-    # lda_processor_15_topics = LDAProcessor(doc_to_word_matrix= doc_to_word_matrix, num_topics=15, vectorizer= vectorizer, exists= False)
-    # lda_processor_20_topics = LDAProcessor(doc_to_word_matrix= doc_to_word_matrix, num_topics=20, vectorizer= vectorizer, exists= False)
-    # lda_processor_25_topics = LDAProcessor(doc_to_word_matrix= doc_to_word_matrix, num_topics=25, vectorizer= vectorizer, exists= False)
-    # lda_processor_30_topics = LDAProcessor(doc_to_word_matrix= doc_to_word_matrix, num_topics=30, vectorizer= vectorizer, exists= False)
+    vectorizer = corpus.get_vectorizer()
 
-    # all_lda_processors = [lda_processor_5_topics, lda_processor_10_topics, lda_processor_15_topics, lda_processor_20_topics,
-    #                         lda_processor_25_topics, lda_processor_30_topics]
+    # creating distinct LDA models for different number of topics (5, 10, 15, 20, 25, 30)
+    lda_processor_5_topics = LDAProcessor(doc_to_word_matrix= doc_to_word_matrix, num_topics=5, vectorizer= vectorizer, exists= False)
+    lda_processor_10_topics = LDAProcessor(doc_to_word_matrix= doc_to_word_matrix, num_topics=10, vectorizer= vectorizer, exists= False)
+    lda_processor_15_topics = LDAProcessor(doc_to_word_matrix= doc_to_word_matrix, num_topics=15, vectorizer= vectorizer, exists= False)
+    lda_processor_20_topics = LDAProcessor(doc_to_word_matrix= doc_to_word_matrix, num_topics=20, vectorizer= vectorizer, exists= False)
+    lda_processor_25_topics = LDAProcessor(doc_to_word_matrix= doc_to_word_matrix, num_topics=25, vectorizer= vectorizer, exists= False)
+    lda_processor_30_topics = LDAProcessor(doc_to_word_matrix= doc_to_word_matrix, num_topics=30, vectorizer= vectorizer, exists= False)
 
-    # # storing all the LDA models in variables in order to save
-    # lda_model_5_topics = lda_processor_5_topics.get_lda_model()
-    # lda_model_10_topics = lda_processor_10_topics.get_lda_model()
-    # lda_model_15_topics = lda_processor_15_topics.get_lda_model()
-    # lda_model_20_topics = lda_processor_20_topics.get_lda_model()
-    # lda_model_25_topics = lda_processor_25_topics.get_lda_model()
-    # lda_model_30_topics = lda_processor_30_topics.get_lda_model()
+    all_lda_processors = [lda_processor_5_topics, lda_processor_10_topics, lda_processor_15_topics, lda_processor_20_topics,
+                            lda_processor_25_topics, lda_processor_30_topics]
 
-    # all_lda_models = [lda_model_5_topics, lda_model_10_topics, lda_model_15_topics, lda_model_20_topics,
-    #                     lda_model_25_topics, lda_model_30_topics]
+    # storing all the LDA models in variables in order to save
+    lda_model_5_topics = lda_processor_5_topics.get_lda_model()
+    lda_model_10_topics = lda_processor_10_topics.get_lda_model()
+    lda_model_15_topics = lda_processor_15_topics.get_lda_model()
+    lda_model_20_topics = lda_processor_20_topics.get_lda_model()
+    lda_model_25_topics = lda_processor_25_topics.get_lda_model()
+    lda_model_30_topics = lda_processor_30_topics.get_lda_model()
 
-    # # creates a doc_to_topic_matrix and appends the barriers (labels) and the record_id to them
-    # doc_to_5_topic_matrix = lda_processor_5_topics.create_doc_to_topic_matrix(list_of_barriers, list_of_record_ids)
-    # doc_to_10_topic_matrix = lda_processor_10_topics.create_doc_to_topic_matrix(list_of_barriers, list_of_record_ids)
-    # doc_to_15_topic_matrix = lda_processor_15_topics.create_doc_to_topic_matrix(list_of_barriers, list_of_record_ids)
-    # doc_to_20_topic_matrix = lda_processor_20_topics.create_doc_to_topic_matrix(list_of_barriers, list_of_record_ids)
-    # doc_to_25_topic_matrix = lda_processor_25_topics.create_doc_to_topic_matrix(list_of_barriers, list_of_record_ids)
-    # doc_to_30_topic_matrix = lda_processor_30_topics.create_doc_to_topic_matrix(list_of_barriers, list_of_record_ids)
+    all_lda_models = [lda_model_5_topics, lda_model_10_topics, lda_model_15_topics, lda_model_20_topics,
+                        lda_model_25_topics, lda_model_30_topics]
 
-    # # concatenating the rest of the data from the patients visits with the patient navigator
-    # doc_to_5_topic_matrix = pd.concat([doc_to_5_topic_matrix, other_patient_visit_data], axis=1)
-    # doc_to_10_topic_matrix = pd.concat([doc_to_10_topic_matrix, other_patient_visit_data], axis=1)
-    # doc_to_15_topic_matrix = pd.concat([doc_to_15_topic_matrix, other_patient_visit_data], axis=1)
-    # doc_to_20_topic_matrix = pd.concat([doc_to_20_topic_matrix, other_patient_visit_data], axis=1)
-    # doc_to_25_topic_matrix = pd.concat([doc_to_25_topic_matrix, other_patient_visit_data], axis=1)
-    # doc_to_30_topic_matrix = pd.concat([doc_to_30_topic_matrix, other_patient_visit_data], axis=1)
+    # creates a doc_to_topic_matrix and appends the barriers (labels) and the record_id to them
+    doc_to_5_topic_matrix = lda_processor_5_topics.create_doc_to_topic_matrix(list_of_barriers, list_of_record_ids)
+    doc_to_10_topic_matrix = lda_processor_10_topics.create_doc_to_topic_matrix(list_of_barriers, list_of_record_ids)
+    doc_to_15_topic_matrix = lda_processor_15_topics.create_doc_to_topic_matrix(list_of_barriers, list_of_record_ids)
+    doc_to_20_topic_matrix = lda_processor_20_topics.create_doc_to_topic_matrix(list_of_barriers, list_of_record_ids)
+    doc_to_25_topic_matrix = lda_processor_25_topics.create_doc_to_topic_matrix(list_of_barriers, list_of_record_ids)
+    doc_to_30_topic_matrix = lda_processor_30_topics.create_doc_to_topic_matrix(list_of_barriers, list_of_record_ids)
 
-    # print(doc_to_5_topic_matrix)
+    # concatenating the rest of the data from the patients visits with the patient navigator
+    doc_to_5_topic_matrix = pd.concat([doc_to_5_topic_matrix, other_patient_visit_data], axis=1)
+    doc_to_10_topic_matrix = pd.concat([doc_to_10_topic_matrix, other_patient_visit_data], axis=1)
+    doc_to_15_topic_matrix = pd.concat([doc_to_15_topic_matrix, other_patient_visit_data], axis=1)
+    doc_to_20_topic_matrix = pd.concat([doc_to_20_topic_matrix, other_patient_visit_data], axis=1)
+    doc_to_25_topic_matrix = pd.concat([doc_to_25_topic_matrix, other_patient_visit_data], axis=1)
+    doc_to_30_topic_matrix = pd.concat([doc_to_30_topic_matrix, other_patient_visit_data], axis=1)
 
-    # all_doc_to_topic_matrices = [doc_to_5_topic_matrix, doc_to_10_topic_matrix, doc_to_15_topic_matrix,
-    #                             doc_to_20_topic_matrix, doc_to_25_topic_matrix, doc_to_30_topic_matrix]
+    print(doc_to_5_topic_matrix)
 
-    # # saves the following objects to a pickle file
-    # '''
-    #     1. vectorizer
-    #     2. all_lda_processors
-    #     3. all_lda_models
-    #     4. all_doc_to_topic_matrices
-    #     5. list_of_documents
-    #     6. list_of_barriers
-    #     7. document_to_word matrix
-    # '''
-    # with open('china_ALL_patients_ALL_5_10_15_20_25_30.pkl', 'wb') as fout:
-    #     pickle.dump((vectorizer, all_lda_processors, all_lda_models, all_doc_to_topic_matrices, list_of_documents, list_of_barriers, doc_to_word_matrix, other_patient_visit_data), fout)
+    all_doc_to_topic_matrices = [doc_to_5_topic_matrix, doc_to_10_topic_matrix, doc_to_15_topic_matrix,
+                                doc_to_20_topic_matrix, doc_to_25_topic_matrix, doc_to_30_topic_matrix]
+
+    # saves the following objects to a pickle file
+    '''
+        1. vectorizer
+        2. all_lda_processors
+        3. all_lda_models
+        4. all_doc_to_topic_matrices
+        5. list_of_documents
+        6. list_of_barriers
+        7. document_to_word matrix
+        8. other_patient_visit_data
+    '''
+    with open('china_ALL_patients_each_patient_one_data_point_ALL_5_10_15_20_25_30.pkl', 'wb') as fout:
+        pickle.dump((vectorizer, all_lda_processors, all_lda_models, all_doc_to_topic_matrices, list_of_documents, list_of_barriers, doc_to_word_matrix, other_patient_visit_data), fout)
 
 if __name__ == "__main__":
     main()
