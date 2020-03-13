@@ -36,6 +36,13 @@ from lda_processor import LDAProcessor
 
 ''' Input is a list of patients visits sorted by patient number and then for
 each patient the list is sorted from 1st visit to the their last visit'''
+
+def set_equal_to_one(x):
+    if x > 1:
+        return 1
+    else:
+        return x
+
 def convert_df_using_technique(df):
     how_many_records = [0] * len(df)
     can_we_append = True # flag to let us know when to skip rows we are not using (when flag is false)
@@ -81,7 +88,8 @@ def convert_df_using_technique(df):
                         new_new_data.iloc[len(new_new_data)-1, new_new_data.columns.get_loc('record_id')] = x
                         barrier = new_data.loc[len(new_data)-1, 'Classification']
                         new_new_data.iloc[len(new_new_data)-1, new_new_data.columns.get_loc('Classification')] = barrier
-                        
+                        length_of_action_taken = new_data.loc[len(new_data)-1, 'length_of_action_taken']
+                        new_new_data.iloc[len(new_new_data)-1, new_new_data.columns.get_loc('length_of_action_taken')] = length_of_action_taken
 
                         ### ISSUE:  summing up barriers as well as one long string
                         ### 1. first, check to see if that is the only issue (compare new csv with one_hot_encoding csv)
@@ -125,7 +133,37 @@ def convert_df_using_technique(df):
                     new_new_data.iloc[len(new_new_data)-1, new_new_data.columns.get_loc('record_id')] = x
                     barrier = new_data.loc[len(new_data)-1, 'Classification']
                     new_new_data.iloc[len(new_new_data)-1, new_new_data.columns.get_loc('Classification')] = barrier
+                    length_of_action_taken = new_data.loc[len(new_data)-1, 'length_of_action_taken']
+                    new_new_data.iloc[len(new_new_data)-1, new_new_data.columns.get_loc('length_of_action_taken')] = length_of_action_taken
                     
+                    ## if value is greater than 1, set value to 1.
+                    
+
+                    # new_new_data['All Languages (select all that apply) (choice=Cantonese)_x'].loc[(new_new_data['All Languages (select all that apply) (choice=Cantonese)_x'] > 1)] = 1
+                    # new_new_data['All Languages (select all that apply) (choice=Mandarin)_x'].loc[(new_new_data['All Languages (select all that apply) (choice=Mandarin)_x'] > 1)] = 1
+                    # new_new_data['All Languages (select all that apply) (choice=Toishanese)_x'].loc[(new_new_data['All Languages (select all that apply) (choice=Toishanese)_x'] > 1)] = 1
+                    # new_new_data['All Languages (select all that apply) (choice=English)_x'].loc[(new_new_data['All Languages (select all that apply) (choice=English)_x'] > 1)] = 1
+
+                    # new_new_data['Type of service (select all that apply) (choice=Breast - Screening)_x'].loc[(new_new_data['Type of service (select all that apply) (choice=Breast - Screening)_x'] > 1)] = 1
+                    # new_new_data['Type of service (select all that apply) (choice=Breast - Dx (MMG/US/MRI))_x'].loc[(new_new_data['Type of service (select all that apply) (choice=Breast - Dx (MMG/US/MRI))_x'] > 1)] = 1
+                    # new_new_data['Type of service (select all that apply) (choice=Breast - Bx (US/Stereotactic))_x'].loc[(new_new_data['Type of service (select all that apply) (choice=Breast - Bx (US/Stereotactic))_x'] > 1)] = 1
+                    # new_new_data['Type of service (select all that apply) (choice=Breast - F/u (results))_x'].loc[(new_new_data['Type of service (select all that apply) (choice=Breast - F/u (results))_x'] > 1)] = 1
+
+                    # new_new_data['Type of service (select all that apply) (choice=Breast - Tx (Surgery))_x'].loc[(new_new_data['Type of service (select all that apply) (choice=Breast - Tx (Surgery))_x'] > 1)] = 1
+                    # new_new_data['Type of service (select all that apply) (choice=Breast - Other)_x'].loc[(new_new_data['Type of service (select all that apply) (choice=Breast - Other)_x'] > 1)] = 1
+                    # new_new_data['Type of service (select all that apply) (choice=Cervical - Screening)_x'].loc[(new_new_data['Type of service (select all that apply) (choice=Cervical - Screening)_x'] > 1)] = 1
+                    # new_new_data['Type of service (select all that apply) (choice=Cervical - Dx (COLPO))_x'].loc[(new_new_data['Type of service (select all that apply) (choice=Cervical - Dx (COLPO))_x'] > 1)] = 1
+
+                    # new_new_data['Type of service (select all that apply) (choice=Cervical - Bx (COLPO))_x'].loc[(new_new_data['Type of service (select all that apply) (choice=Cervical - Bx (COLPO))_x'] > 1)] = 1
+                    # new_new_data['Type of service (select all that apply) (choice=Cervical - F/u (results))_x'].loc[(new_new_data['Type of service (select all that apply) (choice=Cervical - F/u (results))_x'] > 1)] = 1
+                    # new_new_data['Type of service (select all that apply) (choice=Cervical - Tx (Surgery/LEEP/CONE))_x'].loc[(new_new_data['Type of service (select all that apply) (choice=Cervical - Tx (Surgery/LEEP/CONE))_x'] > 1)] = 1
+                    # new_new_data['Type of service (select all that apply) (choice=Cervical - Other)_x'].loc[(new_new_data['Type of service (select all that apply) (choice=Cervical - Other)_x'] > 1)] = 1
+
+                    # new_new_data['Type of service (select all that apply) (choice=Cervical - F/u (results))_x'].loc[(new_new_data['Type of service (select all that apply) (choice=Cervical - F/u (results))_x'] > 1)] = 1
+                    # new_new_data['Type of service (select all that apply) (choice=Cervical - Tx (Surgery/LEEP/CONE))_x'].loc[(new_new_data['Type of service (select all that apply) (choice=Cervical - Tx (Surgery/LEEP/CONE))_x'] > 1)] = 1
+                    # new_new_data['Type of service (select all that apply) (choice=Cervical - Other)_x'].loc[(new_new_data['Type of service (select all that apply) (choice=Cervical - Other)_x'] > 1)] = 1
+                    
+
                     # print(new_new_data)
                     # print(new_new_data[len(new_new_data)-1])
                     input_data = input_data.append(new_new_data.iloc[[len(new_new_data)-1]], ignore_index=True)
@@ -135,9 +173,23 @@ def convert_df_using_technique(df):
 
             
 
-    print(input_data)
-    
+    input_data['length_of_action_taken'].fillna((input_data['length_of_action_taken'].mean()), inplace=True)
+    # modDfObj = input_data.apply(lambda x: 1 if (x.name != 'record_id') & (x.name != 'Classification') & (x.name != 'length_of_action_taken') & (x.name != 'comments') & (x > 1) else x)
 
+    # if a value is greater than 1, set it to 1
+    # input_data[['All Languages (select all that apply) (choice=Cantonese)_x', 'All Languages (select all that apply) (choice=Mandarin)_x',
+    #             'All Languages (select all that apply) (choice=Toishanese)_x', 'All Languages (select all that apply) (choice=English)_x',
+    #             'Type of service (select all that apply) (choice=Breast - Screening)_x', 'Type of service (select all that apply) (choice=Breast - Dx (MMG/US/MRI))_x',
+    #             'Type of service (select all that apply) (choice=Breast - Bx (US/Stereotactic))_x', 'Type of service (select all that apply) (choice=Breast - F/u (results))_x',
+    #             'Type of service (select all that apply) (choice=Breast - Tx (Surgery))_x', 'Type of service (select all that apply) (choice=Breast - Other)_x',
+    #             'Type of service (select all that apply) (choice=Cervical - Screening)_x', 'Type of service (select all that apply) (choice=Cervical - Dx (COLPO))_x',
+    #             'Type of service (select all that apply) (choice=Cervical - Bx (COLPO))_x', 'Type of service (select all that apply) (choice=Cervical - F/u (results))_x',
+    #             'Type of service (select all that apply) (choice=Cervical - Tx (Surgery/LEEP/CONE))_x', 'Type of service (select all that apply) (choice=Cervical - Other)_x',
+    #             'Type of service (select all that apply) (choice=Other - health insurance)_x', 'Type of service (select all that apply) (choice=Other - medical)_x',
+    #             'Type of service (select all that apply) (choice=Other - other)_x', 'Cantonese', 'Mandarin', 'Toishanese', 'Email', 'In person', 'Online instant message',
+    #             'Phone call', 'Social/practical support_x', 'Text message', 'Accompaniment', 'Action pending / No action', 'Arrangements', 'Education', 'Language/interpreter_y',
+    #             'Records/Recordkeeping', 'Referrals/ Direct Contact', 'Scheduling appointment', 'Social/practical support_y', 'Support']].apply(set_equal_to_one)
+    
     return input_data
 
 def main():

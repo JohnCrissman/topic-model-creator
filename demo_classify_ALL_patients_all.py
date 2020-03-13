@@ -208,8 +208,8 @@ def main():
     # train_and_test_classifier(input_for_classifier= iris)
 
     # testing 5 topics
-    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0])
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier)
+    matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0])
+    train_and_test_classifier(input_for_classifier= matrix_for_classifier)
 
     # # testing 10 topics
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[1])
@@ -268,30 +268,30 @@ def main():
     # train_and_test_classifier(input_for_classifier= df)
 
     # testing 30 topics without tuples with language/interpreter label
-    matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[5])
-    df = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    train_and_test_classifier(input_for_classifier= df)
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[5])
+    # df = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
+    # train_and_test_classifier(input_for_classifier= df)
 
 
-    # let's visuallize a document while highlighting most prevalent topics and their words
-    "-----------------------------------------------------------------------------"
-    topic_distribution_for_doc = all_lda_processors[3].show_topics_for_unseen([list_of_documents[2]]).reshape(1,-1)
-    distribution = []
-    distribution.append(topic_distribution_for_doc)
+    # # let's visuallize a document while highlighting most prevalent topics and their words
+    # "-----------------------------------------------------------------------------"
+    # topic_distribution_for_doc = all_lda_processors[3].show_topics_for_unseen([list_of_documents[2]]).reshape(1,-1)
+    # distribution = []
+    # distribution.append(topic_distribution_for_doc)
 
-    document = []
-    document.append(list_of_documents[2])
-    words = 1000
-    filename = 'patients_topic_to_word_matrix' + str(words) + '.csv'
-    topic_to_word_matrix = all_lda_processors[3].topic_to_word_matrix_n_words(words, filename)
-    npa = np.asarray(distribution, dtype=np.float64)
+    # document = []
+    # document.append(list_of_documents[2])
+    # words = 1000
+    # filename = 'patients_topic_to_word_matrix' + str(words) + '.csv'
+    # topic_to_word_matrix = all_lda_processors[3].topic_to_word_matrix_n_words(words, filename)
+    # npa = np.asarray(distribution, dtype=np.float64)
     
     
     
-    display = DisplayNotes(document, npa[0], topic_to_word_matrix)
-    "-----------------------------------------------------------------------------"
+    # display = DisplayNotes(document, npa[0], topic_to_word_matrix)
+    # "-----------------------------------------------------------------------------"
 
-    display.display_threshold_topics_m_words(0.0000000000001, 5)
+    # display.display_threshold_topics_m_words(0.0000000000001, 5)
     # # display.display_top_n_topics_m_words(5, 1000)
 
 if __name__ == "__main__":

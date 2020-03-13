@@ -4,6 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.model_selection import KFold
 from sklearn.model_selection import StratifiedKFold
 from sklearn.model_selection import cross_val_score
+import seaborn as sn
 
 # CLASSIFIERS
 import tensorflow as tf 
@@ -17,12 +18,17 @@ from sklearn.linear_model import SGDClassifier
 from sklearn.naive_bayes import ComplementNB
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
+from sklearn import svm
 from sklearn.ensemble import RandomForestClassifier
+import itertools
 
 from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.metrics import plot_confusion_matrix
 
 import pandas as pd
-import numpy 
+import numpy as np 
+import matplotlib.pyplot as plt 
+
 
 class ClassifierProcessor():
     """ Using a document to topic matrix, with each document's label added on, this class 
@@ -31,12 +37,21 @@ class ClassifierProcessor():
         will be the attributes to help with the classifcation.
     """
 
-    def __init__(self, doc_to_topic_matrix, unseen_doc_features = [], classifier = 'ANN'):
+    def __init__(self, doc_to_topic_matrix, unseen_doc_features = [], classifier = 'RF'):
         self.doc_to_topic_matrix = doc_to_topic_matrix
         self.unseen_doc_features = unseen_doc_features
         if classifier == 'DT':
             self.classifier_name = 'Decision Tree'
             self.classifier = DecisionTreeClassifier()
+        elif classifier == 'SVM':
+            self.classifier_name = 'Support Vector Machine'
+            self.classifier = SVC(gamma='auto')
+        elif classifier == 'LR':
+            self.classifier_name = 'Logistic Regression'
+            self.classifier = LogisticRegression(multi_class='auto', solver='lbfgs', max_iter=10000)
+        elif classifier == 'RF':
+            self.classifier_name = 'Random Forest'
+            self.classifier = RandomForestClassifier(max_depth=50, n_estimators=100)
         elif classifier == 'GNB':
             self.classifier_name = 'Gaussian Naive Bayes'
             self.classifier = GaussianNB()
@@ -54,32 +69,29 @@ class ClassifierProcessor():
             self.classifier = ComplementNB()
         else:
             self.classifier_name = 'ANN - Multilayer Perceptron'
-            self.classifier = MLPClassifier(solver='lbfgs', alpha = 1e-5, 
-                                hidden_layer_sizes=(10,4), random_state =1)
+            self.classifier = MLPClassifier(max_iter=1000)
 
     
+   
 
     def train_classifier(self):
         X = self.doc_to_topic_matrix.drop('Classification', axis=1)
-        y = pd.factorize( self.doc_to_topic_matrix['Classification'] )[0]
-        
-        # y = self.doc_to_topic_matrix['Classification']
-        print(y)
-        print(numpy.unique(y).size)
+        y = self.doc_to_topic_matrix['Classification']
+
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20)
-        # self.classifier.fit(X_train, y_train)
+        self.classifier.fit(X_train, y_train)
+        y_pred = self.classifier.predict(X_test)
+        print(confusion_matrix(y_test, y_pred))
+        print(classification_report(y_test, y_pred))
+        df_cm = pd.DataFrame(confusion_matrix(y_test, y_pred))
+        # plt.figure(figsize=(10,7))
+        sn.set(font_scale=1.4) # for label size
+        sn.heatmap(df_cm, annot=True, annot_kws={"size": 16}) # font size
 
-        feature_columns = [tf.contrib.layers.real_valued_column("", dimension=4)]
-
-        classifier = tf.contrib.learn.DNNClassifier(feature_columns=feature_columns,hidden_units=[100, 200, 100], n_classes=18)
-        classifier.fit(X_train, y_train, steps=2000)
-
-        accuracy_score = classifier.evaluate(x=X,
-                                     y=y)["accuracy"]
-        print('Accuracy: {0:f}'.format(accuracy_score))
+        plt.show()
 
 
-        
+
 
     def train_and_test_classifier_k_fold(self, num_folds = 10):
         X = self.doc_to_topic_matrix.drop('Classification', axis=1)
