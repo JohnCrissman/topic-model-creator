@@ -145,7 +145,7 @@ class CorpusProcessor():
         return data
     
     def create_vectorizer(self):
-        vectorizer = CountVectorizer(#analyzer='word',
+        vectorizer = CountVectorizer(analyzer='word',
                                     min_df = 5,
                                     max_df = 0.9,
                                     #stop_words='english', # remove stop words

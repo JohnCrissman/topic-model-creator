@@ -86,14 +86,14 @@ from classifier_processor import ClassifierProcessor
 from display_notes import DisplayNotes
 
 
-def train_and_test_classifier(input_for_classifier, tuple_to_predict=[]):
+def train_and_test_classifier(input_for_classifier, tuple_to_predict=[], title='one billion data points'):
     print("Training and testing multiple classifiers classifiers for", len(input_for_classifier.columns)-1,"topics")
     classifier = ClassifierProcessor(doc_to_topic_matrix= input_for_classifier, unseen_doc_features= tuple_to_predict)
     print(input_for_classifier)
     # classifier.train_and_test_classifier_k_fold()
 
     # use this to show confusion matrix and stats like recall and precision
-    classifier.train_classifier()
+    classifier.train_classifier(title)
 
 
 def show_top_n_words_for_each_topic(num_words, lda_processor_object, filename):
@@ -209,8 +209,9 @@ def main():
 
 
     # testing 5 topics
+    title = 'Each patient is represented as a data point - Strategy 1'
     matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0])
-    train_and_test_classifier(input_for_classifier= matrix_for_classifier)
+    train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title)
 
     # # testing 10 topics
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[1])
