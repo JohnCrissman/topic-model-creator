@@ -86,9 +86,9 @@ from classifier_processor import ClassifierProcessor
 from display_notes import DisplayNotes
 
 
-def train_and_test_classifier(input_for_classifier, tuple_to_predict=[], title='one billion data points'):
+def train_and_test_classifier(input_for_classifier, tuple_to_predict=[], title='one billion data points', clf = 'LR'):
     print("Training and testing multiple classifiers classifiers for", len(input_for_classifier.columns)-1,"topics")
-    classifier = ClassifierProcessor(doc_to_topic_matrix= input_for_classifier, unseen_doc_features= tuple_to_predict)
+    classifier = ClassifierProcessor(doc_to_topic_matrix= input_for_classifier, unseen_doc_features= tuple_to_predict, classifier= clf)
     print(input_for_classifier)
     # classifier.train_and_test_classifier_k_fold()
 
@@ -180,38 +180,64 @@ def main():
     with open('china_ALL_patients_each_patient_one_data_point_ALL_5_10_15_20_25_30.pkl', 'rb') as f:
         vectorizer, all_lda_processors, all_lda_models, all_doc_to_topic_matrices, list_of_documents, list_of_barriers, doc_to_word_matrix, other_patient_visit_data = pickle.load(f)
 
-    # # Show 5 topics and top 10 words
-    # show_top_n_words_for_each_topic(num_words= 10, lda_processor_object= all_lda_processors[0], filename= "topic_5_to_word_10_1st_visit.csv")
-    
-    # # Show 10 topics and top 10 words
-    # show_top_n_words_for_each_topic(num_words= 10, lda_processor_object= all_lda_processors[1], filename= "topic_10_to_word_10_1st_visit.csv")
-    
+    ''' testing 5 LDA topics on all classifiers '''
 
-    
-    # print("These are the 5 topics distribution for the first document: \n")
-    # print(all_lda_models[0].transform(doc_to_word_matrix)[0])
+    # # testing 5 topics - 10 fold - confustion matrix, logistic regression
+    # title = 'Each patient is represented as a data point - Strategy 1 - 5 topics - using Logistic Regression'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'LR')
 
-    # print("These are the 5 topics distribution for the second document: \n")
-    # print(all_lda_models[0].transform(doc_to_word_matrix)[1])
+    # testing 5 topics - 10 fold - confustion matrix, random forest
+    # title = 'Each patient is represented as a data point - Strategy 1 - 5 topics - using Random Forest'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'RF')
 
-    # print("There are the 5 topics distribution for the third document: \n")
-    # print(all_lda_models[0].transform(doc_to_word_matrix)[2])
+    # # testing 5 topics - 10 fold - confustion matrix, support vector machine
+    # title = 'Each patient is represented as a data point - Strategy 1 - 5 topics-  using Support Vector Machine'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'SVM')
 
-    # print(all_doc_to_topic_matrices[0])
+    # # # testing 5 topics - 10 fold - confustion matrix, multi-layer perceptron
+    # title = 'Each patient is represented as a data point - Strategy 1 - 5 topics-  using ANN with one hidden layer'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'ANN')
 
-    ''' testing my code on a dataset that I know will perform well'''
-    # iris = sklearn_to_df(load_iris())
-    # print(iris)
-    # print(type(iris))
-    # iris.to_csv('IRIS_TESTING.csv', encoding='utf-8', index=False)
-    # ##### TEST MY CLASSIFIER ON DATA THAT I KNOW SHOULD PERFORM WELL
-    # train_and_test_classifier(input_for_classifier= iris)
+    # # testing 5 topics - 10 fold - confustion matrix, GNB
+    # title = 'Each patient is represented as a data point - Strategy 1 - 5 topics - Gaussian Naive Bayes'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'GNB')
+
+    ''' testing 10 LDAtopics in all classifiers ''' 
+
+    # # testing 10 topics - 10 fold - confustion matrix, logistic regression
+    # title = 'Each patient is represented as a data point - Strategy 1 - 10 topics - using Logistic Regression'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[1])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'LR')
+
+    # testing 10 topics - 10 fold - confustion matrix, random forest
+    title = 'Each patient is represented as a data point - Strategy 1 - 10 topics - using Random Forest'
+    matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[1])
+    train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'RF')
+
+    # # testing 10 topics - 10 fold - confustion matrix, support vector machine
+    # title = 'Each patient is represented as a data point - Strategy 1 - 10 topics-  using Support Vector Machine'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[1])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'SVM')
+
+    # # # testing 10 topics - 10 fold - confustion matrix, multi-layer perceptron
+    # title = 'Each patient is represented as a data point - Strategy 1 - 10 topics-  using ANN with one hidden layer'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[1])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'ANN')
+
+    # # testing 10 topics - 10 fold - confustion matrix, GNB
+    # title = 'Each patient is represented as a data point - Strategy 1 - 10 topics - Gaussian Naive Bayes'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[1])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'GNB')
 
 
-    # testing 5 topics
-    title = 'Each patient is represented as a data point - Strategy 1'
-    matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0])
-    train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title)
+
+
+
 
     # # testing 10 topics
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[1])

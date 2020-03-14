@@ -12,6 +12,8 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.neural_network import MLPClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.naive_bayes import MultinomialNB
+from sklearn.gaussian_process import GaussianProcessClassifier
+from sklearn.gaussian_process.kernels import RBF
 
 from sklearn.cluster import KMeans
 from sklearn.linear_model import SGDClassifier
@@ -20,11 +22,14 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 from sklearn import svm
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.neighbors import KNeighborsClassifier
 import itertools
+from sklearn.pipeline import Pipeline
 
 from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.metrics import plot_confusion_matrix
 from sklearn.model_selection import cross_val_predict
+from sklearn.preprocessing import StandardScaler
         
 
 import pandas as pd
@@ -148,7 +153,7 @@ class ClassifierProcessor():
             self.classifier = SVC(gamma='auto')
         elif classifier == 'LR':
             self.classifier_name = 'Logistic Regression'
-            self.classifier = LogisticRegression(multi_class='auto', solver='lbfgs', max_iter=10000)
+            self.classifier = LogisticRegression(multi_class='auto', solver='lbfgs', max_iter=100000)
         elif classifier == 'RF':
             self.classifier_name = 'Random Forest'
             self.classifier = RandomForestClassifier(max_depth=50, n_estimators=100)
@@ -167,6 +172,19 @@ class ClassifierProcessor():
         elif classifier == 'CNB':
             self.classifier_name = 'Complement Naive Bayes'
             self.classifier = ComplementNB()
+        elif classifier == 'KNN_3':
+            self.classifier_name = 'K Nearest Neighbors (3 neighbors)'
+            self.classifier = KNeighborsClassifier(n_neighbors=3)
+        elif classifier == 'KNN_10':
+            self.classifier_name = 'K Nearest Neighbors (10 neighbors)'
+            self.classifier = KNeighborsClassifier(n_neighbors=10)
+        elif classifier == 'KNN_15':
+            self.classifier_name = 'K Nearest Neighbors (15 neighbors)'
+            self.classifier = KNeighborsClassifier(n_neighbors=15)
+        elif classifier == 'GPC':
+            self.classifier_name = 'Gaussian Process Classifier'
+            kernel = 1.0 * RBF(1.0)
+            self.classifier = GaussianProcessClassifier(kernel=kernel, random_state=0)
         else:
             self.classifier_name = 'ANN - Multilayer Perceptron'
             self.classifier = MLPClassifier(max_iter=1000)
@@ -177,7 +195,12 @@ class ClassifierProcessor():
         X = self.doc_to_topic_matrix.drop('Classification', axis=1)
         y = self.doc_to_topic_matrix['Classification']
 
-        y_pred = cross_val_predict(self.classifier, X, y, cv=10)
+        scaler = StandardScaler()
+        clf = self.classifier
+
+        pipeline = Pipeline([('transformer', scaler), ('estimator', clf)])
+
+        y_pred = cross_val_predict(pipeline, X, y, cv=10)
         conf_mat = confusion_matrix(y, y_pred)
         
         report = classification_report(y, y_pred)
