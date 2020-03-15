@@ -215,17 +215,17 @@ def main():
     # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'LR')
 
     # testing 10 topics - 10 fold - confustion matrix, random forest
-    title = 'Each patient is represented as a data point - Strategy 1 - 10 topics - using Random Forest'
-    matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[1])
-    train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'RF')
+    # title = 'Each patient is represented as a data point - Strategy 1 - 10 topics - using Random Forest'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[1])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'RF')
 
     # # testing 10 topics - 10 fold - confustion matrix, support vector machine
-    # title = 'Each patient is represented as a data point - Strategy 1 - 10 topics-  using Support Vector Machine'
+    # title = 'Each patient is represented as a data point - Strategy 1 - 10 topics - using Support Vector Machine'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[1])
     # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'SVM')
 
     # # # testing 10 topics - 10 fold - confustion matrix, multi-layer perceptron
-    # title = 'Each patient is represented as a data point - Strategy 1 - 10 topics-  using ANN with one hidden layer'
+    # title = 'Each patient is represented as a data point - Strategy 1 - 10 topics - using ANN with one hidden layer'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[1])
     # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'ANN')
 
@@ -233,6 +233,92 @@ def main():
     # title = 'Each patient is represented as a data point - Strategy 1 - 10 topics - Gaussian Naive Bayes'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[1])
     # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'GNB')
+
+    ''' testing 15 LDAtopics in all classifiers ''' 
+
+    # # testing 15 topics - 10 fold - confustion matrix, logistic regression
+    # title = 'Each patient is represented as a data point - Strategy 1 - 15 topics - using Logistic Regression'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[2])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'LR')
+
+    # testing 15 topics - 10 fold - confustion matrix, random forest
+    # title = 'Each patient is represented as a data point - Strategy 1 - 15 topics - using Random Forest'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[2])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'RF')
+
+    # # testing 15 topics - 10 fold - confustion matrix, support vector machine
+    # title = 'Each patient is represented as a data point - Strategy 1 - 15 topics - using Support Vector Machine'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[2])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'SVM')
+
+    # # # testing 15 topics - 10 fold - confustion matrix, multi-layer perceptron
+    # title = 'Each patient is represented as a data point - Strategy 1 - 15 topics - using ANN with one hidden layer'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[2])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'ANN')
+
+    # # testing 15 topics - 10 fold - confustion matrix, GNB
+    # title = 'Each patient is represented as a data point - Strategy 1 - 15 topics - Gaussian Naive Bayes'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[2])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'GNB')
+
+    ''' testing 20 LDAtopics in all classifiers ''' 
+
+    # # testing 20 topics - 10 fold - confustion matrix, logistic regression
+    # title = 'Each patient is represented as a data point - Strategy 1 - 20 topics - using Logistic Regression'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[3])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'LR')
+
+    # testing 20 topics - 10 fold - confustion matrix, random forest
+    # title = 'Each patient is represented as a data point - Strategy 1 - 20 topics - using Random Forest'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[3])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'RF')
+
+    # # testing 20 topics - 10 fold - confustion matrix, support vector machine
+    # title = 'Each patient is represented as a data point - Strategy 1 - 20 topics - using Support Vector Machine'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[3])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'SVM')
+
+    # # # testing 20 topics - 10 fold - confustion matrix, multi-layer perceptron
+    # title = 'Each patient is represented as a data point - Strategy 1 - 20 topics - using ANN with one hidden layer'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[3])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'ANN')
+
+    # # testing 20 topics - 10 fold - confustion matrix, GNB
+    # title = 'Each patient is represented as a data point - Strategy 1 - 20 topics - Gaussian Naive Bayes'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[3])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'GNB')
+
+    ''' testing 25 LDAtopics in all classifiers ''' 
+
+    # # testing 25 topics - 10 fold - confustion matrix, logistic regression
+    # title = 'Each patient is represented as a data point - Strategy 1 - 25 topics - using Logistic Regression'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[4])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'LR')
+
+    # testing 25 topics - 10 fold - confustion matrix, random forest
+    # title = 'Each patient is represented as a data point - Strategy 1 - 25 topics - using Random Forest'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[4])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'RF')
+
+    # # testing 25 topics - 10 fold - confustion matrix, support vector machine
+    title = 'Each patient is represented as a data point - Strategy 1 - 25 topics - using Support Vector Machine'
+    matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[4])
+    train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'SVM')
+
+    # # # testing 25 topics - 10 fold - confustion matrix, multi-layer perceptron
+    # title = 'Each patient is represented as a data point - Strategy 1 - 25 topics - using ANN with one hidden layer'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[4])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'ANN')
+
+    # # testing 25 topics - 10 fold - confustion matrix, GNB
+    # title = 'Each patient is represented as a data point - Strategy 1 - 25 topics - Gaussian Naive Bayes'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[4])
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'GNB')
+
+
+
+
+
 
 
 
