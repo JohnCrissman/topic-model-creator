@@ -191,7 +191,7 @@ class ClassifierProcessor():
    
     
         
-    def train_classifier(self, title):
+    def train_classifier(self, title, filename):
         X = self.doc_to_topic_matrix.drop('Classification', axis=1)
         y = self.doc_to_topic_matrix['Classification']
 
@@ -241,6 +241,8 @@ class ClassifierProcessor():
                             top=0.95, wspace=0.20, hspace=0.20)
 
         plt.show()
+        
+        # plt.savefig('results/'+filename)
 
 
     def train_and_test_classifier_k_fold(self, num_folds = 10):

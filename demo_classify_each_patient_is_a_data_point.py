@@ -86,14 +86,14 @@ from classifier_processor import ClassifierProcessor
 from display_notes import DisplayNotes
 
 
-def train_and_test_classifier(input_for_classifier, tuple_to_predict=[], title='one billion data points', clf = 'LR'):
+def train_and_test_classifier(input_for_classifier, tuple_to_predict=[], title='one billion data points', clf = 'LR', filename = None):
     print("Training and testing multiple classifiers classifiers for", len(input_for_classifier.columns)-1,"topics")
     classifier = ClassifierProcessor(doc_to_topic_matrix= input_for_classifier, unseen_doc_features= tuple_to_predict, classifier= clf)
     print(input_for_classifier)
     # classifier.train_and_test_classifier_k_fold()
 
     # use this to show confusion matrix and stats like recall and precision
-    classifier.train_classifier(title)
+    classifier.train_classifier(title, filename)
 
 
 def show_top_n_words_for_each_topic(num_words, lda_processor_object, filename):
@@ -350,194 +350,224 @@ def main():
     ''' testing 5 LDA topics on all classifiers NO LANGUAGE BARRIER'''
 
     # # testing 5 topics - 10 fold - confustion matrix, logistic regression
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 5 topics - using Logistic Regression'
+    # filename = 'Strategy_2_num_topics_5_no_language_LR.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 5 topics - using Logistic Regression'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'LR')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'LR', filename = filename)
 
-    # testing 5 topics - 10 fold - confustion matrix, random forest
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 5 topics - using Random Forest'
+    # # testing 5 topics - 10 fold - confustion matrix, random forest
+    # filename = 'Strategy_2_num_topics_5_no_language_RF.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 5 topics - using Random Forest'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'RF')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'RF', filename = filename)
 
     # # testing 5 topics - 10 fold - confustion matrix, support vector machine
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 5 topics-  using Support Vector Machine'
+    # filename = 'Strategy_2_num_topics_5_no_language_SVM.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 5 topics-  using Support Vector Machine'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'SVM')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'SVM', filename = filename)
 
-    # # # testing 5 topics - 10 fold - confustion matrix, multi-layer perceptron
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 5 topics-  using ANN with one hidden layer'
+    # # testing 5 topics - 10 fold - confustion matrix, multi-layer perceptron
+    # filename = 'Strategy_2_num_topics_5_no_language_ANN.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 5 topics-  using ANN with one hidden layer'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'ANN')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'ANN', filename = filename)
 
     # # testing 5 topics - 10 fold - confustion matrix, GNB
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 5 topics - Gaussian Naive Bayes'
+    # filename = 'Strategy_2_num_topics_5_no_language_GNB.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 5 topics - Gaussian Naive Bayes'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'GNB')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'GNB', filename = filename)
 
-    ''' testing 10 LDA topics in all classifiers.  NO LANGUAGE BARRIER ''' 
+    # ''' testing 10 LDA topics in all classifiers.  NO LANGUAGE BARRIER ''' 
 
     # # testing 10 topics - 10 fold - confustion matrix, logistic regression
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 10 topics - using Logistic Regression'
+    # filename = 'Strategy_2_num_topics_10_no_language_LR.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 10 topics - using Logistic Regression'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[1])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'LR')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'LR', filename = filename)
 
-    # testing 10 topics - 10 fold - confustion matrix, random forest
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 10 topics - using Random Forest'
+    # # testing 10 topics - 10 fold - confustion matrix, random forest
+    # filename = 'Strategy_2_num_topics_10_no_language_RF.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 10 topics - using Random Forest'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[1])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'RF')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'RF', filename = filename)
 
     # # testing 10 topics - 10 fold - confustion matrix, support vector machine
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 10 topics - using Support Vector Machine'
+    # filename = 'Strategy_2_num_topics_10_no_language_SVM.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 10 topics - using Support Vector Machine'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[1])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'SVM')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'SVM', filename = filename)
 
-    # # # testing 10 topics - 10 fold - confustion matrix, multi-layer perceptron
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 10 topics - using ANN with one hidden layer'
+    # # testing 10 topics - 10 fold - confustion matrix, multi-layer perceptron
+    # filename = 'Strategy_2_num_topics_10_no_language_ANN.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 10 topics - using ANN with one hidden layer'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[1])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'ANN')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'ANN', filename = filename)
 
     # # testing 10 topics - 10 fold - confustion matrix, GNB
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 10 topics - Gaussian Naive Bayes'
+    # filename = 'Strategy_2_num_topics_10_no_language_GNB.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 10 topics - Gaussian Naive Bayes'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[1])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'GNB')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'GNB', filename = filename)
 
-    ''' testing 15 LDA topics in all classifiers.  NO LANGUAGE BARRIER''' 
+    # ''' testing 15 LDA topics in all classifiers.  NO LANGUAGE BARRIER''' 
 
     # # testing 15 topics - 10 fold - confustion matrix, logistic regression
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 15 topics - using Logistic Regression'
+    # filename = 'Strategy_2_num_topics_15_no_language_LR.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 15 topics - using Logistic Regression'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[2])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'LR')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'LR', filename = filename)
 
-    # testing 15 topics - 10 fold - confustion matrix, random forest
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 15 topics - using Random Forest'
+    # # testing 15 topics - 10 fold - confustion matrix, random forest
+    # filename = 'Strategy_2_num_topics_15_no_language_RF.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 15 topics - using Random Forest'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[2])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'RF')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'RF', filename = filename)
 
     # # testing 15 topics - 10 fold - confustion matrix, support vector machine
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 15 topics - using Support Vector Machine'
+    # filename = 'Strategy_2_num_topics_15_no_language_SVM.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 15 topics - using Support Vector Machine'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[2])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'SVM')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'SVM', filename = filename)
 
-    # # # testing 15 topics - 10 fold - confustion matrix, multi-layer perceptron
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 15 topics - using ANN with one hidden layer'
+    # # testing 15 topics - 10 fold - confustion matrix, multi-layer perceptron
+    # filename = 'Strategy_2_num_topics_15_no_language_ANN.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 15 topics - using ANN with one hidden layer'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[2])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'ANN')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'ANN', filename = filename)
 
     # # testing 15 topics - 10 fold - confustion matrix, GNB
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 15 topics - Gaussian Naive Bayes'
+    # filename = 'Strategy_2_num_topics_15_no_language_GNB.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 15 topics - Gaussian Naive Bayes'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[2])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'GNB')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'GNB', filename = filename)
 
-    ''' testing 20 LDA topics in all classifiers.  NO LANGUAGE BARRIER ''' 
+    # ''' testing 20 LDA topics in all classifiers.  NO LANGUAGE BARRIER ''' 
 
     # # testing 20 topics - 10 fold - confustion matrix, logistic regression
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 20 topics - using Logistic Regression'
+    # filename = 'Strategy_2_num_topics_20_no_language_LR.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 20 topics - using Logistic Regression'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[3])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'LR')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'LR', filename = filename)
 
-    # testing 20 topics - 10 fold - confustion matrix, random forest
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 20 topics - using Random Forest'
+    # # testing 20 topics - 10 fold - confustion matrix, random forest
+    # filename = 'Strategy_2_num_topics_20_no_language_RF.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 20 topics - using Random Forest'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[3])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'RF')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'RF', filename = filename)
 
     # # testing 20 topics - 10 fold - confustion matrix, support vector machine
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 20 topics - using Support Vector Machine'
+    # filename = 'Strategy_2_num_topics_20_no_language_SVM.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 20 topics - using Support Vector Machine'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[3])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'SVM')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'SVM', filename = filename)
 
-    # # # testing 20 topics - 10 fold - confustion matrix, multi-layer perceptron
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 20 topics - using ANN with one hidden layer'
+    # # testing 20 topics - 10 fold - confustion matrix, multi-layer perceptron
+    # filename = 'Strategy_2_num_topics_20_no_language_ANN.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 20 topics - using ANN with one hidden layer'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[3])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'ANN')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'ANN', filename = filename)
 
     # # testing 20 topics - 10 fold - confustion matrix, GNB
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 20 topics - Gaussian Naive Bayes'
+    # filename = 'Strategy_2_num_topics_20_no_language_GNB.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 20 topics - Gaussian Naive Bayes'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[3])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'GNB')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'GNB', filename = filename)
 
-    ''' testing 25 LDA topics in all classifiers.  NO LANGUAGE BARRIER ''' 
+    # ''' testing 25 LDA topics in all classifiers.  NO LANGUAGE BARRIER ''' 
 
     # # testing 25 topics - 10 fold - confustion matrix, logistic regression
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 25 topics - using Logistic Regression'
+    # filename = 'Strategy_2_num_topics_25_no_language_LR.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 25 topics - using Logistic Regression'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[4])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'LR')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'LR', filename = filename)
 
-    # testing 25 topics - 10 fold - confustion matrix, random forest
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 25 topics - using Random Forest'
+    # # testing 25 topics - 10 fold - confustion matrix, random forest
+    # filename = 'Strategy_2_num_topics_25_no_language_RF.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 25 topics - using Random Forest'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[4])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'RF')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'RF', filename = filename)
 
     # # testing 25 topics - 10 fold - confustion matrix, support vector machine
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 25 topics - using Support Vector Machine'
+    # filename = 'Strategy_2_num_topics_25_no_language_SVM.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 25 topics - using Support Vector Machine'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[4])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'SVM')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'SVM', filename = filename)
 
-    # # # testing 25 topics - 10 fold - confustion matrix, multi-layer perceptron
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 25 topics - using ANN with one hidden layer'
+    # # testing 25 topics - 10 fold - confustion matrix, multi-layer perceptron
+    # filename = 'Strategy_2_num_topics_25_no_language_ANN.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 25 topics - using ANN with one hidden layer'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[4])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'ANN')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'ANN', filename = filename)
 
     # # testing 25 topics - 10 fold - confustion matrix, GNB
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 25 topics - Gaussian Naive Bayes'
+    # filename = 'Strategy_2_num_topics_25_no_language_GNB.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 25 topics - Gaussian Naive Bayes'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[4])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'GNB')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'GNB', filename = filename)
 
-    ''' testing 30 LDA topics in all classifiers.  NO LANGUAGE BARRIER ''' 
+    # ''' testing 30 LDA topics in all classifiers.  NO LANGUAGE BARRIER ''' 
 
     # # testing 30 topics - 10 fold - confustion matrix, logistic regression
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 30 topics - using Logistic Regression'
+    # filename = 'Strategy_2_num_topics_30_no_language_LR.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 30 topics - using Logistic Regression'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[5])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'LR')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'LR', filename = filename)
 
-    # testing 30 topics - 10 fold - confustion matrix, random forest
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 30 topics - using Random Forest'
+    # # testing 30 topics - 10 fold - confustion matrix, random forest
+    # filename = 'Strategy_2_num_topics_30_no_language_RF.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 30 topics - using Random Forest'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[5])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'RF')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'RF', filename = filename)
 
     # # testing 30 topics - 10 fold - confustion matrix, support vector machine
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 30 topics - using Support Vector Machine'
+    # filename = 'Strategy_2_num_topics_30_no_language_SVM.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 30 topics - using Support Vector Machine'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[5])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'SVM')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'SVM', filename = filename)
 
-    # # # testing 30 topics - 10 fold - confustion matrix, multi-layer perceptron
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 30 topics - using ANN with one hidden layer'
+    # #  testing 30 topics - 10 fold - confustion matrix, multi-layer perceptron
+    # filename = 'Strategy_2_num_topics_30_no_language_ANN.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 30 topics - using ANN with one hidden layer'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[5])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'ANN')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'ANN', filename = filename)
 
     # # testing 30 topics - 10 fold - confustion matrix, GNB
-    # title = 'Each patient is represented as a data point - Strategy 1 - (REMOVED LANGUAGE/INTERPRETER) - 30 topics - Gaussian Naive Bayes'
+    # filename = 'Strategy_2_num_topics_30_no_language_GNB.png'
+    # title = 'Each patient is represented as a data point - Strategy 2 - (REMOVED LANGUAGE/INTERPRETER) - 30 topics - Gaussian Naive Bayes'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[5])
     # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
-    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'GNB')
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'GNB', filename = filename)
 
 
 
