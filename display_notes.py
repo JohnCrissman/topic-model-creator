@@ -1,12 +1,12 @@
 import webbrowser
 import pandas as pd
-import numpy as np  
+import numpy as np
 import heapq
 
 class DisplayNotes():
     """ This class displays one document and highlights words different
         colors that are associated with topics.
-        
+
         Maximum ammount of topics that can be highlighted is 5.  This is ok
         because most of the document will be associated with either 1 or 2 topics.
 
@@ -21,7 +21,7 @@ class DisplayNotes():
 
         self.unseen_doc_features = unseen_doc_features
         self.topic_to_word_matrix = topic_to_word_matrix
-        self.notes = notes 
+        self.notes = notes
 
     def highlight_words_associated_with_topics(self, lists_of_words_from_topics):
 
@@ -40,7 +40,7 @@ class DisplayNotes():
             orange_words = lists_of_words_from_topics[3]
         if len(lists_of_words_from_topics) >= 5:
             red_words = lists_of_words_from_topics[4]
-        
+
         for word in notes:
             if(word in blue_words):
                 notes1 = notes1 + '<span class="highlighted-blue">'+word+'</span>'
@@ -98,7 +98,7 @@ class DisplayNotes():
 
         lists_of_words_from_topics = self.display_doc_n_topics_m_words(num_topics= n_topics, num_words= m_words)   # showing top n topics
         self.highlight_words_associated_with_topics(lists_of_words_from_topics)
-        
+
 
     def display_doc_n_topics_m_words(self,num_topics = 1, num_words = 5):
         # Input: number of topics and number of words as natural numbers
@@ -116,8 +116,16 @@ class DisplayNotes():
             list_of_list_of_words.append(top_m_words_in_topic)
         return list_of_list_of_words
 
-        
+
     def display_doc_threshold_m_words(self, threshold = 0.2, num_words = 10):
+        # Will only display topics that are equal to or over the threshold
+        # For example:  if threshold is 0.1, then all topics that make up 10% (0.1)
+        #               or more of the document will be displayed.  If none of the topics
+        #               make up atleast 10% of the topics then no topics with their
+        #               corresponding words will be displayed.
+        # The top m words will be shown for each topic that makes it within the threshold.
+        # Default for threshold is 0.2 (20 %) and default for m is 10
+        
         topics = self.unseen_doc_features[0]
         print(topics)
         print(type(topics))
@@ -128,15 +136,3 @@ class DisplayNotes():
             top_m_words_in_topic = matrix.iloc[topic_num,0:num_words].tolist()
             list_of_list_of_words.append(top_m_words_in_topic)
         return list_of_list_of_words
-
-
-        # Will only display topics that are equal to or over the threshold
-        # For example:  if threshold is 0.1, then all topics that make up 10% (0.1)
-        #               or more of the document will be displayed.  If none of the topics
-        #               make up atleast 10% of the topics then no topics with their
-        #               corresponding words will be displayed.
-        # The top m words will be shown for each topic that makes it within the threshold.
-        # Default for threshold is 0.2 (20 %) and default for m is 10
-
-
-        
