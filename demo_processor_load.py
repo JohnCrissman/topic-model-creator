@@ -33,7 +33,7 @@ def main():
     words = 100
     filename = 'movie_reviews_topic_to_word_matrix' + str(words) + '.csv'
     topic_to_word_matrix = topic_model_creator.topic_to_word_matrix_n_words(words, filename)
-    
+
 
     '''Predict topics for a new piece of text'''
     path_neg_test = 'C:/Users/johnm/Documents/Tutoring/CLASSES/MASTERS_PROJECT/code/txt_sentoken/neg_test/*.txt'
@@ -41,18 +41,18 @@ def main():
 
     doc_neg = CorpusProcessor(path_neg_test)
     doc_neg_text = doc_neg.create_one_doc()
-    
+
     # one_string = " ".join(doc_neg_text)
-    
+
 
     ''' input used for predicting classification (good or bad) for unseen document!!!!!!!!!!!!'''
     unseen_doc_features = topic_model_creator.show_topics_for_unseen(doc_neg_text).reshape(1, -1)
-    
-    classifying_movie_reviews = ClassifierProcessor(doc_to_topic_matrix, unseen_doc_features)
-    classifying_movie_reviews.train_classifier()
-    classifying_movie_reviews.predict_class_for_doc()
 
-    
+    classifying_movie_reviews = ClassifierProcessor(doc_to_topic_matrix, unseen_doc_features)
+    # classifying_movie_reviews.train_classifier('hey','hey.png')
+    # classifying_movie_reviews.predict_class_for_doc()
+
+
 
     display = DisplayNotes(doc_neg_text, unseen_doc_features, topic_to_word_matrix)
 
@@ -63,5 +63,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
