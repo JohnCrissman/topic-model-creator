@@ -5,10 +5,10 @@
  >Predicting social determinants of health in patients
  
 2. Data
- >On china town patients and produced by patient navigators at Northwestern University.  Data includes visit information, demographics, >comments left by patient navigators and the barrier (social determinant of health)
+ >On china town patients and produced by patient navigators at Northwestern University.  Data includes visit information, demographics, comments left by patient navigators and the barrier (social determinant of health)
 
 3. Algorithms
- >Latent Dirichlet Allocation (Topic Modeling) is used to convert text to numerical data.  Random Forests, Artificial Neural Networks, >Logistic Regression, Support Vector Machines, and Gaussian Naive Bayes were used for classification.
+ >Latent Dirichlet Allocation (Topic Modeling) is used to convert text to numerical data.  Random Forests, Artificial Neural Networks, Logistic Regression, Support Vector Machines, and Gaussian Naive Bayes were used for classification.
  
 4. Other uses for this program.
  >Users can turn text into topic models and concatenate this data with other numerica data for predicting (classification) purposes.  
