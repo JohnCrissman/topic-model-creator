@@ -1,10 +1,10 @@
 # topic-model-creator
 git-name: chicago-crime-tracker-map
 
-# Chicago Crime Tracker
-*Developed by Karaoke Squad*
+# Topic Model Creator
+*Developed by John Crissman
 
-Campus safety is a concern for all who attend universities and colleges.  Students should have a right to see and understand the data that shows crimes near their campus locations.  We pulled data from the “Crimes - 2001 to present” dataset on the Chicago Data Portal website, which contains all reported crimes from 2001 to present, excluding the most recent week.  Our application, Chicago Crime Tracker, filters this data in a way where we can see what crimes have happened within a given area.  With the application a user can enter an address and select a distance in miles to get a filtered list of crimes within the distance of the chosen Chicago address.
+Focus:  S
 
 
 # Setup
