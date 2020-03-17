@@ -4,19 +4,24 @@ git-name: chicago-crime-tracker-map
 # Topic Model Creator
 *Developed by John Crissman
 
-Focus:  S
+1. Focus
+ Predicting social determinants of health
+ 
+2. Data
+ On china town patients and produced by patient navigators at Northwestern University
+
+3. Algorithms
 
 
 # Setup
 
 ## Dependencies
 
-This application was developed in Java 11 and JavaFX 8, using IntelliJ IDEA with Gradle to access JavaFX.
+This application was developed in Python 3 and HTML, using Visual Studio Code
 
- - Java 11.0.4
- - IntelliJ IDEA Community 2019.2
-	 - Running Gradle 5.6.2
- - Java packages (including several sub-packages)
+ - Python 3.6.4
+ - Visual Studio Code.  February 2020 (version 1.43)
+ - Python packages (including several sub-packages)
 	 - `javafx.*`
 	 - `org.json.simple.*`
 	 - `java.io.*`
