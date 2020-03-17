@@ -2,16 +2,16 @@
 *Developed by John Crissman
 
 1. Focus (reason I created this project)
- Predicting social determinants of health in patients
+ >Predicting social determinants of health in patients
  
 2. Data
- On china town patients and produced by patient navigators at Northwestern University.  Data includes visit information, demographics, comments left by patient navigators and the barrier (social determinant of health)
+ >On china town patients and produced by patient navigators at Northwestern University.  Data includes visit information, demographics, >comments left by patient navigators and the barrier (social determinant of health)
 
 3. Algorithms
- Latent Dirichlet Allocation (Topic Modeling) is used to convert text to numerical data.  Random Forests, Artificial Neural Networks, Logistic Regression, Support Vector Machines, and Gaussian Naive Bayes were used for classification.
+ >Latent Dirichlet Allocation (Topic Modeling) is used to convert text to numerical data.  Random Forests, Artificial Neural Networks, >Logistic Regression, Support Vector Machines, and Gaussian Naive Bayes were used for classification.
  
 4. Other uses for this program.
- Users can turn text into topic models and concatenate this data with other numerica data for predicting (classification) purposes.  
+ >Users can turn text into topic models and concatenate this data with other numerica data for predicting (classification) purposes.  
  
 
 # Setup
@@ -63,20 +63,4 @@ This application was developed in Python 3 and HTML, using Visual Studio Code
 
 
 
-## Instructions to Use
 
-The application window contains 3 main parts:
-
-- Top section: search menu
-- Middle section: view crimes as a map, list, or set of bar graphs
-- Bottom section: change between different views, or exit the application
-
-To use:
-
-- Type in an address (full or partial - this works just like Google Maps to fill in incomplete addresses)
-- Select a search radius from the drop-down menu.
-- Click "Search" to run your query.
-
-Repeat these steps as many times as desired.
-
-Some crimes are missing latitude and longitude information -- these crimes are excluded from our application, since location information is very important to this application performing as expected!  These crimes are saved in a `logFile_[date information].log` file at application launch, located within `build/resources/main`.
