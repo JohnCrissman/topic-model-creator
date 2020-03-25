@@ -42,7 +42,7 @@ def set_equal_to_one(x):
         return 1
     else:
         return x
-
+''' Strategy 1'''
 def convert_df_using_technique(df):
     how_many_records = [0] * len(df)
     can_we_append = True # flag to let us know when to skip rows we are not using (when flag is false)

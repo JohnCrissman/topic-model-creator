@@ -85,6 +85,9 @@ from lda_processor import LDAProcessor
 from classifier_processor import ClassifierProcessor
 from display_notes import DisplayNotes
 
+def remove_attributes_that_are_not_demographics():
+    return 1
+
 
 def train_and_test_classifier(input_for_classifier, tuple_to_predict=[], title='one billion data points', clf = 'LR', filename = None):
     print("Training and testing multiple classifiers classifiers for", len(input_for_classifier.columns)-1,"topics")
@@ -107,12 +110,12 @@ def remove_rows_with_this_label(label, df):
     return new_df
 
 ''' add demographics and types of service to document_to_topic_matrix '''
-def add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix):
+def add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix, demo = False):
 
     df_demographics = pd.read_excel('PN_demographics_neiu.xlsx')
-    print(df_demographics)
+    # print(df_demographics)
 
-    print(document_to_topic_matrix)
+    # print(document_to_topic_matrix)
     df_demographics.to_csv('aaaa_demographics.csv', encoding='utf-8', index=False)
     document_to_topic_matrix.to_csv('aaaa_doc_to_topic.csv', encoding='utf-8', index=False)
     df_all_INFO = df_demographics.merge(document_to_topic_matrix, on='record_id', how='inner')
@@ -122,6 +125,20 @@ def add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix):
                                 df_all_INFO.columns[10]: "family_members_in_household", df_all_INFO.columns[11]: "household_income"}, inplace = True)
 
     
+    ''' This block of code is used to delete all data that is not demographics (LDA topics and visit data)'''
+    # check for testing purposes
+    if demo == True:
+        df_all_INFO = df_all_INFO.loc[:,'record_id':'Classification'].copy()
+        del df_all_INFO[0]
+        del df_all_INFO[1]
+        del df_all_INFO[2]
+        del df_all_INFO[3]
+        del df_all_INFO[4]
+    
+    print(df_all_INFO)
+    df_all_INFO.to_csv('df_ALL_patients_all.csv', encoding='utf-8', index=False)
+
+
     ## one hot encoding for all attributes that need it
     # First, create a dataframe that is a one hot encoding of a column
     # Second, merge the two dataframes
@@ -155,9 +172,6 @@ def add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix):
     df = df.merge(dummy, left_index=True, right_index=True)
     del df['household_income']
     
-    print(df)
-    df.to_csv('aa_df.csv', encoding='utf-8', index=False)
-    
     
     # take out record id for classification purposes
     del df['record_id']
@@ -165,10 +179,7 @@ def add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix):
     # df.at[53,'year_entered_US'] = 2000
     df.fillna(method='pad', inplace=True)
 
-    print(df)
     
-    # check for testing purposes
-    df.to_csv('df_ALL_patients_all.csv', encoding='utf-8', index=False)
     return df
 
 def sklearn_to_df(sklearn_dataset):
@@ -180,9 +191,83 @@ def main():
     with open('china_ALL_patients_each_patient_one_data_point_ALL_5_10_15_20_25_30.pkl', 'rb') as f:
         vectorizer, all_lda_processors, all_lda_models, all_doc_to_topic_matrices, list_of_documents, list_of_barriers, doc_to_word_matrix, other_patient_visit_data = pickle.load(f)
 
+    ''' 
+        Uncomment which test you would like to use below.
+        Once you are done using a specific test please comment it out.
+    '''
+
+    ''' testing all 5 classifiers only on demographics (no LDA topics nor visit data).  Considering ALL barriers '''
+
+    # testing only demographics - 10 fold - confustion matrix, logistic regression
+    # filename = 'Strategy_5_Only_Demographics_Data_LR.png'
+    # title = 'Each patient is represented as a data point - Strategy 5 - Only Demographics Data - using Logistic Regression'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0], demo = True)
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'LR', filename = filename)
+
+    # testing only demographics - 10 fold - confustion matrix, random forest
+    # filename = 'Strategy_5_Only_Demographics_Data_RF.png'
+    # title = 'Each patient is represented as a data point - Strategy 5 - Only Demographics Data - using Random Forest'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0], demo = True)
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'RF', filename = filename)
+
+    # # testing only demographics - 10 fold - confustion matrix, support vector machine
+    # filename = 'Strategy_5_Only_Demographics_Data_SVM.png'
+    # title = 'Each patient is represented as a data point - Strategy 5 - Only Demographics Data - using Support Vector Machine'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0], demo = True)
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'SVM', filename = filename)
+
+    # # testing only demographics - 10 fold - confustion matrix, multi-layer perceptron
+    # filename = 'Strategy_5_Only_Demographics_Data_ANN.png'
+    # title = 'Each patient is represented as a data point - Strategy 5 - Only Demographics Data - using Artificial Neural Network'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0], demo = True)
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'ANN', filename = filename)
+
+    # # testing only demographics - 10 fold - confustion matrix, GNB
+    # filename = 'Strategy_5_Only_Demographics_Data_GNB.png'
+    # title = 'Each patient is represented as a data point - Strategy 5 - Only Demographics Data - Gaussian Naive Bayes'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0], demo = True)
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'GNB', filename = filename)
+
+    ''' testing all 5 classifiers only on demographics (no LDA topics nor visit data).  Removing Language/interpreter barriers '''
+
+    # # testing only demographics - 10 fold - confustion matrix, logistic regression
+    # filename = 'Strategy_6_Only_Demographics_Data_No_Language_Barriers_LR.png'
+    # title = 'Each patient is represented as a data point - Strategy 6 - Only Demographics Data - No Language Barrier - using Logistic Regression'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0], demo = True)
+    # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'LR', filename = filename)
+
+    # # testing only demographics - 10 fold - confustion matrix, random forest
+    # filename = 'Strategy_6_Only_Demographics_Data_No_Language_Barriers_RF.png'
+    # title = 'Each patient is represented as a data point - Strategy 6 - Only Demographics Data - No Language Barrier - using Random Forest'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0], demo = True)
+    # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'RF', filename = filename)
+
+    # # testing only demographics - 10 fold - confustion matrix, support vector machine
+    # filename = 'Strategy_6_Only_Demographics_Data_No_Language_Barriers_SVM.png'
+    # title = 'Each patient is represented as a data point - Strategy 6 - Only Demographics Data - No Language Barrier - using Support Vector Machine'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0], demo = True)
+    # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'SVM', filename = filename)
+
+    # # testing only demographics - 10 fold - confustion matrix, multi-layer perceptron
+    # filename = 'Strategy_6_Only_Demographics_Data_No_Language_Barriers_ANN.png'
+    # title = 'Each patient is represented as a data point - Strategy 6 - Only Demographics Data - No Language Barrier - using Artificial Neural Network'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0], demo = True)
+    # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'ANN', filename = filename)
+
+    # # testing only demographics - 10 fold - confustion matrix, GNB
+    # filename = 'Strategy_6_Only_Demographics_Data_No_Language_Barriers_GNB.png'
+    # title = 'Each patient is represented as a data point - Strategy 6 - Only Demographics Data - No Language Barrier - using Gaussian Naive Bayes'
+    # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0], demo = True)
+    # matrix_for_classifier = remove_rows_with_this_label(label='Language/interpreter', df = matrix_for_classifier)
+    # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'GNB', filename = filename)
+
     ''' testing 5 LDA topics on all classifiers '''
 
-    # # testing 5 topics - 10 fold - confustion matrix, logistic regression
+    # testing 5 topics - 10 fold - confustion matrix, logistic regression
     # title = 'Each patient is represented as a data point - Strategy 1 - 5 topics - using Logistic Regression'
     # matrix_for_classifier = add_demographics_and_other_to_doc_to_topic(document_to_topic_matrix= all_doc_to_topic_matrices[0])
     # train_and_test_classifier(input_for_classifier= matrix_for_classifier, title = title, clf= 'LR')
